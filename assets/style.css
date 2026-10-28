@@ -1,26 +1,1114 @@
 
-:root{--ink:#16252b;--muted:#596970;--accent:#156d61;--line:#dbe4e1;--cream:#f7f8f5;--white:#fff;--dark:#173c3a}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--white);color:var(--ink);line-height:1.65}a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}a:focus-visible{outline:3px solid #2ba58e;outline-offset:3px}.container{width:min(1130px,calc(100% - 48px));margin:auto}.navwrap{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{font-size:17px;font-weight:750;letter-spacing:-.03em}.navlinks{display:flex;gap:26px;font-size:13px;font-weight:650}.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--accent);font-weight:750}.hero{padding:104px 0 92px;background:linear-gradient(115deg,#f5f8f4 0%,#f5f8f4 65%,#e6f1eb 100%)}.hero-inner{display:grid;grid-template-columns:1.45fr .55fr;gap:70px;align-items:center}.hero h1{font-size:clamp(45px,5.8vw,78px);letter-spacing:-.06em;line-height:1.04;margin:20px 0 20px;max-width:780px}.hero h1 em{font-style:normal;color:var(--accent)}.lead{font-size:19px;max-width:690px;color:#41585b}.portrait{background:#e0ece6;border:1px solid #c9dfd5;min-height:280px;display:flex;align-items:center;justify-content:center;position:relative}.portrait:after{content:'SQL / PYTHON / POWER BI';position:absolute;bottom:24px;left:24px;font-size:12px;letter-spacing:.15em;color:var(--accent);font-weight:700}.monogram{font-size:100px;letter-spacing:-.1em;font-weight:800;color:#8bb9a7;line-height:1}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:12px 20px;border:1px solid var(--accent);font-size:13px;font-weight:750;display:inline-block}.btn.primary{background:var(--accent);color:white}.btn:hover{background:#114d45;color:white}.section{padding:88px 0}.section.alt{background:var(--cream)}.section-heading{margin:0 0 33px}.section-heading h2{font-size:clamp(30px,3.5vw,46px);letter-spacing:-.05em;line-height:1.1;margin:11px 0}.section-heading p{color:var(--muted);max-width:700px}.about{display:grid;grid-template-columns:1.2fr .8fr;gap:70px}.about p{font-size:16px;color:#40545a;margin-top:0}.subhead{font-size:18px;margin:0 0 16px}.skill-list{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.skill{border-bottom:1px solid var(--line);padding:11px 0;font-size:14px;font-weight:650}.education{border-top:1px solid var(--line);padding-top:25px;margin-top:30px}.education strong{display:block}.education span{color:var(--muted);font-size:14px}.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 32px}.project{border-bottom:1px solid var(--line);padding-bottom:25px}.project-image{display:block;background:#eaf0ee;overflow:hidden;border:1px solid var(--line)}.project-image img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block;transition:transform .3s}.project-image:hover img{transform:scale(1.025)}.project .eyebrow{margin-top:20px}.project h3{font-size:25px;letter-spacing:-.035em;line-height:1.22;margin:9px 0}.project p{font-size:14px;color:var(--muted);margin:0 0 14px}.textlink{font-weight:750;font-size:13px;color:var(--accent);border-bottom:1px solid currentColor;padding-bottom:3px}.contact{background:var(--dark);color:white;padding:82px 0}.contact .eyebrow{color:#9bd4bf}.contact h2{font-size:clamp(31px,4vw,49px);line-height:1.13;letter-spacing:-.04em;margin:13px 0}.contact p{color:#d4e2de}.contact .btn{border-color:#a2d8c7;color:white}.contact .btn.primary{background:#d5eee4;color:#173c3a}.footer{padding:24px 0;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}.detail-head{padding:76px 0 40px;background:var(--cream)}.detail-head h1{font-size:clamp(37px,5vw,64px);line-height:1.1;letter-spacing:-.05em;margin:12px 0}.detail-head p{max-width:770px;color:var(--muted);font-size:17px}.gallery{display:grid;gap:42px}.shot{margin:0}.shot img{width:100%;display:block;border:1px solid var(--line)}.shot figcaption{padding:11px 0;font-size:13px;color:var(--muted)}.note{font-size:12px;color:var(--muted);margin-top:30px}.back{display:inline-block;margin-bottom:24px;color:var(--accent);font-size:13px;font-weight:750}@media(max-width:800px){.hero-inner,.about{grid-template-columns:1fr;gap:28px}.portrait{display:none}.hero{padding:70px 0}.section{padding:65px 0}.projects{grid-template-columns:1fr}.navlinks{gap:13px;font-size:12px}.brand{font-size:14px}}@media(max-width:480px){.container{width:calc(100% - 32px)}.navlinks a:nth-child(2){display:none}.hero h1{font-size:47px}.skill-list{grid-template-columns:1fr}.contact{padding:65px 0}}
+/* ==========================================
+   PEDRO HENRIQUE BARBOSA
+   PORTFÓLIO DE DADOS
+   DARK TECH PREMIUM
+   ========================================== */
 
-/* Conteúdo técnico dos projetos — integrado ao layout existente */
-.project-analysis{padding-top:30px;padding-bottom:54px}
-.analysis-title{font-size:clamp(28px,3.2vw,39px);line-height:1.18;margin:10px 0 10px}
-.analysis-intro{max-width:720px;opacity:.78;margin:0 0 28px}
-.analysis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 36px;margin:26px 0 32px}
-.analysis-item{padding-top:16px;border-top:1px solid #d7e3dd}
-.analysis-item h3{font-size:17px;margin:0 0 8px}
-.analysis-item p{line-height:1.7;margin:0;color:#42534c}
-.analysis-subtitle{font-size:20px;margin:30px 0 12px}
-.metric-list{display:flex;flex-wrap:wrap;gap:9px;list-style:none;padding:0;margin:0}
-.metric-list li,.tech-tags span{display:inline-block;padding:9px 13px;border:1px solid #d3e0d8;border-radius:6px;background:#f7faf7;font-size:13px;color:#25473a}
-.tech-tags{display:flex;flex-wrap:wrap;gap:9px}
-.project-tech{font-size:12px;color:#456b57;margin:12px 0 8px;font-weight:600}
-@media(max-width:700px){.analysis-grid{grid-template-columns:1fr;gap:22px}.project-analysis{padding-top:10px}}
+/* 01. VARIÁVEIS E CORES */
 
-/* Foto de perfil na apresentação */
-.profile-photo{width:260px;height:260px;max-width:calc(100% - 48px);aspect-ratio:1/1;object-fit:cover;object-position:center;border-radius:50%;border:5px solid #fff;box-shadow:0 10px 28px rgba(22,55,48,.14);display:block;margin:0 auto 22px}
+:root {
+  color-scheme: dark;
 
-/* Retrato: centralizado, com respiro e legenda separada */
-.hero .portrait{min-height:310px;padding:24px 24px 55px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero .portrait .profile-photo{width:210px;height:210px;max-width:100%;flex:0 0 auto;object-fit:cover;object-position:center 38%;border-radius:50%;border:4px solid #fff;box-shadow:0 8px 24px rgba(22,55,48,.12);margin:0}
-.hero .portrait::after{left:0;right:0;bottom:18px;text-align:center;font-size:11px;letter-spacing:.12em;white-space:nowrap}
-@media(max-width:800px){.hero .portrait{display:flex;max-width:320px;width:100%;margin:0 auto;min-height:295px}.hero .portrait .profile-photo{width:205px;height:205px}}
+  --ink: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+
+  --line: #24344b;
+  --cream: #0e1728;
+  --white: #0b1120;
+  --dark: #080e1b;
+
+  --surface: #111c30;
+  --surface-hover: #17253d;
+  --surface-soft: #152239;
+
+  --border: rgba(148, 163, 184, 0.16);
+
+  --glow: rgba(56, 189, 248, 0.15);
+
+  --shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+
+  --radius: 14px;
+}
+
+/* 02. CONFIGURAÇÕES GERAIS */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 95px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(1130px, calc(100% - 48px));
+  margin: auto;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.3);
+  color: #ffffff;
+}
+
+/* 03. MENU DE NAVEGAÇÃO */
+
+.navwrap {
+  background: rgba(11, 17, 32, 0.94);
+  border-bottom: 1px solid var(--border);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.nav {
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 22px;
+}
+
+.brand {
+  font-size: 17px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  color: #f8fafc;
+}
+
+.brand:hover {
+  color: var(--accent);
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.navlinks a {
+  color: #cbd5e1;
+  position: relative;
+}
+
+.navlinks a:hover {
+  color: var(--accent);
+}
+
+.navlinks a::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.navlinks a:hover::after {
+  width: 100%;
+}
+
+/* 04. ELEMENTOS DE DESTAQUE */
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+
+  color: var(--accent);
+  font-weight: 750;
+}
+
+/* 05. HERO - APRESENTAÇÃO PRINCIPAL */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  padding: 104px 0 92px;
+
+  background:
+    radial-gradient(
+      ellipse at 85% 30%,
+      rgba(14, 116, 144, 0.16),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 10% 85%,
+      rgba(37, 99, 235, 0.08),
+      transparent 50%
+    ),
+    linear-gradient(
+      115deg,
+      #0b1120 0%,
+      #0e192d 65%,
+      #101f35 100%
+    );
+
+  border-bottom: 1px solid var(--border);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(56, 189, 248, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(56, 189, 248, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 1.45fr 0.55fr;
+
+  gap: 70px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 5.8vw, 78px);
+
+  letter-spacing: -0.06em;
+  line-height: 1.04;
+
+  margin: 20px 0;
+  max-width: 780px;
+
+  color: #f8fafc;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.lead {
+  font-size: 19px;
+  max-width: 690px;
+
+  color: #a9bbd0;
+  line-height: 1.8;
+}
+
+/* 06. BOTÕES */
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 20px;
+
+  border: 1px solid #38506b;
+  border-radius: 8px;
+
+  background: rgba(17, 28, 48, 0.55);
+
+  color: #e2e8f0;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #061522;
+
+  box-shadow: 0 5px 22px rgba(56, 189, 248, 0.13);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+
+  background: var(--surface-hover);
+  border-color: var(--accent);
+
+  color: #ffffff;
+}
+
+.btn.primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+
+  color: #061522;
+
+  box-shadow: 0 8px 28px rgba(56, 189, 248, 0.23);
+}
+
+/* 07. FOTO DE PERFIL */
+
+.portrait {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(56, 189, 248, 0.1),
+      transparent 75%
+    ),
+    var(--surface);
+
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 20px;
+
+  min-height: 310px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px 24px 55px;
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow);
+}
+
+.portrait::after {
+  content: "SQL / PYTHON / POWER BI";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 18px;
+
+  text-align: center;
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.profile-photo {
+  width: 260px;
+  height: 260px;
+
+  max-width: calc(100% - 48px);
+
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+
+  border: 4px solid #243b55;
+
+  box-shadow:
+    0 0 0 5px rgba(56, 189, 248, 0.07),
+    0 12px 35px rgba(0, 0, 0, 0.35);
+
+  display: block;
+  margin: 0 auto 22px;
+}
+
+.hero .portrait .profile-photo {
+  width: 210px;
+  height: 210px;
+
+  max-width: 100%;
+  flex: 0 0 auto;
+
+  object-fit: cover;
+  object-position: center 38%;
+
+  margin: 0;
+
+  transition: transform 0.35s ease;
+}
+
+.hero .portrait:hover .profile-photo {
+  transform: scale(1.035);
+}
+
+.monogram {
+  font-size: 100px;
+  letter-spacing: -0.1em;
+
+  font-weight: 800;
+  color: var(--accent);
+
+  line-height: 1;
+}
+
+/* 08. SEÇÕES */
+
+.section {
+  padding: 88px 0;
+  background: var(--white);
+}
+
+.section.alt {
+  background: var(--cream);
+}
+
+.section-heading {
+  margin: 0 0 33px;
+}
+
+.section-heading h2 {
+  font-size: clamp(30px, 3.5vw, 46px);
+
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+
+  margin: 11px 0;
+
+  color: #f8fafc;
+}
+
+.section-heading p {
+  color: var(--muted);
+  max-width: 700px;
+}
+
+/* 09. SOBRE MIM */
+
+.about {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 70px;
+}
+
+.about p {
+  font-size: 16px;
+  color: #b4c2d3;
+
+  margin-top: 0;
+  line-height: 1.85;
+}
+
+.subhead {
+  font-size: 18px;
+  margin: 0 0 16px;
+
+  color: #eaf2fb;
+}
+
+/* 10. COMPETÊNCIAS TÉCNICAS */
+
+.skill-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0 20px;
+}
+
+.skill {
+  border-bottom: 1px solid var(--line);
+
+  padding: 12px 0;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  color: #cbd5e1;
+
+  transition:
+    color 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+.skill:hover {
+  color: var(--accent);
+  padding-left: 5px;
+}
+
+/* 11. FORMAÇÃO ACADÊMICA */
+
+.education {
+  border-top: 1px solid var(--line);
+
+  padding-top: 25px;
+  margin-top: 30px;
+}
+
+.education strong {
+  display: block;
+  color: #f1f5f9;
+}
+
+.education span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* 12. GRID DE PROJETOS */
+
+.projects {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 30px;
+}
+
+/* 13. CARDS DOS PROJETOS */
+
+.project {
+  min-width: 0;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  padding: 16px 16px 24px;
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(56, 189, 248, 0.4);
+
+  box-shadow:
+    0 16px 45px rgba(0, 0, 0, 0.28),
+    0 0 24px rgba(56, 189, 248, 0.045);
+}
+
+.project-image {
+  display: block;
+
+  background: #0b1525;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+
+.project-image img {
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  object-fit: cover;
+  object-position: top;
+
+  display: block;
+
+  transition: transform 0.4s ease;
+}
+
+.project-image:hover img,
+.project:hover .project-image img {
+  transform: scale(1.035);
+}
+
+.project .eyebrow {
+  margin-top: 20px;
+}
+
+.project h3 {
+  font-size: 25px;
+
+  letter-spacing: -0.035em;
+  line-height: 1.22;
+
+  margin: 9px 0;
+
+  color: #f1f5f9;
+}
+
+.project p {
+  font-size: 14px;
+
+  color: #a5b4c7;
+
+  margin: 0 0 14px;
+
+  line-height: 1.75;
+}
+
+.project-tech {
+  font-size: 12px;
+
+  color: #83cdea;
+
+  margin: 12px 0 12px;
+
+  font-weight: 600;
+}
+
+/* 14. LINKS DOS PROJETOS */
+
+.textlink {
+  display: inline-block;
+
+  font-weight: 750;
+  font-size: 13px;
+
+  color: var(--accent);
+
+  border-bottom: 1px solid currentColor;
+
+  padding-bottom: 3px;
+}
+
+.textlink:hover {
+  color: var(--accent-hover);
+}
+
+/* 15. CONTATO */
+
+.contact {
+  position: relative;
+
+  background:
+    radial-gradient(
+      ellipse at 90% 50%,
+      rgba(56, 189, 248, 0.1),
+      transparent 55%
+    ),
+    #0c1628;
+
+  color: #ffffff;
+
+  padding: 82px 0;
+
+  border-top: 1px solid var(--border);
+}
+
+.contact .eyebrow {
+  color: var(--accent);
+}
+
+.contact h2 {
+  font-size: clamp(31px, 4vw, 49px);
+
+  line-height: 1.13;
+  letter-spacing: -0.04em;
+
+  margin: 13px 0;
+}
+
+.contact p {
+  color: #a9bbd0;
+}
+
+.contact .btn {
+  border-color: #38506b;
+  color: #e2e8f0;
+}
+
+.contact .btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+
+  color: #061522;
+}
+
+.contact .btn.primary:hover {
+  background: var(--accent-hover);
+  color: #061522;
+}
+
+.contact .btn:not(.primary):hover {
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+/* 16. RODAPÉ */
+
+.footer {
+  padding: 24px 0;
+
+  font-size: 12px;
+
+  color: var(--muted);
+
+  background: var(--dark);
+
+  border-top: 1px solid var(--border);
+}
+
+/* ==========================================
+   PÁGINAS INDIVIDUAIS DOS PROJETOS
+   ========================================== */
+
+/* 17. CABEÇALHO DOS PROJETOS */
+
+.detail-head {
+  padding: 76px 0 40px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0e192d,
+      #111f35
+    );
+
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-head h1 {
+  font-size: clamp(37px, 5vw, 64px);
+
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+
+  margin: 12px 0;
+
+  color: #f8fafc;
+}
+
+.detail-head p {
+  max-width: 770px;
+
+  color: var(--muted);
+
+  font-size: 17px;
+}
+
+/* 18. GALERIA DE DASHBOARDS */
+
+.gallery {
+  display: grid;
+  gap: 42px;
+}
+
+.shot {
+  margin: 0;
+}
+
+.shot img {
+  width: 100%;
+
+  display: block;
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+
+  box-shadow: var(--shadow);
+}
+
+.shot figcaption {
+  padding: 11px 0;
+
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* 19. OBSERVAÇÕES */
+
+.note {
+  font-size: 12px;
+  color: var(--muted);
+
+  margin-top: 30px;
+}
+
+/* 20. VOLTAR AO PORTFÓLIO */
+
+.back {
+  display: inline-block;
+
+  margin-bottom: 24px;
+
+  color: var(--accent);
+
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.back:hover {
+  color: var(--accent-hover);
+}
+
+/* ==========================================
+   CONTEÚDO TÉCNICO DOS PROJETOS
+   ========================================== */
+
+/* 21. ANÁLISE TÉCNICA */
+
+.project-analysis {
+  padding-top: 30px;
+  padding-bottom: 54px;
+}
+
+.analysis-title {
+  font-size: clamp(28px, 3.2vw, 39px);
+
+  line-height: 1.18;
+
+  margin: 10px 0;
+
+  color: #f1f5f9;
+}
+
+.analysis-intro {
+  max-width: 720px;
+
+  color: #a5b4c7;
+
+  margin: 0 0 28px;
+}
+
+/* 22. GRID DE ANÁLISES */
+
+.analysis-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px 36px;
+
+  margin: 26px 0 32px;
+}
+
+.analysis-item {
+  padding-top: 16px;
+
+  border-top: 1px solid var(--line);
+}
+
+.analysis-item h3 {
+  font-size: 17px;
+
+  margin: 0 0 8px;
+
+  color: #e2e8f0;
+}
+
+.analysis-item p {
+  line-height: 1.7;
+
+  margin: 0;
+
+  color: #a9b9cc;
+}
+
+.analysis-subtitle {
+  font-size: 20px;
+
+  margin: 30px 0 12px;
+
+  color: #f1f5f9;
+}
+
+/* 23. MÉTRICAS */
+
+.metric-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.metric-list li {
+  display: inline-block;
+
+  padding: 9px 13px;
+
+  border: 1px solid #2b4560;
+  border-radius: 6px;
+
+  background: #15253a;
+
+  font-size: 13px;
+
+  color: #b9dced;
+}
+
+/* 24. TECNOLOGIAS */
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.tech-tags span {
+  display: inline-block;
+
+  padding: 9px 13px;
+
+  border: 1px solid #2b4560;
+  border-radius: 6px;
+
+  background: #15253a;
+
+  font-size: 13px;
+
+  color: #b9dced;
+}
+
+/* ==========================================
+   MELHORIAS VISUAIS
+   ========================================== */
+
+/* 25. ANIMAÇÕES DISCRETAS */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-inner > div:first-child {
+  animation: fadeUp 0.65s ease both;
+}
+
+.hero .portrait {
+  animation: fadeUp 0.8s ease both;
+}
+
+/* 26. SCROLLBAR */
+
+@media (min-width: 801px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0b1120;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2b415c;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3b5b7a;
+  }
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+   ========================================== */
+
+/* 27. TABLETS */
+
+@media (max-width: 800px) {
+
+  .hero-inner,
+  .about {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero {
+    padding: 70px 0;
+  }
+
+  .hero .portrait {
+    display: flex;
+
+    max-width: 320px;
+    width: 100%;
+
+    margin: 0 auto;
+
+    min-height: 295px;
+  }
+
+  .hero .portrait .profile-photo {
+    width: 205px;
+    height: 205px;
+  }
+
+  .section {
+    padding: 65px 0;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .navlinks {
+    gap: 13px;
+    font-size: 12px;
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+}
+
+/* 28. CELULARES */
+
+@media (max-width: 480px) {
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .navlinks {
+    gap: 10px;
+    font-size: 11px;
+  }
+
+  .navlinks a:nth-child(2) {
+    display: none;
+  }
+
+  .brand {
+    font-size: 13px;
+  }
+
+  .hero h1 {
+    font-size: 47px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    padding: 65px 0;
+  }
+
+  .project {
+    padding: 12px 12px 22px;
+  }
+
+  .project h3 {
+    font-size: 22px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 11px 16px;
+  }
+}
+
+/* 29. ANÁLISES EM TELAS PEQUENAS */
+
+@media (max-width: 700px) {
+
+  .analysis-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .project-analysis {
+    padding-top: 10px;
+  }
+}
+
+/* 30. ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
