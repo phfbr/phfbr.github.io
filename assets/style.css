@@ -1,22 +1,33 @@
 
-/* =====================================
-   PORTFÓLIO — DARK TECH PREMIUM 2.0
+/* =========================================
+   PORTFÓLIO — DARK TECH PREMIUM 3.0
    PEDRO HENRIQUE BARBOSA
-   ===================================== */
+   ========================================= */
+
+/* =========================================
+   01. VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================= */
 
 :root {
   color-scheme: dark;
+
   --ink: #f1f5f9;
   --muted: #a8b8cc;
   --accent: #38bdf8;
+  --accent-light: #7dd3fc;
+
   --line: #26374f;
   --cream: #0e1728;
   --white: #0b1120;
   --dark: #080f1e;
   --surface: #111c30;
-  --border: rgba(148, 163, 184, .18);
+
+  --border: rgba(148, 163, 184, 0.18);
+
   --radius: 16px;
-  --shadow: 0 12px 35px rgba(0, 0, 0, .16);
+  --shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+
+  --transition: 0.3s ease;
 }
 
 * {
@@ -25,7 +36,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -40,17 +51,27 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color .2s, background .2s,
-    border-color .2s, transform .2s;
+
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
 }
 
 a:hover {
   color: var(--accent);
 }
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible,
+select:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 4px;
+}
+
+img {
+  max-width: 100%;
 }
 
 .container {
@@ -63,67 +84,147 @@ a:focus-visible {
   color: #fff;
 }
 
-/* NAVEGAÇÃO */
+/* =========================================
+   02. NAVEGAÇÃO
+   ========================================= */
 
 .navwrap {
-  background: rgba(9, 16, 30, .95);
+  background: rgba(9, 16, 30, 0.95);
   border-bottom: 1px solid var(--border);
+
   position: sticky;
   top: 0;
   z-index: 100;
+
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
 .nav {
   min-height: 76px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 24px;
 }
 
 .brand {
   font-size: 17px;
   font-weight: 750;
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
   color: #f8fafc;
+  white-space: nowrap;
+}
+
+.brand:hover {
+  color: var(--accent);
 }
 
 .navlinks {
   display: flex;
-  gap: 28px;
   align-items: center;
+  gap: 28px;
+
+  margin-left: auto;
+
   font-size: 13px;
   font-weight: 650;
 }
 
 .navlinks a {
   color: #cbd5e1;
+  white-space: nowrap;
 }
 
 .navlinks a:hover {
   color: var(--accent);
 }
 
+/* =========================================
+   03. SELETOR DE IDIOMAS
+   ========================================= */
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.language-switcher label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--accent);
+  font-size: 15px;
+}
+
+.language-switcher select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  min-width: 65px;
+
+  padding: 9px 23px 9px 12px;
+
+  border: 1px solid #38506b;
+  border-radius: 8px;
+
+  background-color: #142238;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 7px center;
+
+  color: #e2e8f0;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.language-switcher select:hover {
+  border-color: var(--accent);
+  background-color: #1a2d47;
+}
+
+/* =========================================
+   04. ELEMENTOS DE TEXTO
+   ========================================= */
+
 .eyebrow {
   font-size: 11px;
-  letter-spacing: .17em;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
+
   color: var(--accent);
   font-weight: 750;
 }
 
-/* APRESENTAÇÃO */
+/* =========================================
+   05. APRESENTAÇÃO / HERO
+   ========================================= */
 
 .hero {
   padding: 104px 0 100px;
+
   position: relative;
   overflow: hidden;
+
   background:
     radial-gradient(
       ellipse at 85% 30%,
-      rgba(14, 116, 144, .17),
+      rgba(14, 116, 144, 0.17),
       transparent 50%
     ),
     linear-gradient(
@@ -132,41 +233,49 @@ a:focus-visible {
       #0e192d 65%,
       #101f35
     );
+
   border-bottom: 1px solid var(--border);
 }
 
 .hero::before {
   content: "";
+
   position: absolute;
   inset: 0;
+
   background-image:
     linear-gradient(
-      rgba(56, 189, 248, .025) 1px,
+      rgba(56, 189, 248, 0.025) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(56, 189, 248, .025) 1px,
+      rgba(56, 189, 248, 0.025) 1px,
       transparent 1px
     );
+
   background-size: 48px 48px;
   pointer-events: none;
 }
 
 .hero-inner {
   position: relative;
+
   display: grid;
+
   grid-template-columns:
     minmax(0, 1.35fr)
-    minmax(270px, .65fr);
+    minmax(270px, 0.65fr);
+
   gap: 70px;
   align-items: center;
 }
 
 .hero h1 {
   font-size: clamp(48px, 5.6vw, 82px);
-  letter-spacing: -.06em;
+  letter-spacing: -0.06em;
   line-height: 1.05;
+
   margin: 20px 0;
   max-width: 800px;
 }
@@ -179,16 +288,20 @@ a:focus-visible {
 .lead {
   font-size: 19px;
   max-width: 680px;
+
   color: #b5c5d8;
   line-height: 1.8;
 }
 
-/* BOTÕES */
+/* =========================================
+   06. BOTÕES
+   ========================================= */
 
 .buttons {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+
   margin-top: 28px;
 }
 
@@ -196,13 +309,19 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 9px;
+
   min-height: 44px;
   padding: 12px 21px;
+
   border: 1px solid #38506b;
   border-radius: 9px;
-  background: rgba(17, 28, 48, .55);
+
+  background: rgba(17, 28, 48, 0.55);
+
   font-size: 13px;
   font-weight: 750;
+
   color: #e2e8f0;
 }
 
@@ -210,56 +329,70 @@ a:focus-visible {
   background: var(--accent);
   border-color: var(--accent);
   color: #061522;
+
   box-shadow:
-    0 5px 22px rgba(56, 189, 248, .13);
+    0 5px 22px rgba(56, 189, 248, 0.13);
 }
 
 .btn:hover {
   transform: translateY(-2px);
+
   background: #17283f;
   border-color: var(--accent);
   color: #fff;
 }
 
 .btn.primary:hover {
-  background: #7dd3fc;
-  border-color: #7dd3fc;
+  background: var(--accent-light);
+  border-color: var(--accent-light);
   color: #061522;
 }
 
-/* FOTO DE PERFIL */
+/* =========================================
+   07. FOTO DE PERFIL
+   ========================================= */
 
 .portrait,
 .hero .portrait {
   min-height: 340px;
   padding: 30px 25px 60px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   position: relative;
   overflow: hidden;
+
   border-radius: 20px;
-  border: 1px solid rgba(56, 189, 248, .23);
+  border: 1px solid rgba(56, 189, 248, 0.23);
+
   background:
     radial-gradient(
       circle at center,
-      rgba(56, 189, 248, .1),
+      rgba(56, 189, 248, 0.1),
       transparent 72%
     ),
     var(--surface);
+
   box-shadow: var(--shadow);
 }
 
 .portrait::after,
 .hero .portrait::after {
   content: "SQL / PYTHON / POWER BI";
+
   position: absolute;
+
   bottom: 22px;
   left: 0;
   right: 0;
+
   text-align: center;
+
   font-size: 11px;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
+
   color: var(--accent);
   font-weight: 700;
   white-space: nowrap;
@@ -270,18 +403,24 @@ a:focus-visible {
   width: 235px;
   height: 235px;
   max-width: 100%;
+
   aspect-ratio: 1 / 1;
   flex: 0 0 auto;
+
   object-fit: cover;
   object-position: center 38%;
+
   border-radius: 50%;
   border: 4px solid #28435d;
+
   box-shadow:
-    0 0 0 6px rgba(56, 189, 248, .07),
-    0 12px 35px rgba(0, 0, 0, .3);
+    0 0 0 6px rgba(56, 189, 248, 0.07),
+    0 12px 35px rgba(0, 0, 0, 0.3);
+
   display: block;
   margin: 0;
-  transition: transform .3s;
+
+  transition: transform 0.3s;
 }
 
 .portrait:hover .profile-photo {
@@ -290,13 +429,15 @@ a:focus-visible {
 
 .monogram {
   font-size: 100px;
-  letter-spacing: -.1em;
+  letter-spacing: -0.1em;
   font-weight: 800;
   color: var(--accent);
   line-height: 1;
 }
 
-/* SEÇÕES */
+/* =========================================
+   08. SEÇÕES
+   ========================================= */
 
 .section {
   padding: 94px 0;
@@ -313,9 +454,11 @@ a:focus-visible {
 
 .section-heading h2 {
   font-size: clamp(32px, 3.5vw, 48px);
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
   line-height: 1.1;
+
   margin: 11px 0;
+
   color: #f8fafc;
 }
 
@@ -324,17 +467,20 @@ a:focus-visible {
   max-width: 740px;
 }
 
-/* SOBRE MIM */
+/* =========================================
+   09. SOBRE MIM
+   ========================================= */
 
 .about {
   display: grid;
-  grid-template-columns: 1.15fr .85fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 80px;
 }
 
 .about p {
   font-size: 16px;
   color: #b8c7d7;
+
   margin-top: 0;
   line-height: 1.9;
 }
@@ -345,7 +491,9 @@ a:focus-visible {
   color: #f1f5f9;
 }
 
-/* COMPETÊNCIAS */
+/* =========================================
+   10. COMPETÊNCIAS
+   ========================================= */
 
 .skill-list {
   display: grid;
@@ -355,11 +503,17 @@ a:focus-visible {
 
 .skill {
   border-bottom: 1px solid var(--line);
+
   padding: 12px 0;
+
   font-size: 14px;
   font-weight: 650;
+
   color: #d0dbea;
-  transition: color .2s, padding-left .2s;
+
+  transition:
+    color 0.2s,
+    padding-left 0.2s;
 }
 
 .skill:hover {
@@ -367,7 +521,9 @@ a:focus-visible {
   padding-left: 4px;
 }
 
-/* FORMAÇÃO */
+/* =========================================
+   11. FORMAÇÃO
+   ========================================= */
 
 .education {
   border-top: 1px solid var(--line);
@@ -384,53 +540,73 @@ a:focus-visible {
   font-size: 14px;
 }
 
-/* GRID DE PROJETOS */
+/* =========================================
+   12. GRID DE PROJETOS
+   ========================================= */
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
   gap: 32px;
 }
 
-/* CARDS */
+/* =========================================
+   13. CARDS DE PROJETOS
+   ========================================= */
 
 .project {
   min-width: 0;
+
   display: flex;
   flex-direction: column;
+
   background: var(--surface);
+
   border: 1px solid var(--border);
   border-radius: var(--radius);
+
   padding: 18px 18px 25px;
+
   box-shadow: var(--shadow);
+
   transition:
-    transform .3s,
-    border-color .3s,
-    box-shadow .3s;
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 
 .project:hover {
   transform: translateY(-5px);
-  border-color: rgba(56, 189, 248, .43);
+
+  border-color: rgba(56, 189, 248, 0.43);
+
   box-shadow:
-    0 20px 48px rgba(0, 0, 0, .24);
+    0 20px 48px rgba(0, 0, 0, 0.24);
 }
 
 .project-image {
   display: block;
   overflow: hidden;
+
   border: 1px solid var(--border);
   border-radius: 10px;
+
   background: #0b1525;
 }
 
 .project-image img {
   width: 100%;
   aspect-ratio: 16 / 10;
+
   object-fit: cover;
   object-position: top;
+
   display: block;
-  transition: transform .35s;
+
+  transition: transform 0.35s;
 }
 
 .project-image:hover img,
@@ -444,15 +620,18 @@ a:focus-visible {
 
 .project h3 {
   font-size: clamp(21px, 2vw, 26px);
-  letter-spacing: -.035em;
+  letter-spacing: -0.035em;
   line-height: 1.25;
+
   margin: 9px 0;
+
   color: #f1f5f9;
 }
 
 .project p {
   font-size: 14px;
   color: #b0c0d3;
+
   margin: 0 0 15px;
   line-height: 1.8;
 }
@@ -460,40 +639,190 @@ a:focus-visible {
 .project-tech {
   font-size: 12px;
   color: #85d7f7;
+
   margin: 12px 0 15px;
   font-weight: 650;
 }
 
-.project .textlink {
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 12px 22px;
+
   margin-top: auto;
+  padding-top: 8px;
+}
+
+.project .textlink {
   align-self: flex-start;
 }
 
 .textlink {
   display: inline-block;
+
   font-weight: 750;
   font-size: 13px;
+
   color: var(--accent);
+
   border-bottom: 1px solid currentColor;
   padding-bottom: 3px;
 }
 
 .textlink:hover {
-  color: #7dd3fc;
+  color: var(--accent-light);
 }
 
-/* CONTATO */
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #cbd5e1;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.github-link:hover {
+  color: var(--accent);
+}
+
+/* =========================================
+   14. PROJETO PRINCIPAL — CYBERTHREAT
+   ========================================= */
+
+.featured-projects .project-featured {
+  grid-column: 1 / -1;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(0, 1fr);
+
+  column-gap: 32px;
+
+  align-content: start;
+
+  padding: 24px;
+
+  border-color: rgba(56, 189, 248, 0.32);
+
+  background:
+    radial-gradient(
+      ellipse at 95% 5%,
+      rgba(56, 189, 248, 0.065),
+      transparent 60%
+    ),
+    var(--surface);
+}
+
+.project-featured .project-image {
+  grid-column: 1;
+  grid-row: 1 / span 5;
+
+  align-self: stretch;
+}
+
+.project-featured .project-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project-featured .eyebrow {
+  margin-top: 8px;
+}
+
+.project-featured h3 {
+  font-size: clamp(26px, 2.8vw, 38px);
+  line-height: 1.18;
+
+  margin: 12px 0 15px;
+}
+
+.project-featured p {
+  font-size: 15px;
+  line-height: 1.85;
+
+  margin-bottom: 18px;
+}
+
+.project-featured .project-tech {
+  margin: 12px 0 18px;
+}
+
+.project-featured .project-links {
+  margin-top: auto;
+}
+
+/* =========================================
+   15. PROJETOS SECUNDÁRIOS EM DESTAQUE
+   ========================================= */
+
+.featured-projects > .project:not(.project-featured) {
+  border-color: rgba(148, 163, 184, 0.23);
+}
+
+.featured-projects > .project:not(.project-featured) h3 {
+  font-size: clamp(23px, 2.2vw, 29px);
+}
+
+.featured-projects > .project:not(.project-featured):hover {
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+/* =========================================
+   16. OUTROS PROJETOS
+   ========================================= */
+
+.other-heading {
+  margin-top: 76px;
+  padding-top: 35px;
+
+  border-top: 1px solid var(--line);
+}
+
+.other-heading h2 {
+  font-size: clamp(28px, 3vw, 38px);
+}
+
+.other-projects .project h3 {
+  font-size: clamp(20px, 2vw, 24px);
+}
+
+.other-projects .project-image img {
+  aspect-ratio: 16 / 9;
+}
+
+.other-projects .project {
+  background: #101b2d;
+}
+
+/* =========================================
+   17. CONTATO
+   ========================================= */
 
 .contact {
   background:
     radial-gradient(
       ellipse at 90% 50%,
-      rgba(56, 189, 248, .1),
+      rgba(56, 189, 248, 0.1),
       transparent 55%
     ),
     #0c1628;
+
   color: #fff;
+
   padding: 94px 0;
+
   border-top: 1px solid var(--border);
 }
 
@@ -504,7 +833,8 @@ a:focus-visible {
 .contact h2 {
   font-size: clamp(33px, 4vw, 52px);
   line-height: 1.13;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
+
   margin: 13px 0;
 }
 
@@ -525,7 +855,7 @@ a:focus-visible {
 }
 
 .contact .btn.primary:hover {
-  background: #7dd3fc;
+  background: var(--accent-light);
   color: #061522;
 }
 
@@ -534,40 +864,54 @@ a:focus-visible {
   color: #fff;
 }
 
-/* RODAPÉ */
+/* =========================================
+   18. RODAPÉ
+   ========================================= */
 
 .footer {
   padding: 25px 0;
+
   font-size: 12px;
   color: var(--muted);
+
   background: var(--dark);
+
   border-top: 1px solid var(--border);
 }
 
-/* PÁGINAS DOS PROJETOS */
+/* =========================================
+   19. PÁGINAS INDIVIDUAIS DOS PROJETOS
+   ========================================= */
 
 .detail-head {
   padding: 76px 0 46px;
+
   background:
     linear-gradient(135deg, #0e192d, #111f35);
+
   border-bottom: 1px solid var(--border);
 }
 
 .detail-head h1 {
   font-size: clamp(37px, 5vw, 64px);
   line-height: 1.1;
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
+
   margin: 12px 0;
+
   color: #f8fafc;
 }
 
 .detail-head p {
   max-width: 770px;
+
   color: var(--muted);
   font-size: 17px;
 }
 
-/* GALERIA */
+/* =========================================
+   20. GALERIA DE DASHBOARDS
+   ========================================= */
 
 .gallery {
   display: grid;
@@ -581,13 +925,16 @@ a:focus-visible {
 .shot img {
   width: 100%;
   display: block;
+
   border: 1px solid var(--line);
   border-radius: 11px;
+
   box-shadow: var(--shadow);
 }
 
 .shot figcaption {
   padding: 11px 0;
+
   font-size: 13px;
   color: var(--muted);
 }
@@ -600,13 +947,18 @@ a:focus-visible {
 
 .back {
   display: inline-block;
+
   margin-bottom: 24px;
+
   color: var(--accent);
+
   font-size: 13px;
   font-weight: 750;
 }
 
-/* ANÁLISES TÉCNICAS */
+/* =========================================
+   21. ANÁLISES TÉCNICAS
+   ========================================= */
 
 .project-analysis {
   padding-top: 30px;
@@ -616,20 +968,28 @@ a:focus-visible {
 .analysis-title {
   font-size: clamp(28px, 3.2vw, 39px);
   line-height: 1.18;
+
   margin: 10px 0;
+
   color: #f1f5f9;
 }
 
 .analysis-intro {
   max-width: 720px;
+
   color: #aebed0;
+
   margin: 0 0 28px;
 }
 
 .analysis-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
   gap: 24px 36px;
+
   margin: 26px 0 32px;
 }
 
@@ -640,26 +1000,34 @@ a:focus-visible {
 
 .analysis-item h3 {
   font-size: 17px;
+
   margin: 0 0 8px;
+
   color: #e2e8f0;
 }
 
 .analysis-item p {
   line-height: 1.75;
+
   margin: 0;
+
   color: #b4c3d4;
 }
 
 .analysis-subtitle {
   font-size: 20px;
+
   margin: 30px 0 12px;
+
   color: #f1f5f9;
 }
 
 .metric-list {
   display: flex;
   flex-wrap: wrap;
+
   gap: 9px;
+
   list-style: none;
   padding: 0;
   margin: 0;
@@ -668,10 +1036,14 @@ a:focus-visible {
 .metric-list li,
 .tech-tags span {
   display: inline-block;
+
   padding: 9px 13px;
+
   border: 1px solid #2b4560;
   border-radius: 7px;
+
   background: #15253a;
+
   font-size: 13px;
   color: #b9dced;
 }
@@ -682,9 +1054,40 @@ a:focus-visible {
   gap: 9px;
 }
 
-/* RESPONSIVIDADE */
+/* =========================================
+   22. RESPONSIVIDADE — NOTEBOOK
+   ========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+
+  .nav {
+    gap: 18px;
+  }
+
+  .navlinks {
+    gap: 18px;
+  }
+
+  .hero-inner {
+    gap: 45px;
+  }
+
+  .about {
+    gap: 50px;
+  }
+
+  .featured-projects .project-featured {
+    column-gap: 24px;
+  }
+
+}
+
+/* =========================================
+   23. RESPONSIVIDADE — TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
   .container {
     width: calc(100% - 48px);
   }
@@ -700,9 +1103,25 @@ a:focus-visible {
   .projects {
     gap: 24px;
   }
+
+  .nav {
+    flex-wrap: wrap;
+    padding: 12px 0;
+  }
+
+  .navlinks {
+    gap: 16px;
+    margin-left: auto;
+  }
+
 }
 
+/* =========================================
+   24. RESPONSIVIDADE — CELULAR
+   ========================================= */
+
 @media (max-width: 800px) {
+
   .hero-inner,
   .about {
     grid-template-columns: 1fr;
@@ -716,6 +1135,7 @@ a:focus-visible {
   .hero .portrait {
     max-width: 360px;
     width: 100%;
+
     margin: 0 auto;
     min-height: 310px;
   }
@@ -726,44 +1146,78 @@ a:focus-visible {
 
   .projects {
     grid-template-columns: 1fr;
+
     max-width: 680px;
     margin: 0 auto;
   }
 
-  .navlinks {
-    gap: 14px;
-    font-size: 12px;
+  .featured-projects .project-featured {
+    display: flex;
+    flex-direction: column;
+
+    padding: 18px;
+  }
+
+  .project-featured .project-image {
+    width: 100%;
+  }
+
+  .project-featured .project-image img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-featured h3 {
+    font-size: clamp(24px, 5vw, 31px);
+  }
+
+  .other-heading {
+    margin-top: 60px;
+  }
+
+  .contact {
+    padding: 70px 0;
+  }
+
+}
+
+/* =========================================
+   25. RESPONSIVIDADE — CELULAR PEQUENO
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .nav {
+    gap: 12px;
+    justify-content: space-between;
   }
 
   .brand {
     font-size: 14px;
   }
 
-  .contact {
-    padding: 70px 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    width: calc(100% - 32px);
-  }
-
-  .nav {
-    gap: 10px;
-  }
-
-  .brand {
-    font-size: 13px;
+  .language-switcher {
+    margin-left: auto;
   }
 
   .navlinks {
-    gap: 10px;
-    font-size: 11px;
-  }
+    order: 3;
 
-  .navlinks a:nth-child(2) {
-    display: none;
+    width: 100%;
+
+    margin-left: 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    font-size: 12px;
   }
 
   .hero h1 {
@@ -779,11 +1233,15 @@ a:focus-visible {
   }
 
   .project {
-    padding: 12px 12px 22px;
+    padding: 14px 14px 22px;
   }
 
   .project h3 {
     font-size: 22px;
+  }
+
+  .project-featured h3 {
+    font-size: 25px;
   }
 
   .btn {
@@ -794,27 +1252,59 @@ a:focus-visible {
     width: 210px;
     height: 210px;
   }
-}
 
-@media (max-width: 700px) {
-  .analysis-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
+  .other-heading {
+    margin-top: 55px;
   }
 
-  .project-analysis {
-    padding-top: 10px;
-  }
 }
 
-/* ACESSIBILIDADE */
+/* =========================================
+   26. RESPONSIVIDADE — TELAS ESTREITAS
+   ========================================= */
+
+@media (max-width: 380px) {
+
+  .brand {
+    font-size: 12px;
+  }
+
+  .navlinks {
+    font-size: 11px;
+    gap: 8px;
+  }
+
+  .language-switcher {
+    gap: 4px;
+  }
+
+  .language-switcher select {
+    min-width: 57px;
+    padding: 8px 19px 8px 9px;
+  }
+
+  .project-featured {
+    padding: 12px;
+  }
+
+  .project-links {
+    gap: 10px;
+  }
+
+}
+
+/* =========================================
+   27. ACESSIBILIDADE
+   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
     scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
+
 }
