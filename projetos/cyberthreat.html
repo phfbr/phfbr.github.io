@@ -2,15 +2,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="CyberThreat Intelligence | Global Security Analytics. Análise de vulnerabilidades com Python, NIST NVD, CVSS, CWE e Power BI."/>
-  <meta name="theme-color" content="#0B1120"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B1120">
+  <meta name="description" content="CyberThreat Intelligence | Global Security Analytics. Análise de vulnerabilidades com Python, NIST NVD, CVSS, CWE e Power BI.">
+
   <title>CyberThreat Intelligence | Pedro Henrique Barbosa</title>
-  <link href="../assets/style.css" rel="stylesheet"/>
+
+  <link href="../assets/style.css" rel="stylesheet">
 
   <style>
-    /* Estilos exclusivos da página CyberThreat */
+    /* ESTILOS EXCLUSIVOS DO CYBERTHREAT */
 
     .cyber-highlights {
       display: grid;
@@ -114,364 +116,604 @@
 
 <body>
 
-<!-- NAVEGAÇÃO -->
-<header class="navwrap">
-  <div class="container nav">
-    <a class="brand" href="../index.html">Pedro Henrique Barbosa</a>
+  <!-- NAVEGAÇÃO -->
+  <header class="navwrap">
+    <div class="container nav">
 
-    <nav class="navlinks">
-      <a href="../index.html#sobre">Sobre</a>
-      <a href="../index.html#formacao">Formação</a>
-      <a href="../index.html#projetos">Projetos</a>
-      <a href="../index.html#contato">Contato</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <!-- APRESENTAÇÃO: MESMO PADRÃO DO NEUROINSIGHTS -->
-  <section class="detail-head">
-    <div class="container">
-
-      <a class="back" href="../index.html#projetos">
-        ← Voltar aos projetos
+      <a class="brand" href="../index.html">
+        Pedro Henrique Barbosa
       </a>
 
-      <div class="eyebrow">
-        CYBERSECURITY ANALYTICS · PYTHON &amp; POWER BI
-      </div>
+      <nav class="navlinks" aria-label="Navegação principal">
+        <a href="../index.html#sobre" data-i18n="navAbout">Sobre</a>
+        <a href="../index.html#formacao" data-i18n="navEducation">Formação</a>
+        <a href="../index.html#projetos" data-i18n="navProjects">Projetos</a>
+        <a href="../index.html#contato" data-i18n="navContact">Contato</a>
+      </nav>
 
-      <h1>CyberThreat Intelligence | Global Security Analytics</h1>
-
-      <h2>Transformando dados de vulnerabilidades em inteligência analítica</h2>
-
-      <p>
-        Projeto de análise de dados voltado à investigação de vulnerabilidades
-        de cibersegurança, desenvolvido com Python e Power BI a partir de
-        informações públicas da National Vulnerability Database (NVD),
-        mantida pelo NIST.
-      </p>
-
-      <p>
-        A proposta é transformar registros técnicos de vulnerabilidades em
-        indicadores e visualizações que facilitem a compreensão dos níveis
-        de severidade, das classificações de fraquezas, dos fabricantes e
-        produtos referenciados e da evolução temporal das publicações.
-      </p>
-
-      <div class="eyebrow">
-        Python · Pandas · API REST · ETL · Power BI · Power Query · DAX · CVSS · CWE
+      <div class="language-switcher">
+        <label for="language-select" aria-label="Selecionar idioma">🌐</label>
+        <select id="language-select" aria-label="Selecionar idioma">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
       </div>
 
     </div>
-  </section>
+  </header>
 
-  <!-- ANÁLISE DO PROJETO -->
-  <section class="section project-analysis">
-    <div class="container">
+  <main>
 
-      <div class="eyebrow">POR DENTRO DO PROJETO</div>
+    <!-- APRESENTAÇÃO -->
+    <section class="detail-head">
+      <div class="container">
 
-      <h2 class="analysis-title">
-        Da coleta de dados à inteligência em cibersegurança
-      </h2>
-
-      <p class="analysis-intro">
-        Um fluxo estruturado de extração, tratamento, validação e visualização
-        de informações públicas sobre vulnerabilidades de segurança.
-      </p>
-
-      <div class="analysis-grid">
-
-        <article class="analysis-item">
-          <h3>Objetivo da análise</h3>
-          <p>
-            Desenvolver uma solução analítica capaz de organizar dados públicos
-            de vulnerabilidades, permitindo acompanhar sua distribuição por
-            severidade, status de análise, classificações CWE, fabricantes,
-            produtos e período de publicação.
-          </p>
-        </article>
-
-        <article class="analysis-item">
-          <h3>Coleta e fontes de dados</h3>
-          <p>
-            Extração programática de registros CVE por meio da API 2.0 da
-            NIST NVD, utilizando Python. A coleta contempla identificadores,
-            datas, status, métricas CVSS, classificações CWE e referências
-            a produtos quando disponíveis.
-          </p>
-        </article>
-
-        <article class="analysis-item">
-          <h3>Tratamento e qualidade</h3>
-          <p>
-            Organização dos dados em etapas de processamento, com verificações
-            de integridade, duplicidade, consistência temporal e disponibilidade
-            dos campos. As estruturas aninhadas da API são transformadas em
-            informações adequadas à análise.
-          </p>
-        </article>
-
-        <article class="analysis-item">
-          <h3>Desenvolvimento do painel</h3>
-          <p>
-            Desenvolvimento de seis páginas no Power BI, reunindo indicadores,
-            gráficos comparativos, análises temporais e tabelas exploratórias.
-            Os filtros permitem investigar diferentes recortes do conjunto
-            de vulnerabilidades.
-          </p>
-        </article>
-
-      </div>
-
-      <!-- INDICADORES -->
-      <h3 class="analysis-subtitle">
-        Indicadores em destaque
-      </h3>
-
-      <p>
-        O recorte apresentado no dashboard compreende as vulnerabilidades
-        publicadas entre 1º e 7 de outubro de 2026.
-      </p>
-
-      <div class="cyber-highlights">
-
-        <div class="cyber-highlight">
-          <strong>2.743</strong>
-          <span>Registros CVE no período</span>
-        </div>
-
-        <div class="cyber-highlight">
-          <strong>1.337</strong>
-          <span>CVEs críticas ou de alta severidade</span>
-        </div>
-
-        <div class="cyber-highlight">
-          <strong>251</strong>
-          <span>Classificações CWE distintas</span>
-        </div>
-
-        <div class="cyber-highlight">
-          <strong>1.009</strong>
-          <span>Produtos identificados nas referências analisadas</span>
-        </div>
-
-      </div>
-
-      <p class="cyber-note">
-        Os indicadores representam o recorte e as regras de classificação
-        utilizados no dashboard. A disponibilidade de pontuações CVSS,
-        classificações CWE e referências a produtos varia entre os registros
-        da NVD. A quantidade de CVEs não corresponde ao número de ataques
-        ou incidentes efetivamente ocorridos.
-      </p>
-
-      <!-- TECNOLOGIAS -->
-      <h3 class="analysis-subtitle">
-        Tecnologias e contexto
-      </h3>
-
-      <div class="tech-tags">
-        <span>Python</span>
-        <span>Pandas</span>
-        <span>Requests</span>
-        <span>JSON</span>
-        <span>API REST</span>
-        <span>NIST NVD 2.0</span>
-        <span>Power BI</span>
-        <span>Power Query</span>
-        <span>DAX</span>
-        <span>Git</span>
-        <span>GitHub</span>
-      </div>
-
-      <p>
-        O projeto utiliza registros públicos da NIST NVD para análise de
-        vulnerabilidades. As informações sobre CVEs, severidade e produtos
-        não devem ser interpretadas como evidência de exploração efetiva
-        ou ocorrência de incidentes.
-      </p>
-
-      <p>
-        <a
-          href="https://github.com/phfbr/cyberthreat-intelligence"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ver código, documentação e arquivos do projeto no GitHub
+        <a class="back" href="../index.html#projetos" data-i18n="back">
+          ← Voltar aos projetos
         </a>
-      </p>
 
-    </div>
-  </section>
+        <div class="eyebrow">
+          CYBERSECURITY ANALYTICS · PYTHON &amp; POWER BI
+        </div>
 
-  <!-- GALERIA DE DASHBOARDS -->
-  <section class="section" id="dashboards">
-    <div class="container">
+        <h1>CyberThreat Intelligence | Global Security Analytics</h1>
 
-      <div class="eyebrow">POWER BI · DASHBOARDS</div>
+        <h2 data-i18n="subtitle">
+          Transformando dados de vulnerabilidades em inteligência analítica
+        </h2>
 
-      <h2 class="analysis-title">
-        Explore as análises
-      </h2>
+        <p data-i18n="intro1">
+          Projeto de análise de dados voltado à investigação de vulnerabilidades
+          de cibersegurança, desenvolvido com Python e Power BI a partir de
+          informações públicas da National Vulnerability Database (NVD),
+          mantida pelo NIST.
+        </p>
 
-      <p class="analysis-intro">
-        Seis páginas analíticas desenvolvidas para explorar vulnerabilidades,
-        severidade, fabricantes, produtos, classificações CWE e tendências temporais.
-      </p>
+        <p data-i18n="intro2">
+          A proposta é transformar registros técnicos de vulnerabilidades em
+          indicadores e visualizações que facilitem a compreensão dos níveis
+          de severidade, das classificações de fraquezas, dos fabricantes e
+          produtos referenciados e da evolução temporal das publicações.
+        </p>
 
-      <div class="cyber-gallery">
-
-        <!-- PÁGINA 01 -->
-        <figure>
-          <a href="../assets/cyberthreat-01.png"
-             target="_blank" rel="noopener noreferrer">
-            <img
-              src="../assets/cyberthreat-01.png"
-              alt="CyberThreat Intelligence — Visão Geral"
-              loading="lazy"
-            />
-          </a>
-
-          <figcaption>
-            <strong>01 · Visão Geral</strong>
-            Panorama das 2.743 vulnerabilidades do período, incluindo
-            indicadores de severidade, status NVD, evolução das publicações,
-            fabricantes referenciados e principais classificações CWE.
-          </figcaption>
-        </figure>
-
-        <!-- PÁGINA 02 -->
-        <figure>
-          <a href="../assets/cyberthreat-02.png"
-             target="_blank" rel="noopener noreferrer">
-            <img
-              src="../assets/cyberthreat-02.png"
-              alt="CyberThreat Intelligence — Vulnerabilidades"
-              loading="lazy"
-            />
-          </a>
-
-          <figcaption>
-            <strong>02 · Vulnerabilidades</strong>
-            Análise da distribuição das pontuações CVSS, concentração de
-            vulnerabilidades por dia e faixa de pontuação, além de um explorador
-            detalhado de registros CVE com identificadores, datas, status
-            e métricas de severidade.
-          </figcaption>
-        </figure>
-
-        <!-- PÁGINA 03 -->
-        <figure>
-          <a href="../assets/cyberthreat-03.png"
-             target="_blank" rel="noopener noreferrer">
-            <img
-              src="../assets/cyberthreat-03.png"
-              alt="CyberThreat Intelligence — Severidade e Risco"
-              loading="lazy"
-            />
-          </a>
-
-          <figcaption>
-            <strong>03 · Severidade e Risco</strong>
-            Comparação dos níveis de severidade entre versões do CVSS,
-            distribuição das pontuações e relação entre a classificação
-            de severidade e os diferentes status registrados na NVD.
-          </figcaption>
-        </figure>
-
-        <!-- PÁGINA 04 -->
-        <figure>
-          <a href="../assets/cyberthreat-04.png"
-             target="_blank" rel="noopener noreferrer">
-            <img
-              src="../assets/cyberthreat-04.png"
-              alt="CyberThreat Intelligence — Fabricantes e Produtos"
-              loading="lazy"
-            />
-          </a>
-
-          <figcaption>
-            <strong>04 · Fabricantes e Produtos</strong>
-            Identificação de fabricantes e produtos referenciados nos registros
-            de vulnerabilidade, com rankings de ocorrências e uma tabela
-            exploratória que relaciona produtos, identificadores CVE,
-            pontuações CVSS e status NVD.
-          </figcaption>
-        </figure>
-
-        <!-- PÁGINA 05 -->
-        <figure>
-          <a href="../assets/cyberthreat-05.png"
-             target="_blank" rel="noopener noreferrer">
-            <img
-              src="../assets/cyberthreat-05.png"
-              alt="CyberThreat Intelligence — Classificações CWE"
-              loading="lazy"
-            />
-          </a>
-
-          <figcaption>
-            <strong>05 · Classificações CWE</strong>
-            Estudo das categorias de fraquezas associadas às vulnerabilidades,
-            incluindo classificações mais frequentes, presença de múltiplas CWE,
-            registros sem classificação identificada e distribuição por severidade.
-          </figcaption>
-        </figure>
-
-        <!-- PÁGINA 06 -->
-        <figure>
-          <a href="../assets/cyberthreat-06.png"
-             target="_blank" rel="noopener noreferrer">
-            <img
-              src="../assets/cyberthreat-06.png"
-              alt="CyberThreat Intelligence — Análise Temporal"
-              loading="lazy"
-            />
-          </a>
-
-          <figcaption>
-            <strong>06 · Análise Temporal</strong>
-            Acompanhamento das publicações diárias de vulnerabilidades,
-            com média por dia, identificação do maior volume de registros
-            e comparativos temporais por severidade, dia da semana e status NVD.
-          </figcaption>
-        </figure>
+        <div class="eyebrow">
+          Python · Pandas · API REST · ETL · Power BI · Power Query · DAX · CVSS · CWE
+        </div>
 
       </div>
+    </section>
 
-      <p class="cyber-note">
-        Clique em qualquer imagem para visualizar o dashboard em tamanho maior.
-        As imagens representam páginas do relatório desenvolvido no Power BI.
-      </p>
+    <!-- ANÁLISE TÉCNICA -->
+    <section class="section project-analysis">
+      <div class="container">
 
-      <a class="back" href="../index.html#projetos">
-        ← Ver outros projetos
-      </a>
+        <div class="eyebrow" data-i18n="analysisEyebrow">
+          POR DENTRO DO PROJETO
+        </div>
 
-      <div class="cyber-actions">
-        <a
-          href="https://github.com/phfbr/cyberthreat-intelligence"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Acessar repositório do projeto no GitHub
+        <h2 class="analysis-title" data-i18n="analysisTitle">
+          Da coleta de dados à inteligência em cibersegurança
+        </h2>
+
+        <p class="analysis-intro" data-i18n="analysisIntro">
+          Um fluxo estruturado de extração, tratamento, validação e visualização
+          de informações públicas sobre vulnerabilidades de segurança.
+        </p>
+
+        <div class="analysis-grid">
+
+          <article class="analysis-item">
+            <h3 data-i18n="objectiveTitle">Objetivo da análise</h3>
+            <p data-i18n="objectiveText">
+              Desenvolver uma solução analítica capaz de organizar dados públicos
+              de vulnerabilidades, permitindo acompanhar sua distribuição por
+              severidade, status de análise, classificações CWE, fabricantes,
+              produtos e período de publicação.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="collectionTitle">Coleta e fontes de dados</h3>
+            <p data-i18n="collectionText">
+              Extração programática de registros CVE por meio da API 2.0 da
+              NIST NVD, utilizando Python. A coleta contempla identificadores,
+              datas, status, métricas CVSS, classificações CWE e referências
+              a produtos quando disponíveis.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="qualityTitle">Tratamento e qualidade</h3>
+            <p data-i18n="qualityText">
+              Organização dos dados em etapas de processamento, com verificações
+              de integridade, duplicidade, consistência temporal e disponibilidade
+              dos campos. As estruturas aninhadas da API são transformadas em
+              informações adequadas à análise.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="dashboardTitle">Desenvolvimento do painel</h3>
+            <p data-i18n="dashboardText">
+              Desenvolvimento de seis páginas no Power BI, reunindo indicadores,
+              gráficos comparativos, análises temporais e tabelas exploratórias.
+              Os filtros permitem investigar diferentes recortes do conjunto
+              de vulnerabilidades.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- INDICADORES -->
+        <h3 class="analysis-subtitle" data-i18n="metricsTitle">
+          Indicadores em destaque
+        </h3>
+
+        <p data-i18n="metricsIntro">
+          O recorte apresentado no dashboard compreende as vulnerabilidades
+          publicadas entre 1º e 7 de outubro de 2026.
+        </p>
+
+        <div class="cyber-highlights">
+
+          <div class="cyber-highlight">
+            <strong>2.743</strong>
+            <span data-i18n="metric1">Registros CVE no período</span>
+          </div>
+
+          <div class="cyber-highlight">
+            <strong>1.337</strong>
+            <span data-i18n="metric2">CVEs críticas ou de alta severidade</span>
+          </div>
+
+          <div class="cyber-highlight">
+            <strong>251</strong>
+            <span data-i18n="metric3">Classificações CWE distintas</span>
+          </div>
+
+          <div class="cyber-highlight">
+            <strong>1.009</strong>
+            <span data-i18n="metric4">
+              Produtos identificados nas referências analisadas
+            </span>
+          </div>
+
+        </div>
+
+        <p class="cyber-note" data-i18n="metricsNote">
+          Os indicadores representam o recorte e as regras de classificação
+          utilizados no dashboard. A disponibilidade de pontuações CVSS,
+          classificações CWE e referências a produtos varia entre os registros
+          da NVD. A quantidade de CVEs não corresponde ao número de ataques
+          ou incidentes efetivamente ocorridos.
+        </p>
+
+        <!-- TECNOLOGIAS -->
+        <h3 class="analysis-subtitle" data-i18n="techTitle">
+          Tecnologias e contexto
+        </h3>
+
+        <div class="tech-tags">
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>Requests</span>
+          <span>JSON</span>
+          <span>API REST</span>
+          <span>NIST NVD 2.0</span>
+          <span>Power BI</span>
+          <span>Power Query</span>
+          <span>DAX</span>
+          <span>Git</span>
+          <span>GitHub</span>
+        </div>
+
+        <p data-i18n="techNote">
+          O projeto utiliza registros públicos da NIST NVD para análise de
+          vulnerabilidades. As informações sobre CVEs, severidade e produtos
+          não devem ser interpretadas como evidência de exploração efetiva
+          ou ocorrência de incidentes.
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/phfbr/cyberthreat-intelligence"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="githubText"
+          >
+            Ver código, documentação e arquivos do projeto no GitHub
+          </a>
+        </p>
+
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="section" id="dashboards">
+      <div class="container">
+
+        <div class="eyebrow">POWER BI · DASHBOARDS</div>
+
+        <h2 class="analysis-title" data-i18n="galleryTitle">
+          Explore as análises
+        </h2>
+
+        <p class="analysis-intro" data-i18n="galleryIntro">
+          Seis páginas analíticas desenvolvidas para explorar vulnerabilidades,
+          severidade, fabricantes, produtos, classificações CWE e tendências temporais.
+        </p>
+
+        <div class="cyber-gallery">
+
+          <figure>
+            <a href="../assets/cyberthreat-01.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="../assets/cyberthreat-01.png"
+                alt="CyberThreat Intelligence — Visão Geral"
+                data-alt-key="gallery1Title"
+                loading="lazy"
+              >
+            </a>
+            <figcaption>
+              <strong data-i18n="gallery1Title">01 · Visão Geral</strong>
+              <span data-i18n="gallery1Text">
+                Panorama das 2.743 vulnerabilidades do período, incluindo
+                indicadores de severidade, status NVD, evolução das publicações,
+                fabricantes referenciados e principais classificações CWE.
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <a href="../assets/cyberthreat-02.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="../assets/cyberthreat-02.png"
+                alt="CyberThreat Intelligence — Vulnerabilidades"
+                data-alt-key="gallery2Title"
+                loading="lazy"
+              >
+            </a>
+            <figcaption>
+              <strong data-i18n="gallery2Title">02 · Vulnerabilidades</strong>
+              <span data-i18n="gallery2Text">
+                Análise da distribuição das pontuações CVSS, concentração de
+                vulnerabilidades por dia e faixa de pontuação, além de um explorador
+                detalhado de registros CVE com identificadores, datas, status
+                e métricas de severidade.
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <a href="../assets/cyberthreat-03.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="../assets/cyberthreat-03.png"
+                alt="CyberThreat Intelligence — Severidade e Risco"
+                data-alt-key="gallery3Title"
+                loading="lazy"
+              >
+            </a>
+            <figcaption>
+              <strong data-i18n="gallery3Title">03 · Severidade e Risco</strong>
+              <span data-i18n="gallery3Text">
+                Comparação dos níveis de severidade entre versões do CVSS,
+                distribuição das pontuações e relação entre a classificação
+                de severidade e os diferentes status registrados na NVD.
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <a href="../assets/cyberthreat-04.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="../assets/cyberthreat-04.png"
+                alt="CyberThreat Intelligence — Fabricantes e Produtos"
+                data-alt-key="gallery4Title"
+                loading="lazy"
+              >
+            </a>
+            <figcaption>
+              <strong data-i18n="gallery4Title">04 · Fabricantes e Produtos</strong>
+              <span data-i18n="gallery4Text">
+                Identificação de fabricantes e produtos referenciados nos registros
+                de vulnerabilidade, com rankings de ocorrências e uma tabela
+                exploratória que relaciona produtos, identificadores CVE,
+                pontuações CVSS e status NVD.
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <a href="../assets/cyberthreat-05.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="../assets/cyberthreat-05.png"
+                alt="CyberThreat Intelligence — Classificações CWE"
+                data-alt-key="gallery5Title"
+                loading="lazy"
+              >
+            </a>
+            <figcaption>
+              <strong data-i18n="gallery5Title">05 · Classificações CWE</strong>
+              <span data-i18n="gallery5Text">
+                Estudo das categorias de fraquezas associadas às vulnerabilidades,
+                incluindo classificações mais frequentes, presença de múltiplas CWE,
+                registros sem classificação identificada e distribuição por severidade.
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <a href="../assets/cyberthreat-06.png" target="_blank" rel="noopener noreferrer">
+              <img
+                src="../assets/cyberthreat-06.png"
+                alt="CyberThreat Intelligence — Análise Temporal"
+                data-alt-key="gallery6Title"
+                loading="lazy"
+              >
+            </a>
+            <figcaption>
+              <strong data-i18n="gallery6Title">06 · Análise Temporal</strong>
+              <span data-i18n="gallery6Text">
+                Acompanhamento das publicações diárias de vulnerabilidades,
+                com média por dia, identificação do maior volume de registros
+                e comparativos temporais por severidade, dia da semana e status NVD.
+              </span>
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <p class="cyber-note" data-i18n="galleryNote">
+          Clique em qualquer imagem para visualizar o dashboard em tamanho maior.
+          As imagens representam páginas do relatório desenvolvido no Power BI.
+        </p>
+
+        <a class="back" href="../index.html#projetos" data-i18n="otherProjects">
+          ← Ver outros projetos
         </a>
+
+        <div class="cyber-actions">
+          <a
+            href="https://github.com/phfbr/cyberthreat-intelligence"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="repository"
+          >
+            Acessar repositório do projeto no GitHub
+          </a>
+        </div>
+
       </div>
+    </section>
 
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 Pedro Henrique Barbosa ·
+      <span data-i18n="footer">
+        Portfólio de Dados e Business Intelligence
+      </span>
     </div>
-  </section>
+  </footer>
 
-</main>
+  <!-- TRADUÇÕES -->
+  <script>
+    (() => {
+      "use strict";
 
-<!-- RODAPÉ -->
-<footer class="footer">
-  <div class="container">
-    © 2026 Pedro Henrique Barbosa · Portfólio de Dados e Business Intelligence
-  </div>
-</footer>
+      const STORAGE_KEY = "portfolio-language";
+
+      const translations = {
+        pt: {
+          navAbout: "Sobre",
+          navEducation: "Formação",
+          navProjects: "Projetos",
+          navContact: "Contato",
+          back: "← Voltar aos projetos",
+          subtitle: "Transformando dados de vulnerabilidades em inteligência analítica",
+          intro1: "Projeto de análise de dados voltado à investigação de vulnerabilidades de cibersegurança, desenvolvido com Python e Power BI a partir de informações públicas da National Vulnerability Database (NVD), mantida pelo NIST.",
+          intro2: "A proposta é transformar registros técnicos de vulnerabilidades em indicadores e visualizações que facilitem a compreensão dos níveis de severidade, das classificações de fraquezas, dos fabricantes e produtos referenciados e da evolução temporal das publicações.",
+          analysisEyebrow: "POR DENTRO DO PROJETO",
+          analysisTitle: "Da coleta de dados à inteligência em cibersegurança",
+          analysisIntro: "Um fluxo estruturado de extração, tratamento, validação e visualização de informações públicas sobre vulnerabilidades de segurança.",
+          objectiveTitle: "Objetivo da análise",
+          objectiveText: "Desenvolver uma solução analítica capaz de organizar dados públicos de vulnerabilidades, permitindo acompanhar sua distribuição por severidade, status de análise, classificações CWE, fabricantes, produtos e período de publicação.",
+          collectionTitle: "Coleta e fontes de dados",
+          collectionText: "Extração programática de registros CVE por meio da API 2.0 da NIST NVD, utilizando Python. A coleta contempla identificadores, datas, status, métricas CVSS, classificações CWE e referências a produtos quando disponíveis.",
+          qualityTitle: "Tratamento e qualidade",
+          qualityText: "Organização dos dados em etapas de processamento, com verificações de integridade, duplicidade, consistência temporal e disponibilidade dos campos. As estruturas aninhadas da API são transformadas em informações adequadas à análise.",
+          dashboardTitle: "Desenvolvimento do painel",
+          dashboardText: "Desenvolvimento de seis páginas no Power BI, reunindo indicadores, gráficos comparativos, análises temporais e tabelas exploratórias. Os filtros permitem investigar diferentes recortes do conjunto de vulnerabilidades.",
+          metricsTitle: "Indicadores em destaque",
+          metricsIntro: "O recorte apresentado no dashboard compreende as vulnerabilidades publicadas entre 1º e 7 de outubro de 2026.",
+          metric1: "Registros CVE no período",
+          metric2: "CVEs críticas ou de alta severidade",
+          metric3: "Classificações CWE distintas",
+          metric4: "Produtos identificados nas referências analisadas",
+          metricsNote: "Os indicadores representam o recorte e as regras de classificação utilizados no dashboard. A disponibilidade de pontuações CVSS, classificações CWE e referências a produtos varia entre os registros da NVD. A quantidade de CVEs não corresponde ao número de ataques ou incidentes efetivamente ocorridos.",
+          techTitle: "Tecnologias e contexto",
+          techNote: "O projeto utiliza registros públicos da NIST NVD para análise de vulnerabilidades. As informações sobre CVEs, severidade e produtos não devem ser interpretadas como evidência de exploração efetiva ou ocorrência de incidentes.",
+          githubText: "Ver código, documentação e arquivos do projeto no GitHub",
+          galleryTitle: "Explore as análises",
+          galleryIntro: "Seis páginas analíticas desenvolvidas para explorar vulnerabilidades, severidade, fabricantes, produtos, classificações CWE e tendências temporais.",
+          gallery1Title: "01 · Visão Geral",
+          gallery1Text: "Panorama das 2.743 vulnerabilidades do período, incluindo indicadores de severidade, status NVD, evolução das publicações, fabricantes referenciados e principais classificações CWE.",
+          gallery2Title: "02 · Vulnerabilidades",
+          gallery2Text: "Análise da distribuição das pontuações CVSS, concentração de vulnerabilidades por dia e faixa de pontuação, além de um explorador detalhado de registros CVE com identificadores, datas, status e métricas de severidade.",
+          gallery3Title: "03 · Severidade e Risco",
+          gallery3Text: "Comparação dos níveis de severidade entre versões do CVSS, distribuição das pontuações e relação entre a classificação de severidade e os diferentes status registrados na NVD.",
+          gallery4Title: "04 · Fabricantes e Produtos",
+          gallery4Text: "Identificação de fabricantes e produtos referenciados nos registros de vulnerabilidade, com rankings de ocorrências e uma tabela exploratória que relaciona produtos, identificadores CVE, pontuações CVSS e status NVD.",
+          gallery5Title: "05 · Classificações CWE",
+          gallery5Text: "Estudo das categorias de fraquezas associadas às vulnerabilidades, incluindo classificações mais frequentes, presença de múltiplas CWE, registros sem classificação identificada e distribuição por severidade.",
+          gallery6Title: "06 · Análise Temporal",
+          gallery6Text: "Acompanhamento das publicações diárias de vulnerabilidades, com média por dia, identificação do maior volume de registros e comparativos temporais por severidade, dia da semana e status NVD.",
+          galleryNote: "Clique em qualquer imagem para visualizar o dashboard em tamanho maior. As imagens representam páginas do relatório desenvolvido no Power BI.",
+          otherProjects: "← Ver outros projetos",
+          repository: "Acessar repositório do projeto no GitHub",
+          footer: "Portfólio de Dados e Business Intelligence",
+          meta: "CyberThreat Intelligence | Global Security Analytics. Análise de vulnerabilidades com Python, NIST NVD, CVSS, CWE e Power BI."
+        },
+
+        en: {
+          navAbout: "About",
+          navEducation: "Education",
+          navProjects: "Projects",
+          navContact: "Contact",
+          back: "← Back to projects",
+          subtitle: "Turning vulnerability data into actionable security intelligence",
+          intro1: "A cybersecurity data analytics project developed with Python and Power BI, using public vulnerability information from the National Vulnerability Database (NVD), maintained by NIST.",
+          intro2: "The project transforms technical vulnerability records into indicators and visualizations that make it easier to understand severity levels, weakness classifications, referenced vendors and products, and publication trends over time.",
+          analysisEyebrow: "BEHIND THE PROJECT",
+          analysisTitle: "From data collection to cybersecurity intelligence",
+          analysisIntro: "A structured workflow for extracting, processing, validating, and visualizing publicly available security vulnerability data.",
+          objectiveTitle: "Analysis objectives",
+          objectiveText: "Develop an analytical solution to organize public vulnerability data and examine its distribution by severity, analysis status, CWE classification, vendor, product, and publication period.",
+          collectionTitle: "Data collection and sources",
+          collectionText: "Programmatic extraction of CVE records from the NIST NVD API 2.0 using Python. The collection includes identifiers, dates, statuses, CVSS metrics, CWE classifications, and product references when available.",
+          qualityTitle: "Data processing and quality",
+          qualityText: "Data processing organized into stages, including integrity checks, duplicate detection, temporal consistency checks, and field availability assessments. Nested API structures are transformed into analysis-ready information.",
+          dashboardTitle: "Dashboard development",
+          dashboardText: "Development of six Power BI pages featuring key indicators, comparative charts, time-series analyses, and exploratory tables. Interactive filters support the investigation of different subsets of vulnerability data.",
+          metricsTitle: "Key indicators",
+          metricsIntro: "The dashboard covers vulnerabilities published between October 1 and October 7, 2026.",
+          metric1: "CVE records in the period",
+          metric2: "Critical or high-severity CVEs",
+          metric3: "Distinct CWE classifications",
+          metric4: "Products identified in analyzed references",
+          metricsNote: "These indicators reflect the dataset and classification rules used in the dashboard. The availability of CVSS scores, CWE classifications, and product references varies across NVD records. CVE counts do not represent the number of attacks or security incidents that actually occurred.",
+          techTitle: "Technologies and context",
+          techNote: "This project uses public NIST NVD records for vulnerability analysis. Information about CVEs, severity, and products should not be interpreted as evidence of actual exploitation or security incidents.",
+          githubText: "View the project's code, documentation, and files on GitHub",
+          galleryTitle: "Explore the analyses",
+          galleryIntro: "Six analytical pages designed to explore vulnerabilities, severity, vendors, products, CWE classifications, and temporal trends.",
+          gallery1Title: "01 · Overview",
+          gallery1Text: "Overview of the 2,743 vulnerabilities in the selected period, including severity indicators, NVD statuses, publication trends, referenced vendors, and leading CWE classifications.",
+          gallery2Title: "02 · Vulnerabilities",
+          gallery2Text: "Analysis of CVSS score distributions and vulnerability concentrations by day and score range, along with a detailed CVE record explorer featuring identifiers, dates, statuses, and severity metrics.",
+          gallery3Title: "03 · Severity and Risk",
+          gallery3Text: "Comparison of severity levels across CVSS versions, score distributions, and the relationship between severity classifications and the different statuses recorded in the NVD.",
+          gallery4Title: "04 · Vendors and Products",
+          gallery4Text: "Identification of vendors and products referenced in vulnerability records, including occurrence rankings and an exploratory table connecting products, CVE identifiers, CVSS scores, and NVD statuses.",
+          gallery5Title: "05 · CWE Classifications",
+          gallery5Text: "Analysis of weakness categories associated with vulnerabilities, including the most frequent classifications, multiple CWE assignments, records without identified classifications, and severity distributions.",
+          gallery6Title: "06 · Temporal Analysis",
+          gallery6Text: "Tracking daily vulnerability publications, including daily averages, peak publication volume, and temporal comparisons by severity, day of the week, and NVD status.",
+          galleryNote: "Click any image to view the dashboard at a larger size. These images show pages from the report developed in Power BI.",
+          otherProjects: "← View other projects",
+          repository: "Access the project's GitHub repository",
+          footer: "Data Analytics and Business Intelligence Portfolio",
+          meta: "CyberThreat Intelligence | Global Security Analytics. Vulnerability analysis using Python, NIST NVD, CVSS, CWE, and Power BI."
+        },
+
+        es: {
+          navAbout: "Sobre mí",
+          navEducation: "Formación",
+          navProjects: "Proyectos",
+          navContact: "Contacto",
+          back: "← Volver a los proyectos",
+          subtitle: "Transformando datos de vulnerabilidades en inteligencia de ciberseguridad",
+          intro1: "Proyecto de análisis de datos de ciberseguridad desarrollado con Python y Power BI, utilizando información pública sobre vulnerabilidades de la National Vulnerability Database (NVD), mantenida por el NIST.",
+          intro2: "El proyecto transforma registros técnicos de vulnerabilidades en indicadores y visualizaciones que facilitan la comprensión de los niveles de severidad, las clasificaciones de debilidades, los fabricantes y productos referenciados y las tendencias de publicación a lo largo del tiempo.",
+          analysisEyebrow: "DETALLES DEL PROYECTO",
+          analysisTitle: "De la recopilación de datos a la inteligencia en ciberseguridad",
+          analysisIntro: "Un flujo estructurado de extracción, procesamiento, validación y visualización de información pública sobre vulnerabilidades de seguridad.",
+          objectiveTitle: "Objetivo del análisis",
+          objectiveText: "Desarrollar una solución analítica para organizar datos públicos de vulnerabilidades y analizar su distribución por severidad, estado de análisis, clasificación CWE, fabricante, producto y período de publicación.",
+          collectionTitle: "Recopilación y fuentes de datos",
+          collectionText: "Extracción programática de registros CVE mediante la API 2.0 de NIST NVD utilizando Python. La recopilación incluye identificadores, fechas, estados, métricas CVSS, clasificaciones CWE y referencias a productos cuando están disponibles.",
+          qualityTitle: "Procesamiento y calidad",
+          qualityText: "Procesamiento de datos organizado por etapas, con verificaciones de integridad, duplicados, consistencia temporal y disponibilidad de campos. Las estructuras anidadas de la API se transforman en información adecuada para el análisis.",
+          dashboardTitle: "Desarrollo del dashboard",
+          dashboardText: "Desarrollo de seis páginas en Power BI con indicadores, gráficos comparativos, análisis temporales y tablas exploratorias. Los filtros interactivos permiten investigar diferentes segmentos del conjunto de vulnerabilidades.",
+          metricsTitle: "Indicadores destacados",
+          metricsIntro: "El dashboard abarca las vulnerabilidades publicadas entre el 1 y el 7 de octubre de 2026.",
+          metric1: "Registros CVE del período",
+          metric2: "CVE de severidad crítica o alta",
+          metric3: "Clasificaciones CWE distintas",
+          metric4: "Productos identificados en las referencias analizadas",
+          metricsNote: "Los indicadores reflejan el conjunto de datos y las reglas de clasificación utilizados en el dashboard. La disponibilidad de puntuaciones CVSS, clasificaciones CWE y referencias a productos varía entre los registros de la NVD. La cantidad de CVE no representa el número de ataques o incidentes de seguridad realmente ocurridos.",
+          techTitle: "Tecnologías y contexto",
+          techNote: "Este proyecto utiliza registros públicos de NIST NVD para analizar vulnerabilidades. La información sobre CVE, severidad y productos no debe interpretarse como evidencia de explotación efectiva o de incidentes de seguridad.",
+          githubText: "Ver el código, la documentación y los archivos del proyecto en GitHub",
+          galleryTitle: "Explora los análisis",
+          galleryIntro: "Seis páginas analíticas diseñadas para explorar vulnerabilidades, severidad, fabricantes, productos, clasificaciones CWE y tendencias temporales.",
+          gallery1Title: "01 · Visión general",
+          gallery1Text: "Panorama de las 2.743 vulnerabilidades del período, incluidos indicadores de severidad, estados NVD, evolución de publicaciones, fabricantes referenciados y principales clasificaciones CWE.",
+          gallery2Title: "02 · Vulnerabilidades",
+          gallery2Text: "Análisis de la distribución de puntuaciones CVSS y de la concentración de vulnerabilidades por día y rango de puntuación, junto con un explorador detallado de registros CVE con identificadores, fechas, estados y métricas de severidad.",
+          gallery3Title: "03 · Severidad y riesgo",
+          gallery3Text: "Comparación de niveles de severidad entre versiones de CVSS, distribución de puntuaciones y relación entre las clasificaciones de severidad y los diferentes estados registrados en la NVD.",
+          gallery4Title: "04 · Fabricantes y productos",
+          gallery4Text: "Identificación de fabricantes y productos referenciados en los registros de vulnerabilidades, con clasificaciones por frecuencia y una tabla exploratoria que relaciona productos, identificadores CVE, puntuaciones CVSS y estados NVD.",
+          gallery5Title: "05 · Clasificaciones CWE",
+          gallery5Text: "Estudio de las categorías de debilidades asociadas a las vulnerabilidades, incluidas las clasificaciones más frecuentes, la presencia de múltiples CWE, los registros sin clasificación identificada y su distribución por severidad.",
+          gallery6Title: "06 · Análisis temporal",
+          gallery6Text: "Seguimiento de las publicaciones diarias de vulnerabilidades, con promedio diario, identificación del mayor volumen de registros y comparaciones temporales por severidad, día de la semana y estado NVD.",
+          galleryNote: "Haz clic en cualquier imagen para ver el dashboard en un tamaño mayor. Las imágenes muestran páginas del informe desarrollado en Power BI.",
+          otherProjects: "← Ver otros proyectos",
+          repository: "Acceder al repositorio del proyecto en GitHub",
+          footer: "Portafolio de Análisis de Datos y Business Intelligence",
+          meta: "CyberThreat Intelligence | Global Security Analytics. Análisis de vulnerabilidades con Python, NIST NVD, CVSS, CWE y Power BI."
+        }
+      };
+
+      const selector = document.getElementById("language-select");
+
+      function applyLanguage(language) {
+        const lang = translations[language] ? language : "pt";
+        const dictionary = translations[lang];
+
+        document.documentElement.lang = lang === "pt" ? "pt-BR" : lang;
+
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+          const key = element.dataset.i18n;
+
+          if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+            element.textContent = dictionary[key];
+          }
+        });
+
+        document.querySelectorAll("[data-alt-key]").forEach(image => {
+          const key = image.dataset.altKey;
+
+          if (dictionary[key]) {
+            image.alt = "CyberThreat Intelligence — " + dictionary[key];
+          }
+        });
+
+        const meta = document.querySelector('meta[name="description"]');
+
+        if (meta) {
+          meta.setAttribute("content", dictionary.meta);
+        }
+
+        selector.value = lang;
+
+        try {
+          localStorage.setItem(STORAGE_KEY, lang);
+        } catch (error) {
+          // A tradução permanece ativa mesmo sem armazenamento.
+        }
+      }
+
+      selector.addEventListener("change", event => {
+        applyLanguage(event.target.value);
+      });
+
+      let savedLanguage = "pt";
+
+      try {
+        savedLanguage = localStorage.getItem(STORAGE_KEY) || "pt";
+      } catch (error) {
+        savedLanguage = "pt";
+      }
+
+      applyLanguage(savedLanguage);
+    })();
+  </script>
 
 </body>
 </html>
