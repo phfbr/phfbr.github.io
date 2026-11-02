@@ -1,204 +1,544 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="NeuroInsights: análise exploratória de desempenho cognitivo com dados públicos do NHANES, Python e Power BI."/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="NeuroInsights: análise exploratória de desempenho cognitivo com dados públicos do NHANES, Python e Power BI."
+  >
+
   <title>NeuroInsights | Pedro Henrique Barbosa</title>
-  <link href="../assets/style.css" rel="stylesheet"/>
+
+  <link href="../assets/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="navwrap">
-  <div class="container nav">
-    <a class="brand" href="../index.html">Pedro Henrique Barbosa</a>
-    <nav class="navlinks">
-      <a href="../index.html#sobre">Sobre</a>
-      <a href="../index.html#formacao">Formação</a>
-      <a href="../index.html#projetos">Projetos</a>
-      <a href="../index.html#contato">Contato</a>
-    </nav>
-  </div>
-</header>
+  <!-- NAVEGAÇÃO -->
+  <header class="navwrap">
+    <div class="container nav">
 
-<main>
-  <section class="detail-head">
-    <div class="container">
-      <a class="back" href="../index.html#projetos">
-        ← Voltar aos projetos
+      <a class="brand" href="../index.html">
+        Pedro Henrique Barbosa
       </a>
 
-      <div class="eyebrow">
-        HEALTH DATA ANALYTICS · PYTHON &amp; POWER BI
+      <nav class="navlinks" aria-label="Navegação principal">
+        <a href="../index.html#sobre" data-i18n="navAbout">Sobre</a>
+        <a href="../index.html#formacao" data-i18n="navEducation">Formação</a>
+        <a href="../index.html#projetos" data-i18n="navProjects">Projetos</a>
+        <a href="../index.html#contato" data-i18n="navContact">Contato</a>
+      </nav>
+
+      <div class="language-switcher">
+        <label for="language-select" aria-label="Selecionar idioma">🌐</label>
+        <select id="language-select" aria-label="Selecionar idioma">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
       </div>
 
-      <h1>NeuroInsights | Clinical &amp; Cognitive Intelligence</h1>
-
-      <h2>O que os dados revelam sobre o desempenho cognitivo?</h2>
-
-      <p>
-        Análise exploratória de avaliações cognitivas de adultos com 60 anos ou mais,
-        utilizando dados públicos do NHANES referentes aos ciclos de 2011 a 2014.
-        O projeto integra processamento e validação de dados em Python, modelagem
-        dimensional e visualização interativa em Power BI, permitindo investigar
-        pontuações, características demográficas e disponibilidade dos registros.
-      </p>
-
-      <div class="eyebrow">
-        Python · Pandas · Power BI · Power Query · DAX
-      </div>
     </div>
-  </section>
+  </header>
 
-  <section class="section project-analysis">
-    <div class="container">
+  <main>
 
-      <div class="eyebrow">POR DENTRO DO PROJETO</div>
+    <!-- APRESENTAÇÃO -->
+    <section class="detail-head">
+      <div class="container">
 
-      <h2 class="analysis-title">
-        Dos dados à inteligência analítica
-      </h2>
-
-      <p class="analysis-intro">
-        Da preparação dos dados públicos à construção de indicadores cognitivos
-        e visualizações interativas.
-      </p>
-
-      <div class="analysis-grid">
-
-        <article class="analysis-item">
-          <h3>Objetivo da análise</h3>
-          <p>
-            Explorar padrões descritivos de desempenho cognitivo, considerando
-            diferenças entre instrumentos, características demográficas e
-            disponibilidade das avaliações.
-          </p>
-        </article>
-
-        <article class="analysis-item">
-          <h3>Dados e preparação</h3>
-          <p>
-            Integração de dados cognitivos e demográficos do NHANES, com auditoria
-            de variáveis, validação de chaves, tratamento de registros e organização
-            das bases nas camadas Silver e Gold.
-          </p>
-        </article>
-
-        <article class="analysis-item">
-          <h3>Desenvolvimento do painel</h3>
-          <p>
-            Modelagem dimensional com tabelas de participantes, ciclos, testes e
-            avaliações. Construção de medidas DAX e três páginas interativas
-            para exploração de indicadores e distribuições.
-          </p>
-        </article>
-
-        <article class="analysis-item">
-          <h3>O que é possível analisar</h3>
-          <p>
-            Distribuição das pontuações por instrumento, desempenho por faixa
-            etária, comparação descritiva entre ciclos e completude dos registros.
-            As análises são exploratórias e não representam diagnósticos clínicos.
-          </p>
-        </article>
-
-      </div>
-
-      <h3 class="analysis-subtitle">
-        Indicadores em destaque
-      </h3>
-
-      <ul class="metric-list">
-        <li>3.472 participantes únicos</li>
-        <li>6 medidas de avaliação cognitiva</li>
-        <li>20.832 avaliações potenciais</li>
-        <li>18.671 avaliações com pontuação registrada</li>
-        <li>89,63% de taxa geral de registro</li>
-      </ul>
-
-      <h3 class="analysis-subtitle">
-        Tecnologias e contexto
-      </h3>
-
-      <div class="tech-tags">
-        <span>Python</span>
-        <span>Pandas</span>
-        <span>Power BI</span>
-        <span>Power Query</span>
-        <span>DAX</span>
-        <span>NHANES</span>
-      </div>
-
-      <p>
-        Os resultados descrevem a amostra analítica. Inferências populacionais
-        exigem a aplicação adequada do desenho amostral complexo do NHANES.
-      </p>
-
-      <p>
         <a
-          href="https://github.com/phfbr/neuroinsights-cognitive-analytics"
-          target="_blank"
-          rel="noopener noreferrer"
+          class="back"
+          href="../index.html#projetos"
+          data-i18n="back"
         >
-          Ver código, documentação e arquivos do projeto no GitHub
+          ← Voltar aos projetos
         </a>
-      </p>
 
-    </div>
-  </section>
+        <div class="eyebrow">
+          HEALTH DATA ANALYTICS · PYTHON &amp; POWER BI
+        </div>
 
-  <section class="section">
-    <div class="container">
+        <h1>
+          NeuroInsights | Clinical &amp; Cognitive Intelligence
+        </h1>
 
-      <div class="gallery">
+        <h2 data-i18n="subtitle">
+          O que os dados revelam sobre o desempenho cognitivo?
+        </h2>
 
-        <!-- PÁGINA 1: VISÃO GERAL -->
-        <figure class="shot">
-          <img
-            src="../assets/01-visao-geral.png"
-            alt="NeuroInsights — Visão Geral"
-            loading="lazy"
-          />
-          <figcaption>Visão Geral</figcaption>
-        </figure>
+        <p data-i18n="intro">
+          Análise exploratória de avaliações cognitivas de adultos com
+          60 anos ou mais, utilizando dados públicos do NHANES referentes
+          aos ciclos de 2011 a 2014. O projeto integra processamento e
+          validação de dados em Python, modelagem dimensional e
+          visualização interativa em Power BI, permitindo investigar
+          pontuações, características demográficas e disponibilidade
+          dos registros.
+        </p>
 
-        <!-- PÁGINA 2: DESEMPENHO COGNITIVO -->
-        <figure class="shot">
-          <img
-            src="../assets/02-desempenho-cognitivo.png"
-            alt="NeuroInsights — Desempenho Cognitivo"
-            loading="lazy"
-          />
-          <figcaption>Desempenho Cognitivo</figcaption>
-        </figure>
-
-        <!-- PÁGINA 3: ANÁLISE POR TESTE -->
-        <figure class="shot">
-          <img
-            src="../assets/03-analise-por-teste.png"
-            alt="NeuroInsights — Análise por Teste"
-            loading="lazy"
-          />
-          <figcaption>Análise por Teste</figcaption>
-        </figure>
+        <div class="eyebrow">
+          Python · Pandas · Power BI · Power Query · DAX
+        </div>
 
       </div>
+    </section>
 
-      <a class="back" href="../index.html#projetos">
-        ← Ver outros projetos
-      </a>
+    <!-- ANÁLISE DO PROJETO -->
+    <section class="section project-analysis">
+      <div class="container">
 
+        <div class="eyebrow" data-i18n="analysisEyebrow">
+          POR DENTRO DO PROJETO
+        </div>
+
+        <h2 class="analysis-title" data-i18n="analysisTitle">
+          Dos dados à inteligência analítica
+        </h2>
+
+        <p class="analysis-intro" data-i18n="analysisIntro">
+          Da preparação dos dados públicos à construção de indicadores
+          cognitivos e visualizações interativas.
+        </p>
+
+        <div class="analysis-grid">
+
+          <article class="analysis-item">
+            <h3 data-i18n="objectiveTitle">
+              Objetivo da análise
+            </h3>
+
+            <p data-i18n="objectiveText">
+              Explorar padrões descritivos de desempenho cognitivo,
+              considerando diferenças entre instrumentos, características
+              demográficas e disponibilidade das avaliações.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="dataTitle">
+              Dados e preparação
+            </h3>
+
+            <p data-i18n="dataText">
+              Integração de dados cognitivos e demográficos do NHANES,
+              com auditoria de variáveis, validação de chaves,
+              tratamento de registros e organização das bases
+              nas camadas Silver e Gold.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="dashboardTitle">
+              Desenvolvimento do painel
+            </h3>
+
+            <p data-i18n="dashboardText">
+              Modelagem dimensional com tabelas de participantes,
+              ciclos, testes e avaliações. Construção de medidas DAX
+              e três páginas interativas para exploração de
+              indicadores e distribuições.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="insightsTitle">
+              O que é possível analisar
+            </h3>
+
+            <p data-i18n="insightsText">
+              Distribuição das pontuações por instrumento, desempenho
+              por faixa etária, comparação descritiva entre ciclos
+              e completude dos registros. As análises são exploratórias
+              e não representam diagnósticos clínicos.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- INDICADORES -->
+        <h3 class="analysis-subtitle" data-i18n="metricsTitle">
+          Indicadores em destaque
+        </h3>
+
+        <ul class="metric-list">
+          <li data-i18n="metric1">3.472 participantes únicos</li>
+          <li data-i18n="metric2">6 medidas de avaliação cognitiva</li>
+          <li data-i18n="metric3">20.832 avaliações potenciais</li>
+          <li data-i18n="metric4">18.671 avaliações com pontuação registrada</li>
+          <li data-i18n="metric5">89,63% de taxa geral de registro</li>
+        </ul>
+
+        <!-- TECNOLOGIAS -->
+        <h3 class="analysis-subtitle" data-i18n="techTitle">
+          Tecnologias e contexto
+        </h3>
+
+        <div class="tech-tags">
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>Power BI</span>
+          <span>Power Query</span>
+          <span>DAX</span>
+          <span>NHANES</span>
+        </div>
+
+        <!-- OBSERVAÇÃO METODOLÓGICA -->
+        <p data-i18n="methodologyNote">
+          Os resultados descrevem a amostra analítica.
+          Inferências populacionais exigem a aplicação adequada
+          do desenho amostral complexo do NHANES.
+        </p>
+
+        <!-- GITHUB -->
+        <p>
+          <a
+            href="https://github.com/phfbr/neuroinsights-cognitive-analytics"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="githubText"
+          >
+            Ver código, documentação e arquivos do projeto no GitHub
+          </a>
+        </p>
+
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="section">
+      <div class="container">
+
+        <div class="gallery">
+
+          <!-- DASHBOARD 01 -->
+          <figure class="shot">
+            <img
+              src="../assets/01-visao-geral.png"
+              alt="NeuroInsights — Visão Geral"
+              data-alt-key="image1Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image1Caption">
+              Visão Geral
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 02 -->
+          <figure class="shot">
+            <img
+              src="../assets/02-desempenho-cognitivo.png"
+              alt="NeuroInsights — Desempenho Cognitivo"
+              data-alt-key="image2Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image2Caption">
+              Desempenho Cognitivo
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 03 -->
+          <figure class="shot">
+            <img
+              src="../assets/03-analise-por-teste.png"
+              alt="NeuroInsights — Análise por Teste"
+              data-alt-key="image3Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image3Caption">
+              Análise por Teste
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <a
+          class="back"
+          href="../index.html#projetos"
+          data-i18n="otherProjects"
+        >
+          ← Ver outros projetos
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 Pedro Henrique Barbosa ·
+      <span data-i18n="footer">
+        Portfólio de Dados e Business Intelligence
+      </span>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer class="footer">
-  <div class="container">
-    © 2026 Pedro Henrique Barbosa · Portfólio de Dados e Business Intelligence
-  </div>
-</footer>
+  <!-- SISTEMA DE TRADUÇÃO -->
+  <script>
+    (() => {
+      "use strict";
+
+      const STORAGE_KEY = "portfolio-language";
+
+      const translations = {
+
+        // PORTUGUÊS
+        pt: {
+          navAbout: "Sobre",
+          navEducation: "Formação",
+          navProjects: "Projetos",
+          navContact: "Contato",
+
+          back: "← Voltar aos projetos",
+
+          subtitle: "O que os dados revelam sobre o desempenho cognitivo?",
+
+          intro: "Análise exploratória de avaliações cognitivas de adultos com 60 anos ou mais, utilizando dados públicos do NHANES referentes aos ciclos de 2011 a 2014. O projeto integra processamento e validação de dados em Python, modelagem dimensional e visualização interativa em Power BI, permitindo investigar pontuações, características demográficas e disponibilidade dos registros.",
+
+          analysisEyebrow: "POR DENTRO DO PROJETO",
+
+          analysisTitle: "Dos dados à inteligência analítica",
+
+          analysisIntro: "Da preparação dos dados públicos à construção de indicadores cognitivos e visualizações interativas.",
+
+          objectiveTitle: "Objetivo da análise",
+
+          objectiveText: "Explorar padrões descritivos de desempenho cognitivo, considerando diferenças entre instrumentos, características demográficas e disponibilidade das avaliações.",
+
+          dataTitle: "Dados e preparação",
+
+          dataText: "Integração de dados cognitivos e demográficos do NHANES, com auditoria de variáveis, validação de chaves, tratamento de registros e organização das bases nas camadas Silver e Gold.",
+
+          dashboardTitle: "Desenvolvimento do painel",
+
+          dashboardText: "Modelagem dimensional com tabelas de participantes, ciclos, testes e avaliações. Construção de medidas DAX e três páginas interativas para exploração de indicadores e distribuições.",
+
+          insightsTitle: "O que é possível analisar",
+
+          insightsText: "Distribuição das pontuações por instrumento, desempenho por faixa etária, comparação descritiva entre ciclos e completude dos registros. As análises são exploratórias e não representam diagnósticos clínicos.",
+
+          metricsTitle: "Indicadores em destaque",
+
+          metric1: "3.472 participantes únicos",
+          metric2: "6 medidas de avaliação cognitiva",
+          metric3: "20.832 avaliações potenciais",
+          metric4: "18.671 avaliações com pontuação registrada",
+          metric5: "89,63% de taxa geral de registro",
+
+          techTitle: "Tecnologias e contexto",
+
+          methodologyNote: "Os resultados descrevem a amostra analítica. Inferências populacionais exigem a aplicação adequada do desenho amostral complexo do NHANES.",
+
+          githubText: "Ver código, documentação e arquivos do projeto no GitHub",
+
+          image1Caption: "Visão Geral",
+          image2Caption: "Desempenho Cognitivo",
+          image3Caption: "Análise por Teste",
+
+          image1Alt: "NeuroInsights — Visão Geral",
+          image2Alt: "NeuroInsights — Desempenho Cognitivo",
+          image3Alt: "NeuroInsights — Análise por Teste",
+
+          otherProjects: "← Ver outros projetos",
+
+          footer: "Portfólio de Dados e Business Intelligence",
+
+          meta: "NeuroInsights: análise exploratória de desempenho cognitivo com dados públicos do NHANES, Python e Power BI."
+        },
+
+        // INGLÊS
+        en: {
+          navAbout: "About",
+          navEducation: "Education",
+          navProjects: "Projects",
+          navContact: "Contact",
+
+          back: "← Back to projects",
+
+          subtitle: "What does the data reveal about cognitive performance?",
+
+          intro: "An exploratory analysis of cognitive assessments among adults aged 60 and older, using publicly available NHANES data from the 2011–2014 survey cycles. The project combines data processing and validation in Python, dimensional modeling, and interactive visualization in Power BI to explore cognitive scores, demographic characteristics, and data availability.",
+
+          analysisEyebrow: "BEHIND THE PROJECT",
+
+          analysisTitle: "From data to analytical intelligence",
+
+          analysisIntro: "From preparing public datasets to developing cognitive performance indicators and interactive visualizations.",
+
+          objectiveTitle: "Analysis objectives",
+
+          objectiveText: "Explore descriptive patterns in cognitive performance, considering differences across assessment instruments, demographic characteristics, and assessment data availability.",
+
+          dataTitle: "Data and preparation",
+
+          dataText: "Integration of NHANES cognitive and demographic datasets, including variable auditing, key validation, record processing, and data organization into Silver and Gold layers.",
+
+          dashboardTitle: "Dashboard development",
+
+          dashboardText: "Dimensional modeling with participant, survey cycle, test, and assessment tables. Development of DAX measures and three interactive dashboard pages for exploring indicators and distributions.",
+
+          insightsTitle: "What can be analyzed",
+
+          insightsText: "Score distributions by assessment instrument, performance across age groups, descriptive comparisons between survey cycles, and data completeness. These analyses are exploratory and do not constitute clinical diagnoses.",
+
+          metricsTitle: "Key indicators",
+
+          metric1: "3,472 unique participants",
+          metric2: "6 cognitive assessment measures",
+          metric3: "20,832 potential assessments",
+          metric4: "18,671 assessments with recorded scores",
+          metric5: "89.63% overall score recording rate",
+
+          techTitle: "Technologies and context",
+
+          methodologyNote: "The results describe the analytical sample. Population-level inferences require appropriate consideration of the NHANES complex survey design.",
+
+          githubText: "View project code, documentation, and files on GitHub",
+
+          image1Caption: "Overview",
+          image2Caption: "Cognitive Performance",
+          image3Caption: "Test-Level Analysis",
+
+          image1Alt: "NeuroInsights — Overview",
+          image2Alt: "NeuroInsights — Cognitive Performance",
+          image3Alt: "NeuroInsights — Test-Level Analysis",
+
+          otherProjects: "← View other projects",
+
+          footer: "Data Analytics and Business Intelligence Portfolio",
+
+          meta: "NeuroInsights: exploratory analysis of cognitive performance using public NHANES data, Python, and Power BI."
+        },
+
+        // ESPANHOL
+        es: {
+          navAbout: "Sobre mí",
+          navEducation: "Formación",
+          navProjects: "Proyectos",
+          navContact: "Contacto",
+
+          back: "← Volver a los proyectos",
+
+          subtitle: "¿Qué revelan los datos sobre el rendimiento cognitivo?",
+
+          intro: "Análisis exploratorio de evaluaciones cognitivas de adultos de 60 años o más, utilizando datos públicos del NHANES correspondientes a los ciclos de 2011 a 2014. El proyecto integra procesamiento y validación de datos con Python, modelado dimensional y visualización interactiva en Power BI para explorar puntuaciones, características demográficas y disponibilidad de registros.",
+
+          analysisEyebrow: "DETALLES DEL PROYECTO",
+
+          analysisTitle: "De los datos a la inteligencia analítica",
+
+          analysisIntro: "Desde la preparación de datos públicos hasta el desarrollo de indicadores cognitivos y visualizaciones interactivas.",
+
+          objectiveTitle: "Objetivo del análisis",
+
+          objectiveText: "Explorar patrones descriptivos del rendimiento cognitivo, considerando diferencias entre instrumentos de evaluación, características demográficas y disponibilidad de las evaluaciones.",
+
+          dataTitle: "Datos y preparación",
+
+          dataText: "Integración de datos cognitivos y demográficos del NHANES, incluyendo auditoría de variables, validación de claves, tratamiento de registros y organización de datos en las capas Silver y Gold.",
+
+          dashboardTitle: "Desarrollo del dashboard",
+
+          dashboardText: "Modelado dimensional con tablas de participantes, ciclos de encuesta, pruebas y evaluaciones. Desarrollo de medidas DAX y tres páginas interactivas para explorar indicadores y distribuciones.",
+
+          insightsTitle: "Qué se puede analizar",
+
+          insightsText: "Distribución de puntuaciones por instrumento, rendimiento por grupo de edad, comparaciones descriptivas entre ciclos y completitud de los registros. Los análisis son exploratorios y no constituyen diagnósticos clínicos.",
+
+          metricsTitle: "Indicadores destacados",
+
+          metric1: "3.472 participantes únicos",
+          metric2: "6 medidas de evaluación cognitiva",
+          metric3: "20.832 evaluaciones potenciales",
+          metric4: "18.671 evaluaciones con puntuación registrada",
+          metric5: "89,63% de tasa general de registro",
+
+          techTitle: "Tecnologías y contexto",
+
+          methodologyNote: "Los resultados describen la muestra analítica. Las inferencias poblacionales requieren aplicar adecuadamente el diseño muestral complejo del NHANES.",
+
+          githubText: "Ver código, documentación y archivos del proyecto en GitHub",
+
+          image1Caption: "Visión General",
+          image2Caption: "Rendimiento Cognitivo",
+          image3Caption: "Análisis por Prueba",
+
+          image1Alt: "NeuroInsights — Visión General",
+          image2Alt: "NeuroInsights — Rendimiento Cognitivo",
+          image3Alt: "NeuroInsights — Análisis por Prueba",
+
+          otherProjects: "← Ver otros proyectos",
+
+          footer: "Portafolio de Análisis de Datos y Business Intelligence",
+
+          meta: "NeuroInsights: análisis exploratorio del rendimiento cognitivo con datos públicos del NHANES, Python y Power BI."
+        }
+      };
+
+      const selector = document.getElementById("language-select");
+
+      function applyLanguage(language) {
+        const lang = translations[language] ? language : "pt";
+        const dictionary = translations[lang];
+
+        document.documentElement.lang =
+          lang === "pt" ? "pt-BR" : lang;
+
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+          const key = element.dataset.i18n;
+
+          if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+            element.textContent = dictionary[key];
+          }
+        });
+
+        document.querySelectorAll("[data-alt-key]").forEach(image => {
+          const key = image.dataset.altKey;
+
+          if (dictionary[key]) {
+            image.alt = dictionary[key];
+          }
+        });
+
+        const meta = document.querySelector('meta[name="description"]');
+
+        if (meta) {
+          meta.setAttribute("content", dictionary.meta);
+        }
+
+        selector.value = lang;
+
+        try {
+          localStorage.setItem(STORAGE_KEY, lang);
+        } catch (error) {
+          // A tradução continua funcionando sem armazenamento.
+        }
+      }
+
+      selector.addEventListener("change", event => {
+        applyLanguage(event.target.value);
+      });
+
+      let savedLanguage = "pt";
+
+      try {
+        savedLanguage = localStorage.getItem(STORAGE_KEY) || "pt";
+      } catch (error) {
+        savedLanguage = "pt";
+      }
+
+      applyLanguage(savedLanguage);
+    })();
+  </script>
 
 </body>
 </html>
