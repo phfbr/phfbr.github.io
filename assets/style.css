@@ -1308,3 +1308,282 @@ img {
   }
 
 }
+
+/* =========================================
+   REFINAMENTO FINAL — PORTFÓLIO 3.1
+   PEDRO HENRIQUE BARBOSA
+   ========================================= */
+
+/* 01. CYBERTHREAT — DESTAQUE PRINCIPAL */
+
+@media (min-width: 801px) {
+
+  .featured-projects .project-featured {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.08fr)
+      minmax(0, 1fr);
+
+    column-gap: 36px;
+    align-content: center;
+
+    padding: 24px;
+  }
+
+  .project-featured .project-image {
+    grid-column: 1;
+    grid-row: 1 / span 5;
+
+    align-self: stretch;
+  }
+
+  .project-featured .project-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 290px;
+
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .project-featured .eyebrow {
+    margin-top: 0;
+    align-self: end;
+  }
+
+  .project-featured h3 {
+    font-size: clamp(26px, 2.5vw, 35px);
+    line-height: 1.2;
+    margin: 12px 0 14px;
+  }
+
+  .project-featured p {
+    font-size: 14px;
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+
+  .project-featured .project-tech {
+    margin: 10px 0 14px;
+  }
+
+  .project-featured .project-links {
+    margin-top: 4px;
+    padding-top: 8px;
+  }
+
+}
+
+/* 02. NEUROINSIGHTS E GOIÁS EC */
+
+.featured-projects > .project:not(.project-featured) {
+  height: 100%;
+  padding-bottom: 24px;
+}
+
+.featured-projects > .project:not(.project-featured)
+.project-image img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
+}
+
+.featured-projects > .project:not(.project-featured) h3 {
+  font-size: clamp(22px, 2vw, 27px);
+  line-height: 1.25;
+  margin: 11px 0;
+}
+
+.featured-projects > .project:not(.project-featured) p {
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.featured-projects > .project:not(.project-featured)
+.project-links {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+/* 03. OUTROS PROJETOS — CARDS COMPACTOS */
+
+.other-heading {
+  margin-top: 68px;
+  padding-top: 32px;
+  margin-bottom: 30px;
+}
+
+.other-projects {
+  gap: 26px;
+}
+
+.other-projects .project {
+  padding: 15px 15px 21px;
+}
+
+.other-projects .project-image img {
+  aspect-ratio: 16 / 8.5;
+  object-fit: cover;
+  object-position: top;
+}
+
+.other-projects .project .eyebrow {
+  margin-top: 17px;
+}
+
+.other-projects .project h3 {
+  font-size: clamp(20px, 1.8vw, 23px);
+  line-height: 1.3;
+  margin: 8px 0;
+}
+
+.other-projects .project p {
+  font-size: 13.5px;
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+
+.other-projects .project-tech {
+  margin: 9px 0 12px;
+}
+
+.other-projects .project-links {
+  padding-top: 10px;
+  margin-top: auto;
+}
+
+/* 04. LINKS DOS PROJETOS */
+
+.project-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.project-links .textlink,
+.project-links .github-link {
+  line-height: 1.5;
+}
+
+.project-links .textlink {
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.project-links .github-link:hover {
+  color: var(--accent-light);
+}
+
+/* 05. CONTATO — FINALIZAÇÃO VISUAL */
+
+.contact {
+  padding: 88px 0 92px;
+
+  background:
+    radial-gradient(
+      ellipse at 88% 40%,
+      rgba(56, 189, 248, 0.12),
+      transparent 55%
+    ),
+    linear-gradient(
+      120deg,
+      #0b1425,
+      #0e1d31
+    );
+}
+
+.contact .container {
+  position: relative;
+}
+
+.contact h2 {
+  margin: 12px 0 16px;
+  letter-spacing: -0.045em;
+}
+
+.contact p {
+  max-width: 600px;
+  line-height: 1.85;
+}
+
+.contact .buttons {
+  margin-top: 25px;
+  gap: 12px;
+}
+
+/* 06. RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+
+  .featured-projects .project-featured {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 18px;
+  }
+
+  .project-featured .project-image {
+    width: 100%;
+  }
+
+  .project-featured .project-image img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .project-featured .eyebrow {
+    margin-top: 18px;
+  }
+
+  .project-featured h3 {
+    font-size: clamp(24px, 5vw, 30px);
+  }
+
+  .other-projects {
+    gap: 22px;
+  }
+
+  .other-heading {
+    margin-top: 55px;
+  }
+
+  .contact {
+    padding: 72px 0;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .featured-projects > .project:not(.project-featured)
+  .project-image img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .other-projects .project-image img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .other-projects .project {
+    padding: 13px 13px 21px;
+  }
+
+  .other-projects .project p {
+    font-size: 14px;
+  }
+
+  .project-links {
+    gap: 10px 16px;
+  }
+
+  .contact h2 {
+    font-size: 36px;
+  }
+
+}
