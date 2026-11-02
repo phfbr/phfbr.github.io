@@ -1,2 +1,465 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Portfólio de Pedro Henrique Barbosa, Analista de Dados e Business Intelligence." name="description"/><title>Indicadores Financeiros | Pedro Henrique Barbosa</title><link href="../assets/style.css" rel="stylesheet"/></head><body><header class="navwrap"><div class="container nav"><a class="brand" href="../index.html">Pedro Henrique Barbosa</a><nav class="navlinks"><a href="../index.html#sobre">Sobre</a><a href="../index.html#formacao">Formação</a><a href="../index.html#projetos">Projetos</a><a href="../index.html#contato">Contato</a></nav></div></header><main><section class="detail-head"><div class="container"><a class="back" href="../index.html#projetos">← Voltar aos projetos</a><div class="eyebrow">FINANCIAL ANALYTICS · POWER BI</div><h1>Indicadores Financeiros</h1><h2>Como acompanhar a saúde financeira de uma operação?</h2><p>Visão gerencial de desempenho financeiro que reúne receitas, custos, despesas e lucro para tornar mais clara a composição do resultado de uma operação.</p><div class="eyebrow">Power BI · Financial Analytics</div></div></section><section class="section project-analysis"><div class="container"><div class="eyebrow">POR DENTRO DO PROJETO</div><h2 class="analysis-title">Do indicador à análise</h2><p class="analysis-intro">Objetivo, organização das informações e principais leituras disponíveis no painel.</p><div class="analysis-grid"><article class="analysis-item"><h3>Objetivo da análise</h3><p>Facilitar a leitura dos principais componentes financeiros e a identificação de variações que afetam o resultado.</p></article><article class="analysis-item"><h3>Dados e preparação</h3><p>Organização de indicadores financeiros em uma visão consolidada. As fontes e as rotinas de transformação não estão documentadas nas imagens do projeto.</p></article><article class="analysis-item"><h3>Desenvolvimento do painel</h3><p>Estruturação de indicadores e visualizações no Power BI para leitura de resultado, composição de gastos e acompanhamento gerencial.</p></article><article class="analysis-item"><h3>O que é possível analisar</h3><p>A leitura integrada permite verificar se a evolução da receita é acompanhada por crescimento de custos e despesas, oferecendo contexto para avaliar rentabilidade.</p></article></div><h3 class="analysis-subtitle">Indicadores em destaque</h3><ul class="metric-list"><li>Receita</li><li>Custos</li><li>Despesas</li><li>Lucro e margem</li><li>Recebimentos e pagamentos, quando exibidos</li></ul><h3 class="analysis-subtitle">Tecnologias e contexto</h3><div class="tech-tags"><span>Power BI</span><span>Financial Analytics</span></div></div></section><section class="section"><div class="container"><div class="gallery"><figure class="shot"><img alt="Tela 1 do projeto Indicadores Financeiros" loading="lazy" src="../assets/financeiro.jpg"/><figcaption>Painel de indicadores financeiros</figcaption></figure></div><a class="back" href="../index.html#projetos">← Ver outros projetos</a></div></section></main><footer class="footer"><div class="container">© 2026 Pedro Henrique Barbosa · Portfólio de Dados e Business Intelligence</div></footer></body></html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Indicadores Financeiros | Dashboard de Financial Analytics desenvolvido com Power BI."
+  >
+
+  <title>Indicadores Financeiros | Pedro Henrique Barbosa</title>
+
+  <link href="../assets/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="navwrap">
+    <div class="container nav">
+
+      <a class="brand" href="../index.html">
+        Pedro Henrique Barbosa
+      </a>
+
+      <nav class="navlinks" aria-label="Navegação principal">
+        <a href="../index.html#sobre" data-i18n="navAbout">Sobre</a>
+        <a href="../index.html#formacao" data-i18n="navEducation">Formação</a>
+        <a href="../index.html#projetos" data-i18n="navProjects">Projetos</a>
+        <a href="../index.html#contato" data-i18n="navContact">Contato</a>
+      </nav>
+
+      <div class="language-switcher">
+        <label for="language-select" aria-label="Selecionar idioma">🌐</label>
+        <select id="language-select" aria-label="Selecionar idioma">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="detail-head">
+      <div class="container">
+
+        <a
+          class="back"
+          href="../index.html#projetos"
+          data-i18n="back"
+        >
+          ← Voltar aos projetos
+        </a>
+
+        <div class="eyebrow">
+          FINANCIAL ANALYTICS · POWER BI
+        </div>
+
+        <h1 data-i18n="projectTitle">
+          Indicadores Financeiros
+        </h1>
+
+        <h2 data-i18n="subtitle">
+          Como acompanhar a saúde financeira de uma operação?
+        </h2>
+
+        <p data-i18n="intro">
+          Visão gerencial de desempenho financeiro que reúne receitas,
+          custos, despesas e lucro para tornar mais clara a composição
+          do resultado de uma operação.
+        </p>
+
+        <div class="eyebrow">
+          Power BI · Financial Analytics
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ANÁLISE DO PROJETO -->
+    <section class="section project-analysis">
+      <div class="container">
+
+        <div class="eyebrow" data-i18n="analysisEyebrow">
+          POR DENTRO DO PROJETO
+        </div>
+
+        <h2 class="analysis-title" data-i18n="analysisTitle">
+          Do indicador à análise
+        </h2>
+
+        <p class="analysis-intro" data-i18n="analysisIntro">
+          Objetivo, organização das informações e principais leituras
+          disponíveis no painel.
+        </p>
+
+        <div class="analysis-grid">
+
+          <article class="analysis-item">
+            <h3 data-i18n="objectiveTitle">
+              Objetivo da análise
+            </h3>
+
+            <p data-i18n="objectiveText">
+              Facilitar a leitura dos principais componentes financeiros
+              e a identificação de variações que afetam o resultado.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="dataTitle">
+              Dados e preparação
+            </h3>
+
+            <p data-i18n="dataText">
+              Organização de indicadores financeiros em uma visão
+              consolidada. As fontes e as rotinas de transformação
+              não estão documentadas nas imagens do projeto.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="dashboardTitle">
+              Desenvolvimento do painel
+            </h3>
+
+            <p data-i18n="dashboardText">
+              Estruturação de indicadores e visualizações no Power BI
+              para leitura de resultado, composição de gastos e
+              acompanhamento gerencial.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="insightsTitle">
+              O que é possível analisar
+            </h3>
+
+            <p data-i18n="insightsText">
+              A leitura integrada permite verificar se a evolução da
+              receita é acompanhada por crescimento de custos e despesas,
+              oferecendo contexto para avaliar rentabilidade.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- INDICADORES -->
+        <h3 class="analysis-subtitle" data-i18n="metricsTitle">
+          Indicadores em destaque
+        </h3>
+
+        <ul class="metric-list">
+          <li data-i18n="metric1">Receita</li>
+          <li data-i18n="metric2">Custos</li>
+          <li data-i18n="metric3">Despesas</li>
+          <li data-i18n="metric4">Lucro e margem</li>
+          <li data-i18n="metric5">
+            Recebimentos e pagamentos, quando exibidos
+          </li>
+        </ul>
+
+        <!-- TECNOLOGIAS -->
+        <h3 class="analysis-subtitle" data-i18n="techTitle">
+          Tecnologias e contexto
+        </h3>
+
+        <div class="tech-tags">
+          <span>Power BI</span>
+          <span>Financial Analytics</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="section">
+      <div class="container">
+
+        <div class="gallery">
+
+          <figure class="shot">
+            <img
+              src="../assets/financeiro.jpg"
+              alt="Tela do projeto Indicadores Financeiros"
+              data-alt-key="imageAlt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="imageCaption">
+              Painel de indicadores financeiros
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <a
+          class="back"
+          href="../index.html#projetos"
+          data-i18n="otherProjects"
+        >
+          ← Ver outros projetos
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 Pedro Henrique Barbosa ·
+      <span data-i18n="footer">
+        Portfólio de Dados e Business Intelligence
+      </span>
+    </div>
+  </footer>
+
+  <!-- SISTEMA DE TRADUÇÃO -->
+  <script>
+    (() => {
+      "use strict";
+
+      const STORAGE_KEY = "portfolio-language";
+
+      const translations = {
+
+        // PORTUGUÊS
+        pt: {
+          navAbout: "Sobre",
+          navEducation: "Formação",
+          navProjects: "Projetos",
+          navContact: "Contato",
+
+          back: "← Voltar aos projetos",
+
+          projectTitle: "Indicadores Financeiros",
+
+          subtitle: "Como acompanhar a saúde financeira de uma operação?",
+
+          intro: "Visão gerencial de desempenho financeiro que reúne receitas, custos, despesas e lucro para tornar mais clara a composição do resultado de uma operação.",
+
+          analysisEyebrow: "POR DENTRO DO PROJETO",
+          analysisTitle: "Do indicador à análise",
+
+          analysisIntro: "Objetivo, organização das informações e principais leituras disponíveis no painel.",
+
+          objectiveTitle: "Objetivo da análise",
+
+          objectiveText: "Facilitar a leitura dos principais componentes financeiros e a identificação de variações que afetam o resultado.",
+
+          dataTitle: "Dados e preparação",
+
+          dataText: "Organização de indicadores financeiros em uma visão consolidada. As fontes e as rotinas de transformação não estão documentadas nas imagens do projeto.",
+
+          dashboardTitle: "Desenvolvimento do painel",
+
+          dashboardText: "Estruturação de indicadores e visualizações no Power BI para leitura de resultado, composição de gastos e acompanhamento gerencial.",
+
+          insightsTitle: "O que é possível analisar",
+
+          insightsText: "A leitura integrada permite verificar se a evolução da receita é acompanhada por crescimento de custos e despesas, oferecendo contexto para avaliar rentabilidade.",
+
+          metricsTitle: "Indicadores em destaque",
+
+          metric1: "Receita",
+          metric2: "Custos",
+          metric3: "Despesas",
+          metric4: "Lucro e margem",
+          metric5: "Recebimentos e pagamentos, quando exibidos",
+
+          techTitle: "Tecnologias e contexto",
+
+          imageCaption: "Painel de indicadores financeiros",
+          imageAlt: "Tela do projeto Indicadores Financeiros",
+
+          otherProjects: "← Ver outros projetos",
+
+          footer: "Portfólio de Dados e Business Intelligence",
+
+          meta: "Indicadores Financeiros | Dashboard de Financial Analytics desenvolvido com Power BI."
+        },
+
+        // INGLÊS
+        en: {
+          navAbout: "About",
+          navEducation: "Education",
+          navProjects: "Projects",
+          navContact: "Contact",
+
+          back: "← Back to projects",
+
+          projectTitle: "Financial Performance Indicators",
+
+          subtitle: "How can we monitor the financial health of an operation?",
+
+          intro: "A financial performance dashboard that brings together revenue, costs, expenses, and profit to provide a clearer understanding of an operation's financial results.",
+
+          analysisEyebrow: "BEHIND THE PROJECT",
+          analysisTitle: "From indicators to insights",
+
+          analysisIntro: "Project objectives, data organization, and the main analytical perspectives available in the dashboard.",
+
+          objectiveTitle: "Analysis objectives",
+
+          objectiveText: "Make key financial components easier to understand and identify variations that affect overall financial performance.",
+
+          dataTitle: "Data and preparation",
+
+          dataText: "Financial indicators organized into a consolidated analytical view. The available project screenshots do not document the original data sources or transformation procedures.",
+
+          dashboardTitle: "Dashboard development",
+
+          dashboardText: "Development of financial indicators and visualizations in Power BI to support performance analysis, expense breakdowns, and management monitoring.",
+
+          insightsTitle: "What can be analyzed",
+
+          insightsText: "An integrated view helps assess whether revenue growth is accompanied by increases in costs and expenses, providing context for evaluating profitability.",
+
+          metricsTitle: "Key indicators",
+
+          metric1: "Revenue",
+          metric2: "Costs",
+          metric3: "Expenses",
+          metric4: "Profit and margin",
+          metric5: "Receipts and payments, when displayed",
+
+          techTitle: "Technologies and context",
+
+          imageCaption: "Financial performance dashboard",
+          imageAlt: "Financial Performance Indicators dashboard",
+
+          otherProjects: "← View other projects",
+
+          footer: "Data Analytics and Business Intelligence Portfolio",
+
+          meta: "Financial Performance Indicators | Financial Analytics dashboard developed with Power BI."
+        },
+
+        // ESPANHOL
+        es: {
+          navAbout: "Sobre mí",
+          navEducation: "Formación",
+          navProjects: "Proyectos",
+          navContact: "Contacto",
+
+          back: "← Volver a los proyectos",
+
+          projectTitle: "Indicadores Financieros",
+
+          subtitle: "¿Cómo monitorear la salud financiera de una operación?",
+
+          intro: "Dashboard de desempeño financiero que reúne ingresos, costos, gastos y beneficios para facilitar la comprensión de los resultados financieros de una operación.",
+
+          analysisEyebrow: "DETALLES DEL PROYECTO",
+          analysisTitle: "De los indicadores al análisis",
+
+          analysisIntro: "Objetivos, organización de la información y principales perspectivas analíticas disponibles en el dashboard.",
+
+          objectiveTitle: "Objetivo del análisis",
+
+          objectiveText: "Facilitar la comprensión de los principales componentes financieros e identificar variaciones que afectan los resultados.",
+
+          dataTitle: "Datos y preparación",
+
+          dataText: "Organización de indicadores financieros en una vista analítica consolidada. Las capturas del proyecto no documentan las fuentes originales de datos ni los procesos de transformación.",
+
+          dashboardTitle: "Desarrollo del dashboard",
+
+          dashboardText: "Desarrollo de indicadores y visualizaciones en Power BI para analizar resultados, composición de gastos y seguimiento gerencial.",
+
+          insightsTitle: "Qué se puede analizar",
+
+          insightsText: "Una visión integrada permite evaluar si el crecimiento de los ingresos viene acompañado de aumentos en costos y gastos, proporcionando contexto para analizar la rentabilidad.",
+
+          metricsTitle: "Indicadores destacados",
+
+          metric1: "Ingresos",
+          metric2: "Costos",
+          metric3: "Gastos",
+          metric4: "Beneficio y margen",
+          metric5: "Cobros y pagos, cuando se muestran",
+
+          techTitle: "Tecnologías y contexto",
+
+          imageCaption: "Dashboard de indicadores financieros",
+          imageAlt: "Dashboard de Indicadores Financieros",
+
+          otherProjects: "← Ver otros proyectos",
+
+          footer: "Portafolio de Análisis de Datos y Business Intelligence",
+
+          meta: "Indicadores Financieros | Dashboard de Financial Analytics desarrollado con Power BI."
+        }
+      };
+
+      const selector = document.getElementById("language-select");
+
+      function applyLanguage(language) {
+        const lang = translations[language] ? language : "pt";
+        const dictionary = translations[lang];
+
+        document.documentElement.lang =
+          lang === "pt" ? "pt-BR" : lang;
+
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+          const key = element.dataset.i18n;
+
+          if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+            element.textContent = dictionary[key];
+          }
+        });
+
+        document.querySelectorAll("[data-alt-key]").forEach(image => {
+          const key = image.dataset.altKey;
+
+          if (dictionary[key]) {
+            image.alt = dictionary[key];
+          }
+        });
+
+        const meta = document.querySelector('meta[name="description"]');
+
+        if (meta) {
+          meta.setAttribute("content", dictionary.meta);
+        }
+
+        document.title =
+          dictionary.projectTitle + " | Pedro Henrique Barbosa";
+
+        selector.value = lang;
+
+        try {
+          localStorage.setItem(STORAGE_KEY, lang);
+        } catch (error) {
+          // A tradução permanece funcional sem armazenamento.
+        }
+      }
+
+      selector.addEventListener("change", event => {
+        applyLanguage(event.target.value);
+      });
+
+      let savedLanguage = "pt";
+
+      try {
+        savedLanguage = localStorage.getItem(STORAGE_KEY) || "pt";
+      } catch (error) {
+        savedLanguage = "pt";
+      }
+
+      applyLanguage(savedLanguage);
+    })();
+  </script>
+
+</body>
+</html>
