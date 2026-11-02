@@ -1,0 +1,659 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <meta
+    name="description"
+    content="CyberThreat Intelligence | Global Security Analytics. Projeto de análise de vulnerabilidades de cibersegurança com Python, NIST NVD, CVSS, CWE e Power BI."
+  />
+
+  <meta name="theme-color" content="#0B1120"/>
+
+  <title>
+    CyberThreat Intelligence | Pedro Henrique Barbosa
+  </title>
+
+  <link rel="stylesheet" href="../assets/style.css"/>
+
+  <style>
+    /* Complementos exclusivos da galeria CyberThreat */
+
+    .cyber-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 28px;
+    }
+
+    .cyber-gallery figure {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .cyber-gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid rgba(56, 189, 248, .22);
+    }
+
+    .cyber-gallery figcaption {
+      padding: 14px 2px 0;
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .cyber-gallery figcaption strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #f8fafc;
+      font-size: 16px;
+    }
+
+    .cyber-gallery a {
+      display: block;
+      text-decoration: none;
+    }
+
+    .cyber-gallery a:hover img {
+      border-color: #38bdf8;
+    }
+
+    .cyber-note {
+      margin-top: 22px;
+      color: #94a3b8;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .cyber-highlights {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin: 26px 0;
+    }
+
+    .cyber-highlight {
+      padding: 22px 16px;
+      border: 1px solid rgba(56, 189, 248, .18);
+      border-radius: 12px;
+      background: rgba(15, 23, 42, .5);
+    }
+
+    .cyber-highlight strong {
+      display: block;
+      color: #38bdf8;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .cyber-highlight span {
+      display: block;
+      color: #cbd5e1;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .cyber-section-title {
+      margin: 42px 0 12px;
+    }
+
+    .cyber-text {
+      line-height: 1.8;
+    }
+
+    .cyber-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0;
+    }
+
+    .cyber-tags span {
+      padding: 8px 13px;
+      border: 1px solid rgba(56, 189, 248, .25);
+      border-radius: 8px;
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
+    .cyber-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 760px) {
+      .cyber-highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cyber-highlights {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGAÇÃO -->
+
+  <header class="navwrap">
+    <div class="container nav">
+
+      <a class="brand" href="../index.html">
+        Pedro Henrique Barbosa
+      </a>
+
+      <nav class="navlinks" aria-label="Navegação principal">
+        <a href="../index.html#sobre">Sobre</a>
+        <a href="../index.html#formacao">Formação</a>
+        <a href="../index.html#projetos">Projetos</a>
+        <a href="../index.html#contato">Contato</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="detail-head">
+
+          <a class="textlink" href="../index.html#projetos">
+            ← Voltar aos projetos
+          </a>
+
+          <div class="eyebrow">
+            CYBERSECURITY ANALYTICS · PYTHON &amp; POWER BI
+          </div>
+
+          <h1>
+            CyberThreat Intelligence
+          </h1>
+
+          <h2>
+            Global Security Analytics
+          </h2>
+
+          <p class="cyber-text">
+            Projeto de análise de dados voltado à investigação
+            de vulnerabilidades de cibersegurança, desenvolvido
+            com Python e Power BI a partir de informações
+            públicas da National Vulnerability Database (NVD),
+            mantida pelo NIST.
+          </p>
+
+          <p class="cyber-text">
+            A proposta é transformar registros técnicos de
+            vulnerabilidades em indicadores e visualizações
+            que facilitem a compreensão dos níveis de
+            severidade, das classificações de fraquezas,
+            dos fabricantes e produtos referenciados e da
+            evolução temporal das publicações.
+          </p>
+
+          <div class="cyber-tags">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>API REST</span>
+            <span>ETL</span>
+            <span>Power BI</span>
+            <span>Power Query</span>
+            <span>DAX</span>
+            <span>NIST NVD</span>
+            <span>CVSS</span>
+            <span>CWE</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOBRE O PROJETO -->
+
+    <section class="section alt project-analysis">
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            SOBRE O PROJETO
+          </div>
+
+          <h2>
+            Da coleta de dados à inteligência analítica
+          </h2>
+
+          <p>
+            Um fluxo estruturado de extração, tratamento,
+            validação e visualização de informações sobre
+            vulnerabilidades de segurança.
+          </p>
+
+        </div>
+
+        <div class="analysis-grid">
+
+          <!-- OBJETIVO -->
+
+          <div>
+
+            <h3>
+              Objetivo
+            </h3>
+
+            <p>
+              Desenvolver uma solução analítica capaz de
+              organizar dados públicos de vulnerabilidades,
+              permitindo acompanhar sua distribuição por
+              severidade, status de análise, classificações
+              CWE, fabricantes, produtos e período de
+              publicação.
+            </p>
+
+          </div>
+
+          <!-- COLETA -->
+
+          <div>
+
+            <h3>
+              Coleta e fontes de dados
+            </h3>
+
+            <p>
+              Extração programática de registros CVE por meio
+              da API 2.0 da NIST NVD, utilizando Python.
+              A coleta contempla identificadores, datas,
+              status, métricas CVSS, classificações CWE e
+              referências a produtos quando disponíveis.
+            </p>
+
+          </div>
+
+          <!-- TRATAMENTO -->
+
+          <div>
+
+            <h3>
+              Tratamento e qualidade
+            </h3>
+
+            <p>
+              Organização dos dados em etapas de processamento,
+              com verificações de integridade, duplicidade,
+              consistência temporal e disponibilidade dos
+              campos. As estruturas aninhadas da API são
+              transformadas em informações adequadas à
+              análise.
+            </p>
+
+          </div>
+
+          <!-- DASHBOARD -->
+
+          <div>
+
+            <h3>
+              Visualização e análise
+            </h3>
+
+            <p>
+              Desenvolvimento de seis páginas no Power BI,
+              reunindo indicadores, gráficos comparativos,
+              análises temporais e tabelas exploratórias.
+              Os filtros permitem investigar diferentes
+              recortes do conjunto de vulnerabilidades.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- INDICADORES -->
+
+        <h3 class="cyber-section-title">
+          Indicadores do período analisado
+        </h3>
+
+        <p class="cyber-text">
+          O recorte apresentado no dashboard compreende
+          as vulnerabilidades publicadas entre
+          1º e 7 de outubro de 2026.
+        </p>
+
+        <div class="cyber-highlights">
+
+          <div class="cyber-highlight">
+            <strong>2.743</strong>
+            <span>Registros CVE no período</span>
+          </div>
+
+          <div class="cyber-highlight">
+            <strong>1.337</strong>
+            <span>CVEs classificadas como críticas ou de alta severidade</span>
+          </div>
+
+          <div class="cyber-highlight">
+            <strong>251</strong>
+            <span>Classificações CWE distintas</span>
+          </div>
+
+          <div class="cyber-highlight">
+            <strong>1.009</strong>
+            <span>Produtos identificados nas referências analisadas</span>
+          </div>
+
+        </div>
+
+        <p class="cyber-note">
+          Os indicadores representam o recorte e as regras
+          de classificação utilizados no dashboard.
+          A disponibilidade de pontuações CVSS, classificações
+          CWE e referências a produtos varia entre os
+          registros da NVD. A quantidade de CVEs não
+          corresponde ao número de ataques ou incidentes
+          efetivamente ocorridos.
+        </p>
+
+        <h3 class="cyber-section-title">
+          Tecnologias utilizadas
+        </h3>
+
+        <div class="cyber-tags">
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>Requests</span>
+          <span>JSON</span>
+          <span>NIST NVD API 2.0</span>
+          <span>Power BI</span>
+          <span>Power Query</span>
+          <span>DAX</span>
+          <span>Git</span>
+          <span>GitHub</span>
+        </div>
+
+        <div class="cyber-actions">
+
+          <a
+            class="btn primary"
+            href="https://github.com/phfbr/cyberthreat-intelligence"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver projeto no GitHub
+          </a>
+
+          <a class="btn" href="#dashboards">
+            Explorar dashboards
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+
+    <section class="section" id="dashboards">
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            POWER BI · DASHBOARDS
+          </div>
+
+          <h2>
+            Explore as análises
+          </h2>
+
+          <p>
+            Seis páginas analíticas desenvolvidas para
+            explorar vulnerabilidades, severidade,
+            fabricantes, produtos, classificações CWE
+            e tendências temporais.
+          </p>
+
+        </div>
+
+        <div class="cyber-gallery">
+
+          <!-- PÁGINA 01 -->
+
+          <figure>
+
+            <a
+              href="../assets/cyberthreat-01.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/cyberthreat-01.png"
+                alt="CyberThreat Intelligence - Visão Geral"
+                loading="lazy"
+              />
+            </a>
+
+            <figcaption>
+              <strong>
+                01 · Visão Geral
+              </strong>
+
+              Panorama das 2.743 vulnerabilidades do período,
+              incluindo indicadores de severidade, status
+              NVD, evolução das publicações, fabricantes
+              referenciados e principais classificações CWE.
+            </figcaption>
+
+          </figure>
+
+          <!-- PÁGINA 02 -->
+
+          <figure>
+
+            <a
+              href="../assets/cyberthreat-02.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/cyberthreat-02.png"
+                alt="CyberThreat Intelligence - Vulnerabilidades"
+                loading="lazy"
+              />
+            </a>
+
+            <figcaption>
+              <strong>
+                02 · Vulnerabilidades
+              </strong>
+
+              Análise da distribuição das pontuações CVSS,
+              concentração de vulnerabilidades por dia
+              e faixa de pontuação, além de um explorador
+              detalhado de registros CVE com identificadores,
+              datas, status e métricas de severidade.
+            </figcaption>
+
+          </figure>
+
+          <!-- PÁGINA 03 -->
+
+          <figure>
+
+            <a
+              href="../assets/cyberthreat-03.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/cyberthreat-03.png"
+                alt="CyberThreat Intelligence - Severidade e Risco"
+                loading="lazy"
+              />
+            </a>
+
+            <figcaption>
+              <strong>
+                03 · Severidade e Risco
+              </strong>
+
+              Comparação dos níveis de severidade entre
+              versões do CVSS, distribuição das pontuações
+              e relação entre a classificação de severidade
+              e os diferentes status registrados na NVD.
+            </figcaption>
+
+          </figure>
+
+          <!-- PÁGINA 04 -->
+
+          <figure>
+
+            <a
+              href="../assets/cyberthreat-04.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/cyberthreat-04.png"
+                alt="CyberThreat Intelligence - Fabricantes e Produtos"
+                loading="lazy"
+              />
+            </a>
+
+            <figcaption>
+              <strong>
+                04 · Fabricantes e Produtos
+              </strong>
+
+              Identificação de fabricantes e produtos
+              referenciados nos registros de vulnerabilidade,
+              com rankings de ocorrências e uma tabela
+              exploratória que relaciona produtos,
+              identificadores CVE, pontuações CVSS
+              e status NVD.
+            </figcaption>
+
+          </figure>
+
+          <!-- PÁGINA 05 -->
+
+          <figure>
+
+            <a
+              href="../assets/cyberthreat-05.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/cyberthreat-05.png"
+                alt="CyberThreat Intelligence - Classificações CWE"
+                loading="lazy"
+              />
+            </a>
+
+            <figcaption>
+              <strong>
+                05 · Classificações CWE
+              </strong>
+
+              Estudo das categorias de fraquezas associadas
+              às vulnerabilidades, incluindo classificações
+              mais frequentes, presença de múltiplas CWE,
+              registros sem classificação identificada
+              e distribuição por severidade.
+            </figcaption>
+
+          </figure>
+
+          <!-- PÁGINA 06 -->
+
+          <figure>
+
+            <a
+              href="../assets/cyberthreat-06.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/cyberthreat-06.png"
+                alt="CyberThreat Intelligence - Análise Temporal"
+                loading="lazy"
+              />
+            </a>
+
+            <figcaption>
+              <strong>
+                06 · Análise Temporal
+              </strong>
+
+              Acompanhamento das publicações diárias
+              de vulnerabilidades, com média por dia,
+              identificação do maior volume de registros
+              e comparativos temporais por severidade,
+              dia da semana e status NVD.
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+        <p class="cyber-note">
+          Clique em qualquer imagem para visualizar
+          o dashboard em tamanho maior.
+          As imagens representam páginas do relatório
+          desenvolvido no Power BI.
+        </p>
+
+        <div class="cyber-actions">
+
+          <a class="btn" href="../index.html#projetos">
+            ← Voltar ao portfólio
+          </a>
+
+          <a
+            class="btn primary"
+            href="https://github.com/phfbr/cyberthreat-intelligence"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Acessar repositório
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 Pedro Henrique Barbosa ·
+      Portfólio de Dados e Business Intelligence
+    </div>
+  </footer>
+
+</body>
+</html>
