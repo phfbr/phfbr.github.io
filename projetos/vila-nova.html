@@ -1,3 +1,578 @@
-<!DOCTYPE html>
 
-<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Portfólio de Pedro Henrique Barbosa, Analista de Dados e Business Intelligence." name="description"/><title>Vila Nova Sub-20 Performance Hub | Pedro Henrique Barbosa</title><link href="../assets/style.css" rel="stylesheet"/></head><body><header class="navwrap"><div class="container nav"><a class="brand" href="../index.html">Pedro Henrique Barbosa</a><nav class="navlinks"><a href="../index.html#sobre">Sobre</a><a href="../index.html#formacao">Formação</a><a href="../index.html#projetos">Projetos</a><a href="../index.html#contato">Contato</a></nav></div></header><main><section class="detail-head"><div class="container"><a class="back" href="../index.html#projetos">← Voltar aos projetos</a><div class="eyebrow">SPORTS ANALYTICS · PYTHON &amp; POWER BI</div><h1>Vila Nova Sub-20 Performance Hub</h1><h2>Uma visão dos resultados, atletas e eventos de cada partida</h2><p>Projeto de análise de desempenho do Vila Nova Sub-20 no Brasileiro Sub-20 B de 2026. A partir de documentos oficiais da CBF, os dados foram coletados, tratados e organizados com Python para alimentar um painel de cinco páginas no Power BI, com indicadores coletivos, individuais e disciplinares.</p><div class="eyebrow">Python · Power BI · Power Query · DAX</div></div></section><section class="section project-analysis"><div class="container"><div class="eyebrow">POR DENTRO DO PROJETO</div><h2 class="analysis-title">Da súmula ao dashboard</h2><p class="analysis-intro">Coleta de dados oficiais, organização das informações e exploração do desempenho da equipe.</p><div class="analysis-grid"><article class="analysis-item"><h3>Objetivo da análise</h3><p>Acompanhar os resultados do Vila Nova Sub-20 e analisar a participação dos atletas, a produção ofensiva e os indicadores disciplinares ao longo das partidas disponíveis.</p></article><article class="analysis-item"><h3>Dados e preparação</h3><p>Extração em Python de dados de partidas e súmulas oficiais da CBF, com limpeza, padronização e validação de atletas, gols, cartões e substituições.</p></article><article class="analysis-item"><h3>Desenvolvimento do painel</h3><p>Estruturação das tabelas para análise no Power BI, construção de indicadores e medidas DAX, além de cinco páginas com navegação e filtros por competição, período e adversário.</p></article><article class="analysis-item"><h3>O que é possível analisar</h3><p>Resultados por partida e local, evolução de gols e aproveitamento, ranking de atletas, participação no elenco e distribuição de cartões por jogo.</p></article></div><h3 class="analysis-subtitle">Indicadores em destaque</h3><ul class="metric-list"><li>7 partidas analisadas · 3 vitórias · 2 empates · 2 derrotas</li><li>15 gols marcados · 16 gols sofridos</li><li>32 jogadores utilizados no painel</li><li>31 cartões amarelos · 2 vermelhos</li><li>5 páginas de análise com filtros interativos no Power BI</li></ul><h3 class="analysis-subtitle">Tecnologias e fontes</h3><div class="tech-tags"><span>Python</span><span>Power BI</span><span>Power Query</span><span>DAX</span><span>CBF · súmulas oficiais</span></div><p><a class="textlink" href="https://github.com/phfbr/vila-nova-sub20-performance-hub-" rel="noopener noreferrer" target="_blank">Ver código e documentação no GitHub →</a></p></div></section><section class="section"><div class="container"><div class="gallery"><figure class="shot"><img alt="Vila Nova Sub-20 - Visão geral" loading="lazy" src="../assets/vila-01.jpg"/><figcaption>Visão geral</figcaption></figure><figure class="shot"><img alt="Vila Nova Sub-20 - Performance coletiva" loading="lazy" src="../assets/vila-02.jpg"/><figcaption>Performance coletiva</figcaption></figure><figure class="shot"><img alt="Vila Nova Sub-20 - Análise de partidas" loading="lazy" src="../assets/vila-03.jpg"/><figcaption>Análise de partidas</figcaption></figure><figure class="shot"><img alt="Vila Nova Sub-20 - Desempenho individual" loading="lazy" src="../assets/vila-04.jpg"/><figcaption>Desempenho individual</figcaption></figure><figure class="shot"><img alt="Vila Nova Sub-20 - Disciplina e elenco" loading="lazy" src="../assets/vila-05.jpg"/><figcaption>Disciplina e elenco</figcaption></figure></div><a class="back" href="../index.html#projetos">← Ver outros projetos</a></div></section></main><footer class="footer"><div class="container">© 2026 Pedro Henrique Barbosa · Portfólio de Dados e Business Intelligence</div></footer></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Vila Nova Sub-20 Performance Hub | Análise de desempenho no Brasileiro Sub-20 B de 2026 com dados oficiais da CBF, Python e Power BI."
+  >
+
+  <title>Vila Nova Sub-20 Performance Hub | Pedro Henrique Barbosa</title>
+
+  <link href="../assets/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="navwrap">
+    <div class="container nav">
+
+      <a class="brand" href="../index.html">
+        Pedro Henrique Barbosa
+      </a>
+
+      <nav class="navlinks" aria-label="Navegação principal">
+        <a href="../index.html#sobre" data-i18n="navAbout">Sobre</a>
+        <a href="../index.html#formacao" data-i18n="navEducation">Formação</a>
+        <a href="../index.html#projetos" data-i18n="navProjects">Projetos</a>
+        <a href="../index.html#contato" data-i18n="navContact">Contato</a>
+      </nav>
+
+      <div class="language-switcher">
+        <label for="language-select" aria-label="Selecionar idioma">🌐</label>
+        <select id="language-select" aria-label="Selecionar idioma">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="detail-head">
+      <div class="container">
+
+        <a
+          class="back"
+          href="../index.html#projetos"
+          data-i18n="back"
+        >
+          ← Voltar aos projetos
+        </a>
+
+        <div class="eyebrow">
+          SPORTS ANALYTICS · PYTHON &amp; POWER BI
+        </div>
+
+        <h1>Vila Nova Sub-20 Performance Hub</h1>
+
+        <h2 data-i18n="subtitle">
+          Uma visão dos resultados, atletas e eventos de cada partida
+        </h2>
+
+        <p data-i18n="intro">
+          Projeto de análise de desempenho do Vila Nova Sub-20 no
+          Brasileiro Sub-20 B de 2026. A partir de documentos oficiais
+          da CBF, os dados foram coletados, tratados e organizados
+          com Python para alimentar um painel de cinco páginas no
+          Power BI, com indicadores coletivos, individuais e disciplinares.
+        </p>
+
+        <div class="eyebrow">
+          Python · Power BI · Power Query · DAX
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ANÁLISE DO PROJETO -->
+    <section class="section project-analysis">
+      <div class="container">
+
+        <div class="eyebrow" data-i18n="analysisEyebrow">
+          POR DENTRO DO PROJETO
+        </div>
+
+        <h2 class="analysis-title" data-i18n="analysisTitle">
+          Da súmula ao dashboard
+        </h2>
+
+        <p class="analysis-intro" data-i18n="analysisIntro">
+          Coleta de dados oficiais, organização das informações
+          e exploração do desempenho da equipe.
+        </p>
+
+        <div class="analysis-grid">
+
+          <article class="analysis-item">
+            <h3 data-i18n="objectiveTitle">
+              Objetivo da análise
+            </h3>
+
+            <p data-i18n="objectiveText">
+              Acompanhar os resultados do Vila Nova Sub-20 e analisar
+              a participação dos atletas, a produção ofensiva e os
+              indicadores disciplinares ao longo das partidas disponíveis.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="dataTitle">
+              Dados e preparação
+            </h3>
+
+            <p data-i18n="dataText">
+              Extração em Python de dados de partidas e súmulas
+              oficiais da CBF, com limpeza, padronização e validação
+              de atletas, gols, cartões e substituições.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="dashboardTitle">
+              Desenvolvimento do painel
+            </h3>
+
+            <p data-i18n="dashboardText">
+              Estruturação das tabelas para análise no Power BI,
+              construção de indicadores e medidas DAX, além de
+              cinco páginas com navegação e filtros por competição,
+              período e adversário.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="insightsTitle">
+              O que é possível analisar
+            </h3>
+
+            <p data-i18n="insightsText">
+              Resultados por partida e local, evolução de gols
+              e aproveitamento, ranking de atletas, participação
+              no elenco e distribuição de cartões por jogo.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- INDICADORES -->
+        <h3 class="analysis-subtitle" data-i18n="metricsTitle">
+          Indicadores em destaque
+        </h3>
+
+        <ul class="metric-list">
+          <li data-i18n="metric1">
+            7 partidas analisadas · 3 vitórias · 2 empates · 2 derrotas
+          </li>
+          <li data-i18n="metric2">
+            15 gols marcados · 16 gols sofridos
+          </li>
+          <li data-i18n="metric3">
+            32 jogadores utilizados no painel
+          </li>
+          <li data-i18n="metric4">
+            31 cartões amarelos · 2 vermelhos
+          </li>
+          <li data-i18n="metric5">
+            5 páginas de análise com filtros interativos no Power BI
+          </li>
+        </ul>
+
+        <!-- TECNOLOGIAS -->
+        <h3 class="analysis-subtitle" data-i18n="techTitle">
+          Tecnologias e fontes
+        </h3>
+
+        <div class="tech-tags">
+          <span>Python</span>
+          <span>Power BI</span>
+          <span>Power Query</span>
+          <span>DAX</span>
+          <span data-i18n="sourceTag">CBF · súmulas oficiais</span>
+        </div>
+
+        <!-- GITHUB -->
+        <p>
+          <a
+            class="textlink"
+            href="https://github.com/phfbr/vila-nova-sub20-performance-hub-"
+            rel="noopener noreferrer"
+            target="_blank"
+            data-i18n="githubText"
+          >
+            Ver código e documentação no GitHub →
+          </a>
+        </p>
+
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="section">
+      <div class="container">
+
+        <div class="gallery">
+
+          <!-- DASHBOARD 01 -->
+          <figure class="shot">
+            <img
+              src="../assets/vila-01.jpg"
+              alt="Vila Nova Sub-20 - Visão geral"
+              data-alt-key="image1Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image1Caption">
+              Visão geral
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 02 -->
+          <figure class="shot">
+            <img
+              src="../assets/vila-02.jpg"
+              alt="Vila Nova Sub-20 - Performance coletiva"
+              data-alt-key="image2Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image2Caption">
+              Performance coletiva
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 03 -->
+          <figure class="shot">
+            <img
+              src="../assets/vila-03.jpg"
+              alt="Vila Nova Sub-20 - Análise de partidas"
+              data-alt-key="image3Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image3Caption">
+              Análise de partidas
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 04 -->
+          <figure class="shot">
+            <img
+              src="../assets/vila-04.jpg"
+              alt="Vila Nova Sub-20 - Desempenho individual"
+              data-alt-key="image4Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image4Caption">
+              Desempenho individual
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 05 -->
+          <figure class="shot">
+            <img
+              src="../assets/vila-05.jpg"
+              alt="Vila Nova Sub-20 - Disciplina e elenco"
+              data-alt-key="image5Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image5Caption">
+              Disciplina e elenco
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <a
+          class="back"
+          href="../index.html#projetos"
+          data-i18n="otherProjects"
+        >
+          ← Ver outros projetos
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 Pedro Henrique Barbosa ·
+      <span data-i18n="footer">
+        Portfólio de Dados e Business Intelligence
+      </span>
+    </div>
+  </footer>
+
+  <!-- SISTEMA DE TRADUÇÃO -->
+  <script>
+    (() => {
+      "use strict";
+
+      const STORAGE_KEY = "portfolio-language";
+
+      const translations = {
+
+        // PORTUGUÊS
+        pt: {
+          navAbout: "Sobre",
+          navEducation: "Formação",
+          navProjects: "Projetos",
+          navContact: "Contato",
+
+          back: "← Voltar aos projetos",
+
+          subtitle: "Uma visão dos resultados, atletas e eventos de cada partida",
+
+          intro: "Projeto de análise de desempenho do Vila Nova Sub-20 no Brasileiro Sub-20 B de 2026. A partir de documentos oficiais da CBF, os dados foram coletados, tratados e organizados com Python para alimentar um painel de cinco páginas no Power BI, com indicadores coletivos, individuais e disciplinares.",
+
+          analysisEyebrow: "POR DENTRO DO PROJETO",
+
+          analysisTitle: "Da súmula ao dashboard",
+
+          analysisIntro: "Coleta de dados oficiais, organização das informações e exploração do desempenho da equipe.",
+
+          objectiveTitle: "Objetivo da análise",
+
+          objectiveText: "Acompanhar os resultados do Vila Nova Sub-20 e analisar a participação dos atletas, a produção ofensiva e os indicadores disciplinares ao longo das partidas disponíveis.",
+
+          dataTitle: "Dados e preparação",
+
+          dataText: "Extração em Python de dados de partidas e súmulas oficiais da CBF, com limpeza, padronização e validação de atletas, gols, cartões e substituições.",
+
+          dashboardTitle: "Desenvolvimento do painel",
+
+          dashboardText: "Estruturação das tabelas para análise no Power BI, construção de indicadores e medidas DAX, além de cinco páginas com navegação e filtros por competição, período e adversário.",
+
+          insightsTitle: "O que é possível analisar",
+
+          insightsText: "Resultados por partida e local, evolução de gols e aproveitamento, ranking de atletas, participação no elenco e distribuição de cartões por jogo.",
+
+          metricsTitle: "Indicadores em destaque",
+
+          metric1: "7 partidas analisadas · 3 vitórias · 2 empates · 2 derrotas",
+          metric2: "15 gols marcados · 16 gols sofridos",
+          metric3: "32 jogadores utilizados no painel",
+          metric4: "31 cartões amarelos · 2 vermelhos",
+          metric5: "5 páginas de análise com filtros interativos no Power BI",
+
+          techTitle: "Tecnologias e fontes",
+          sourceTag: "CBF · súmulas oficiais",
+
+          githubText: "Ver código e documentação no GitHub →",
+
+          image1Caption: "Visão geral",
+          image2Caption: "Performance coletiva",
+          image3Caption: "Análise de partidas",
+          image4Caption: "Desempenho individual",
+          image5Caption: "Disciplina e elenco",
+
+          image1Alt: "Vila Nova Sub-20 - Visão geral",
+          image2Alt: "Vila Nova Sub-20 - Performance coletiva",
+          image3Alt: "Vila Nova Sub-20 - Análise de partidas",
+          image4Alt: "Vila Nova Sub-20 - Desempenho individual",
+          image5Alt: "Vila Nova Sub-20 - Disciplina e elenco",
+
+          otherProjects: "← Ver outros projetos",
+
+          footer: "Portfólio de Dados e Business Intelligence",
+
+          meta: "Vila Nova Sub-20 Performance Hub | Análise de desempenho no Brasileiro Sub-20 B de 2026 com dados oficiais da CBF, Python e Power BI."
+        },
+
+        // INGLÊS
+        en: {
+          navAbout: "About",
+          navEducation: "Education",
+          navProjects: "Projects",
+          navContact: "Contact",
+
+          back: "← Back to projects",
+
+          subtitle: "A closer look at match results, players, and key events",
+
+          intro: "A performance analysis project focused on Vila Nova U20 in the 2026 Brazilian U20 Série B Championship. Using official Brazilian Football Confederation (CBF) documents, match data was collected, cleaned, and organized with Python to build a five-page Power BI dashboard covering team performance, individual contributions, and disciplinary indicators.",
+
+          analysisEyebrow: "BEHIND THE PROJECT",
+
+          analysisTitle: "From official match reports to dashboards",
+
+          analysisIntro: "Official data collection, information organization, and exploration of team performance.",
+
+          objectiveTitle: "Analysis objectives",
+
+          objectiveText: "Track Vila Nova U20 match results and analyze player participation, attacking production, and disciplinary indicators across the available matches.",
+
+          dataTitle: "Data and preparation",
+
+          dataText: "Extraction of match data and official CBF match reports using Python, including cleaning, standardization, and validation of players, goals, cards, and substitutions.",
+
+          dashboardTitle: "Dashboard development",
+
+          dashboardText: "Data table preparation for Power BI, development of performance indicators and DAX measures, and creation of five interactive pages with navigation and filters by competition, period, and opponent.",
+
+          insightsTitle: "What can be analyzed",
+
+          insightsText: "Match results by venue, goal trends and points efficiency, player rankings, squad participation, and the distribution of disciplinary cards across matches.",
+
+          metricsTitle: "Key indicators",
+
+          metric1: "7 matches analyzed · 3 wins · 2 draws · 2 losses",
+          metric2: "15 goals scored · 16 conceded",
+          metric3: "32 players featured in the dashboard",
+          metric4: "31 yellow cards · 2 red cards",
+          metric5: "5 analytical pages with interactive Power BI filters",
+
+          techTitle: "Technologies and data sources",
+          sourceTag: "CBF · official match reports",
+
+          githubText: "View code and documentation on GitHub →",
+
+          image1Caption: "Overview",
+          image2Caption: "Team performance",
+          image3Caption: "Match analysis",
+          image4Caption: "Individual performance",
+          image5Caption: "Discipline and squad",
+
+          image1Alt: "Vila Nova U20 - Overview",
+          image2Alt: "Vila Nova U20 - Team performance",
+          image3Alt: "Vila Nova U20 - Match analysis",
+          image4Alt: "Vila Nova U20 - Individual performance",
+          image5Alt: "Vila Nova U20 - Discipline and squad",
+
+          otherProjects: "← View other projects",
+
+          footer: "Data Analytics and Business Intelligence Portfolio",
+
+          meta: "Vila Nova U20 Performance Hub | Analysis of the 2026 Brazilian U20 Série B Championship using official CBF data, Python, and Power BI."
+        },
+
+        // ESPANHOL
+        es: {
+          navAbout: "Sobre mí",
+          navEducation: "Formación",
+          navProjects: "Proyectos",
+          navContact: "Contacto",
+
+          back: "← Volver a los proyectos",
+
+          subtitle: "Una visión de los resultados, jugadores y eventos de cada partido",
+
+          intro: "Proyecto de análisis del rendimiento del Vila Nova Sub-20 en el Campeonato Brasileño Sub-20 B de 2026. A partir de documentos oficiales de la Confederación Brasileña de Fútbol (CBF), los datos fueron recopilados, procesados y organizados con Python para desarrollar un dashboard de cinco páginas en Power BI, con indicadores colectivos, individuales y disciplinarios.",
+
+          analysisEyebrow: "DETALLES DEL PROYECTO",
+
+          analysisTitle: "De las actas oficiales al dashboard",
+
+          analysisIntro: "Recopilación de datos oficiales, organización de la información y análisis del rendimiento del equipo.",
+
+          objectiveTitle: "Objetivo del análisis",
+
+          objectiveText: "Dar seguimiento a los resultados del Vila Nova Sub-20 y analizar la participación de los jugadores, la producción ofensiva y los indicadores disciplinarios durante los partidos disponibles.",
+
+          dataTitle: "Datos y preparación",
+
+          dataText: "Extracción con Python de datos de partidos y actas oficiales de la CBF, incluyendo limpieza, estandarización y validación de jugadores, goles, tarjetas y sustituciones.",
+
+          dashboardTitle: "Desarrollo del dashboard",
+
+          dashboardText: "Preparación de tablas para Power BI, desarrollo de indicadores y medidas DAX, además de cinco páginas interactivas con navegación y filtros por competición, período y rival.",
+
+          insightsTitle: "Qué se puede analizar",
+
+          insightsText: "Resultados por partido y condición de local o visitante, evolución de goles y rendimiento, clasificación de jugadores, participación en la plantilla y distribución de tarjetas por partido.",
+
+          metricsTitle: "Indicadores destacados",
+
+          metric1: "7 partidos analizados · 3 victorias · 2 empates · 2 derrotas",
+          metric2: "15 goles a favor · 16 en contra",
+          metric3: "32 jugadores incluidos en el dashboard",
+          metric4: "31 tarjetas amarillas · 2 rojas",
+          metric5: "5 páginas de análisis con filtros interactivos en Power BI",
+
+          techTitle: "Tecnologías y fuentes",
+          sourceTag: "CBF · actas oficiales",
+
+          githubText: "Ver código y documentación en GitHub →",
+
+          image1Caption: "Visión general",
+          image2Caption: "Rendimiento colectivo",
+          image3Caption: "Análisis de partidos",
+          image4Caption: "Rendimiento individual",
+          image5Caption: "Disciplina y plantilla",
+
+          image1Alt: "Vila Nova Sub-20 - Visión general",
+          image2Alt: "Vila Nova Sub-20 - Rendimiento colectivo",
+          image3Alt: "Vila Nova Sub-20 - Análisis de partidos",
+          image4Alt: "Vila Nova Sub-20 - Rendimiento individual",
+          image5Alt: "Vila Nova Sub-20 - Disciplina y plantilla",
+
+          otherProjects: "← Ver otros proyectos",
+
+          footer: "Portafolio de Análisis de Datos y Business Intelligence",
+
+          meta: "Vila Nova Sub-20 Performance Hub | Análisis del Campeonato Brasileño Sub-20 B de 2026 con datos oficiales de la CBF, Python y Power BI."
+        }
+      };
+
+      const selector = document.getElementById("language-select");
+
+      function applyLanguage(language) {
+        const lang = translations[language] ? language : "pt";
+        const dictionary = translations[lang];
+
+        document.documentElement.lang =
+          lang === "pt" ? "pt-BR" : lang;
+
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+          const key = element.dataset.i18n;
+
+          if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+            element.textContent = dictionary[key];
+          }
+        });
+
+        document.querySelectorAll("[data-alt-key]").forEach(image => {
+          const key = image.dataset.altKey;
+
+          if (dictionary[key]) {
+            image.alt = dictionary[key];
+          }
+        });
+
+        const meta = document.querySelector('meta[name="description"]');
+
+        if (meta) {
+          meta.setAttribute("content", dictionary.meta);
+        }
+
+        selector.value = lang;
+
+        try {
+          localStorage.setItem(STORAGE_KEY, lang);
+        } catch (error) {
+          // A tradução continua funcionando sem armazenamento.
+        }
+      }
+
+      selector.addEventListener("change", event => {
+        applyLanguage(event.target.value);
+      });
+
+      let savedLanguage = "pt";
+
+      try {
+        savedLanguage = localStorage.getItem(STORAGE_KEY) || "pt";
+      } catch (error) {
+        savedLanguage = "pt";
+      }
+
+      applyLanguage(savedLanguage);
+    })();
+  </script>
+
+</body>
+</html>
