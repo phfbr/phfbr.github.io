@@ -1,2 +1,544 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Portfólio de Pedro Henrique Barbosa, Analista de Dados e Business Intelligence." name="description"/><title>Goiás EC Performance Hub | Pedro Henrique Barbosa</title><link href="../assets/style.css" rel="stylesheet"/></head><body><header class="navwrap"><div class="container nav"><a class="brand" href="../index.html">Pedro Henrique Barbosa</a><nav class="navlinks"><a href="../index.html#sobre">Sobre</a><a href="../index.html#formacao">Formação</a><a href="../index.html#projetos">Projetos</a><a href="../index.html#contato">Contato</a></nav></div></header><main><section class="detail-head"><div class="container"><a class="back" href="../index.html#projetos">← Voltar aos projetos</a><div class="eyebrow">SPORTS ANALYTICS · PYTHON &amp; POWER BI</div><h1>Goiás EC Performance Hub</h1><h2>O que os dados revelam sobre a campanha do Goiás?</h2><p>Análise da campanha do Goiás EC na Série B de 2025, reunindo as 38 partidas em cinco páginas de Power BI. O projeto parte da coleta e organização de dados esportivos em Python e avança para indicadores de resultados, finalizações, desempenho coletivo, análise de partidas e leitura tática.</p><div class="eyebrow">Python · Power BI · Power Query · DAX</div></div></section><section class="section project-analysis"><div class="container"><div class="eyebrow">POR DENTRO DO PROJETO</div><h2 class="analysis-title">Do indicador à análise</h2><p class="analysis-intro">Objetivo, organização das informações e principais leituras disponíveis no painel.</p><div class="analysis-grid"><article class="analysis-item"><h3>Objetivo da análise</h3><p>Investigar como o desempenho da equipe variou ao longo do campeonato, relacionando resultados com produção ofensiva, solidez defensiva e contexto de cada partida.</p></article><article class="analysis-item"><h3>Dados e preparação</h3><p>Dados de partidas e estatísticas esportivas coletados e organizados com Python, com limpeza, padronização e validação antes da utilização no Power BI.</p></article><article class="analysis-item"><h3>Desenvolvimento do painel</h3><p>Preparação dos dados no Power Query, organização do modelo analítico, construção de medidas DAX e desenvolvimento de cinco páginas com filtros e navegação entre visões.</p></article><article class="analysis-item"><h3>O que é possível analisar</h3><p>A leitura conjunta dos indicadores permite comparar mandante e visitante, acompanhar a evolução da campanha e identificar partidas e períodos com diferenças entre volume de finalizações e resultado.</p></article></div><h3 class="analysis-subtitle">Indicadores em destaque</h3><ul class="metric-list"><li>38 partidas analisadas</li><li>17 vitórias · 10 empates · 11 derrotas</li><li>61 pontos na competição</li><li>42 gols marcados · 37 sofridos</li><li>Finalizações e indicadores por partida</li></ul><h3 class="analysis-subtitle">Tecnologias e contexto</h3><div class="tech-tags"><span>Python</span><span>Power BI</span><span>Power Query</span><span>DAX</span></div></div></section><section class="section"><div class="container"><div class="gallery"><figure class="shot"><img alt="Tela 1 do projeto Goiás EC Performance Hub" loading="lazy" src="../assets/goias-01.jpg"/><figcaption>Visão geral da campanha</figcaption></figure><figure class="shot"><img alt="Tela 2 do projeto Goiás EC Performance Hub" loading="lazy" src="../assets/goias_02.jpg"/><figcaption>Performance coletiva</figcaption></figure><figure class="shot"><img alt="Tela 3 do projeto Goiás EC Performance Hub" loading="lazy" src="../assets/goias_03.jpg"/><figcaption>Análise de partidas</figcaption></figure><figure class="shot"><img alt="Tela 4 do projeto Goiás EC Performance Hub" loading="lazy" src="../assets/goias_04.jpg"/><figcaption>Análise tática</figcaption></figure><figure class="shot"><img alt="Tela 5 do projeto Goiás EC Performance Hub" loading="lazy" src="../assets/goias-05.jpg"/><figcaption>Desempenho individual</figcaption></figure></div><a class="back" href="../index.html#projetos">← Ver outros projetos</a></div></section></main><footer class="footer"><div class="container">© 2026 Pedro Henrique Barbosa · Portfólio de Dados e Business Intelligence</div></footer></body></html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Goiás EC Performance Hub | Análise da campanha do Goiás EC na Série B de 2025 com Python e Power BI."
+  >
+
+  <title>Goiás EC Performance Hub | Pedro Henrique Barbosa</title>
+
+  <link href="../assets/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="navwrap">
+    <div class="container nav">
+
+      <a class="brand" href="../index.html">
+        Pedro Henrique Barbosa
+      </a>
+
+      <nav class="navlinks" aria-label="Navegação principal">
+        <a href="../index.html#sobre" data-i18n="navAbout">Sobre</a>
+        <a href="../index.html#formacao" data-i18n="navEducation">Formação</a>
+        <a href="../index.html#projetos" data-i18n="navProjects">Projetos</a>
+        <a href="../index.html#contato" data-i18n="navContact">Contato</a>
+      </nav>
+
+      <div class="language-switcher">
+        <label for="language-select" aria-label="Selecionar idioma">🌐</label>
+        <select id="language-select" aria-label="Selecionar idioma">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="detail-head">
+      <div class="container">
+
+        <a
+          class="back"
+          href="../index.html#projetos"
+          data-i18n="back"
+        >
+          ← Voltar aos projetos
+        </a>
+
+        <div class="eyebrow">
+          SPORTS ANALYTICS · PYTHON &amp; POWER BI
+        </div>
+
+        <h1>Goiás EC Performance Hub</h1>
+
+        <h2 data-i18n="subtitle">
+          O que os dados revelam sobre a campanha do Goiás?
+        </h2>
+
+        <p data-i18n="intro">
+          Análise da campanha do Goiás EC na Série B de 2025,
+          reunindo as 38 partidas em cinco páginas de Power BI.
+          O projeto parte da coleta e organização de dados esportivos
+          em Python e avança para indicadores de resultados,
+          finalizações, desempenho coletivo, análise de partidas
+          e leitura tática.
+        </p>
+
+        <div class="eyebrow">
+          Python · Power BI · Power Query · DAX
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ANÁLISE DO PROJETO -->
+    <section class="section project-analysis">
+      <div class="container">
+
+        <div class="eyebrow" data-i18n="analysisEyebrow">
+          POR DENTRO DO PROJETO
+        </div>
+
+        <h2 class="analysis-title" data-i18n="analysisTitle">
+          Do indicador à análise
+        </h2>
+
+        <p class="analysis-intro" data-i18n="analysisIntro">
+          Objetivo, organização das informações e principais leituras
+          disponíveis no painel.
+        </p>
+
+        <div class="analysis-grid">
+
+          <article class="analysis-item">
+            <h3 data-i18n="objectiveTitle">
+              Objetivo da análise
+            </h3>
+
+            <p data-i18n="objectiveText">
+              Investigar como o desempenho da equipe variou ao longo
+              do campeonato, relacionando resultados com produção
+              ofensiva, solidez defensiva e contexto de cada partida.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="dataTitle">
+              Dados e preparação
+            </h3>
+
+            <p data-i18n="dataText">
+              Dados de partidas e estatísticas esportivas coletados
+              e organizados com Python, com limpeza, padronização
+              e validação antes da utilização no Power BI.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="dashboardTitle">
+              Desenvolvimento do painel
+            </h3>
+
+            <p data-i18n="dashboardText">
+              Preparação dos dados no Power Query, organização do
+              modelo analítico, construção de medidas DAX e
+              desenvolvimento de cinco páginas com filtros e
+              navegação entre visões.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="insightsTitle">
+              O que é possível analisar
+            </h3>
+
+            <p data-i18n="insightsText">
+              A leitura conjunta dos indicadores permite comparar
+              mandante e visitante, acompanhar a evolução da campanha
+              e identificar partidas e períodos com diferenças entre
+              volume de finalizações e resultado.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- INDICADORES -->
+        <h3 class="analysis-subtitle" data-i18n="metricsTitle">
+          Indicadores em destaque
+        </h3>
+
+        <ul class="metric-list">
+          <li data-i18n="metric1">38 partidas analisadas</li>
+          <li data-i18n="metric2">17 vitórias · 10 empates · 11 derrotas</li>
+          <li data-i18n="metric3">61 pontos na competição</li>
+          <li data-i18n="metric4">42 gols marcados · 37 sofridos</li>
+          <li data-i18n="metric5">Finalizações e indicadores por partida</li>
+        </ul>
+
+        <!-- TECNOLOGIAS -->
+        <h3 class="analysis-subtitle" data-i18n="techTitle">
+          Tecnologias e contexto
+        </h3>
+
+        <div class="tech-tags">
+          <span>Python</span>
+          <span>Power BI</span>
+          <span>Power Query</span>
+          <span>DAX</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="section">
+      <div class="container">
+
+        <div class="gallery">
+
+          <!-- DASHBOARD 01 -->
+          <figure class="shot">
+            <img
+              src="../assets/goias-01.jpg"
+              alt="Tela 1 do projeto Goiás EC Performance Hub"
+              data-alt-key="image1Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image1Caption">
+              Visão geral da campanha
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 02 -->
+          <figure class="shot">
+            <img
+              src="../assets/goias_02.jpg"
+              alt="Tela 2 do projeto Goiás EC Performance Hub"
+              data-alt-key="image2Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image2Caption">
+              Performance coletiva
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 03 -->
+          <figure class="shot">
+            <img
+              src="../assets/goias_03.jpg"
+              alt="Tela 3 do projeto Goiás EC Performance Hub"
+              data-alt-key="image3Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image3Caption">
+              Análise de partidas
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 04 -->
+          <figure class="shot">
+            <img
+              src="../assets/goias_04.jpg"
+              alt="Tela 4 do projeto Goiás EC Performance Hub"
+              data-alt-key="image4Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image4Caption">
+              Análise tática
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 05 -->
+          <figure class="shot">
+            <img
+              src="../assets/goias-05.jpg"
+              alt="Tela 5 do projeto Goiás EC Performance Hub"
+              data-alt-key="image5Alt"
+              loading="lazy"
+            >
+
+            <figcaption data-i18n="image5Caption">
+              Desempenho individual
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <a
+          class="back"
+          href="../index.html#projetos"
+          data-i18n="otherProjects"
+        >
+          ← Ver outros projetos
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 Pedro Henrique Barbosa ·
+      <span data-i18n="footer">
+        Portfólio de Dados e Business Intelligence
+      </span>
+    </div>
+  </footer>
+
+  <!-- SISTEMA DE TRADUÇÃO -->
+  <script>
+    (() => {
+      "use strict";
+
+      const STORAGE_KEY = "portfolio-language";
+
+      const translations = {
+
+        // PORTUGUÊS
+        pt: {
+          navAbout: "Sobre",
+          navEducation: "Formação",
+          navProjects: "Projetos",
+          navContact: "Contato",
+
+          back: "← Voltar aos projetos",
+
+          subtitle: "O que os dados revelam sobre a campanha do Goiás?",
+
+          intro: "Análise da campanha do Goiás EC na Série B de 2025, reunindo as 38 partidas em cinco páginas de Power BI. O projeto parte da coleta e organização de dados esportivos em Python e avança para indicadores de resultados, finalizações, desempenho coletivo, análise de partidas e leitura tática.",
+
+          analysisEyebrow: "POR DENTRO DO PROJETO",
+          analysisTitle: "Do indicador à análise",
+
+          analysisIntro: "Objetivo, organização das informações e principais leituras disponíveis no painel.",
+
+          objectiveTitle: "Objetivo da análise",
+
+          objectiveText: "Investigar como o desempenho da equipe variou ao longo do campeonato, relacionando resultados com produção ofensiva, solidez defensiva e contexto de cada partida.",
+
+          dataTitle: "Dados e preparação",
+
+          dataText: "Dados de partidas e estatísticas esportivas coletados e organizados com Python, com limpeza, padronização e validação antes da utilização no Power BI.",
+
+          dashboardTitle: "Desenvolvimento do painel",
+
+          dashboardText: "Preparação dos dados no Power Query, organização do modelo analítico, construção de medidas DAX e desenvolvimento de cinco páginas com filtros e navegação entre visões.",
+
+          insightsTitle: "O que é possível analisar",
+
+          insightsText: "A leitura conjunta dos indicadores permite comparar mandante e visitante, acompanhar a evolução da campanha e identificar partidas e períodos com diferenças entre volume de finalizações e resultado.",
+
+          metricsTitle: "Indicadores em destaque",
+
+          metric1: "38 partidas analisadas",
+          metric2: "17 vitórias · 10 empates · 11 derrotas",
+          metric3: "61 pontos na competição",
+          metric4: "42 gols marcados · 37 sofridos",
+          metric5: "Finalizações e indicadores por partida",
+
+          techTitle: "Tecnologias e contexto",
+
+          image1Caption: "Visão geral da campanha",
+          image2Caption: "Performance coletiva",
+          image3Caption: "Análise de partidas",
+          image4Caption: "Análise tática",
+          image5Caption: "Desempenho individual",
+
+          image1Alt: "Tela 1 do projeto Goiás EC Performance Hub",
+          image2Alt: "Tela 2 do projeto Goiás EC Performance Hub",
+          image3Alt: "Tela 3 do projeto Goiás EC Performance Hub",
+          image4Alt: "Tela 4 do projeto Goiás EC Performance Hub",
+          image5Alt: "Tela 5 do projeto Goiás EC Performance Hub",
+
+          otherProjects: "← Ver outros projetos",
+
+          footer: "Portfólio de Dados e Business Intelligence",
+
+          meta: "Goiás EC Performance Hub | Análise da campanha do Goiás EC na Série B de 2025 com Python e Power BI."
+        },
+
+        // INGLÊS
+        en: {
+          navAbout: "About",
+          navEducation: "Education",
+          navProjects: "Projects",
+          navContact: "Contact",
+
+          back: "← Back to projects",
+
+          subtitle: "What does the data reveal about Goiás EC's season?",
+
+          intro: "An analysis of Goiás EC's 2025 Brazilian Série B campaign, covering all 38 matches across five Power BI dashboard pages. The project combines sports data collection and processing with Python and performance analysis through match results, shooting statistics, team performance, match analysis, and tactical insights.",
+
+          analysisEyebrow: "BEHIND THE PROJECT",
+          analysisTitle: "From indicators to insights",
+
+          analysisIntro: "Project objectives, data organization, and the main analytical perspectives available in the dashboard.",
+
+          objectiveTitle: "Analysis objectives",
+
+          objectiveText: "Investigate how the team's performance evolved throughout the championship, connecting match results with attacking production, defensive consistency, and match context.",
+
+          dataTitle: "Data and preparation",
+
+          dataText: "Match data and sports statistics collected and organized using Python, including data cleaning, standardization, and validation before integration into Power BI.",
+
+          dashboardTitle: "Dashboard development",
+
+          dashboardText: "Data preparation in Power Query, analytical model organization, DAX measure development, and creation of five dashboard pages featuring interactive filters and navigation between views.",
+
+          insightsTitle: "What can be analyzed",
+
+          insightsText: "The combined indicators support home-versus-away comparisons, season performance tracking, and the identification of matches and periods where shooting volume differed from actual results.",
+
+          metricsTitle: "Key indicators",
+
+          metric1: "38 matches analyzed",
+          metric2: "17 wins · 10 draws · 11 losses",
+          metric3: "61 league points",
+          metric4: "42 goals scored · 37 conceded",
+          metric5: "Shots and match-level performance indicators",
+
+          techTitle: "Technologies and context",
+
+          image1Caption: "Season overview",
+          image2Caption: "Team performance",
+          image3Caption: "Match analysis",
+          image4Caption: "Tactical analysis",
+          image5Caption: "Individual performance",
+
+          image1Alt: "Dashboard 1 — Goiás EC Performance Hub",
+          image2Alt: "Dashboard 2 — Goiás EC Performance Hub",
+          image3Alt: "Dashboard 3 — Goiás EC Performance Hub",
+          image4Alt: "Dashboard 4 — Goiás EC Performance Hub",
+          image5Alt: "Dashboard 5 — Goiás EC Performance Hub",
+
+          otherProjects: "← View other projects",
+
+          footer: "Data Analytics and Business Intelligence Portfolio",
+
+          meta: "Goiás EC Performance Hub | Analysis of Goiás EC's 2025 Brazilian Série B campaign using Python and Power BI."
+        },
+
+        // ESPANHOL
+        es: {
+          navAbout: "Sobre mí",
+          navEducation: "Formación",
+          navProjects: "Proyectos",
+          navContact: "Contacto",
+
+          back: "← Volver a los proyectos",
+
+          subtitle: "¿Qué revelan los datos sobre la temporada del Goiás?",
+
+          intro: "Análisis de la campaña del Goiás EC en la Serie B de Brasil de 2025, que reúne los 38 partidos en cinco páginas de Power BI. El proyecto combina la recopilación y preparación de datos deportivos con Python y el análisis de resultados, remates, rendimiento colectivo, partidos y aspectos tácticos.",
+
+          analysisEyebrow: "DETALLES DEL PROYECTO",
+          analysisTitle: "De los indicadores al análisis",
+
+          analysisIntro: "Objetivos, organización de la información y principales perspectivas analíticas disponibles en el dashboard.",
+
+          objectiveTitle: "Objetivo del análisis",
+
+          objectiveText: "Investigar cómo evolucionó el rendimiento del equipo durante el campeonato, relacionando los resultados con la producción ofensiva, la solidez defensiva y el contexto de cada partido.",
+
+          dataTitle: "Datos y preparación",
+
+          dataText: "Datos de partidos y estadísticas deportivas recopilados y organizados con Python, incluyendo limpieza, estandarización y validación antes de su integración en Power BI.",
+
+          dashboardTitle: "Desarrollo del dashboard",
+
+          dashboardText: "Preparación de datos en Power Query, organización del modelo analítico, desarrollo de medidas DAX y creación de cinco páginas con filtros interactivos y navegación entre vistas.",
+
+          insightsTitle: "Qué se puede analizar",
+
+          insightsText: "El análisis conjunto de indicadores permite comparar el rendimiento como local y visitante, seguir la evolución de la temporada e identificar partidos y períodos con diferencias entre el volumen de remates y los resultados obtenidos.",
+
+          metricsTitle: "Indicadores destacados",
+
+          metric1: "38 partidos analizados",
+          metric2: "17 victorias · 10 empates · 11 derrotas",
+          metric3: "61 puntos en la competición",
+          metric4: "42 goles a favor · 37 en contra",
+          metric5: "Remates e indicadores por partido",
+
+          techTitle: "Tecnologías y contexto",
+
+          image1Caption: "Visión general de la temporada",
+          image2Caption: "Rendimiento colectivo",
+          image3Caption: "Análisis de partidos",
+          image4Caption: "Análisis táctico",
+          image5Caption: "Rendimiento individual",
+
+          image1Alt: "Dashboard 1 — Goiás EC Performance Hub",
+          image2Alt: "Dashboard 2 — Goiás EC Performance Hub",
+          image3Alt: "Dashboard 3 — Goiás EC Performance Hub",
+          image4Alt: "Dashboard 4 — Goiás EC Performance Hub",
+          image5Alt: "Dashboard 5 — Goiás EC Performance Hub",
+
+          otherProjects: "← Ver otros proyectos",
+
+          footer: "Portafolio de Análisis de Datos y Business Intelligence",
+
+          meta: "Goiás EC Performance Hub | Análisis de la campaña del Goiás EC en la Serie B de Brasil de 2025 con Python y Power BI."
+        }
+      };
+
+      const selector = document.getElementById("language-select");
+
+      function applyLanguage(language) {
+        const lang = translations[language] ? language : "pt";
+        const dictionary = translations[lang];
+
+        document.documentElement.lang =
+          lang === "pt" ? "pt-BR" : lang;
+
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+          const key = element.dataset.i18n;
+
+          if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+            element.textContent = dictionary[key];
+          }
+        });
+
+        document.querySelectorAll("[data-alt-key]").forEach(image => {
+          const key = image.dataset.altKey;
+
+          if (dictionary[key]) {
+            image.alt = dictionary[key];
+          }
+        });
+
+        const meta = document.querySelector('meta[name="description"]');
+
+        if (meta) {
+          meta.setAttribute("content", dictionary.meta);
+        }
+
+        selector.value = lang;
+
+        try {
+          localStorage.setItem(STORAGE_KEY, lang);
+        } catch (error) {
+          // A tradução continua funcionando sem armazenamento.
+        }
+      }
+
+      selector.addEventListener("change", event => {
+        applyLanguage(event.target.value);
+      });
+
+      let savedLanguage = "pt";
+
+      try {
+        savedLanguage = localStorage.getItem(STORAGE_KEY) || "pt";
+      } catch (error) {
+        savedLanguage = "pt";
+      }
+
+      applyLanguage(savedLanguage);
+    })();
+  </script>
+
+</body>
+</html>
