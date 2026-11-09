@@ -1,112 +1,475 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#050b19">
-  <meta name="description" content="Portfólio de Pedro Henrique Barbosa: Análise de Dados, Business Intelligence e Engenharia de Dados. Projetos com Python, SQL e Power BI.">
+
   <title>Pedro Henrique Barbosa | Portfólio de Dados</title>
+
+  <meta name="description" content="Portfólio de Pedro Henrique Barbosa. Projetos de Análise de Dados, Business Intelligence, Python, SQL, PostgreSQL e Power BI.">
+  <meta name="theme-color" content="#0B1120">
+
   <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    /* Ajustes complementares */
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 22px;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+
+    .project-links .textlink {
+      margin-top: 0;
+    }
+
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #cbd5e1;
+      font-size: 13px;
+      font-weight: 650;
+      transition: color .2s;
+    }
+
+    .github-link:hover {
+      color: #38bdf8;
+    }
+
+    .contact-icon {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+
+    .contact .btn,
+    .hero .btn {
+      gap: 9px;
+    }
+
+    /* Seletor de idiomas */
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 12px;
+    }
+
+    .language-switcher select {
+      background: #142238;
+      color: #e2e8f0;
+      border: 1px solid #38506b;
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .language-switcher select:hover {
+      border-color: #38bdf8;
+    }
+
+    .language-switcher select:focus-visible {
+      outline: 2px solid #38bdf8;
+      outline-offset: 3px;
+    }
+
+    /* Projeto principal */
+    .featured-projects .project-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      column-gap: 30px;
+      align-content: start;
+    }
+
+    .project-featured .project-image {
+      grid-column: 1;
+      grid-row: 1 / span 5;
+      align-self: stretch;
+    }
+
+    .project-featured .project-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 270px;
+      aspect-ratio: auto;
+      object-fit: cover;
+    }
+
+    .project-featured .eyebrow {
+      margin-top: 8px;
+    }
+
+    /* Outros projetos */
+    .other-heading {
+      margin-top: 76px;
+    }
+
+    .other-heading h2 {
+      font-size: clamp(28px, 3vw, 38px);
+    }
+
+    .other-projects .project h3 {
+      font-size: clamp(20px, 2vw, 24px);
+    }
+
+    /* Responsividade */
+    @media (max-width: 800px) {
+      .featured-projects .project-featured {
+        display: flex;
+      }
+
+      .project-featured .project-image img {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        padding: 12px 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav {
+        justify-content: space-between;
+      }
+
+      .navlinks {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .language-switcher {
+        margin-left: auto;
+      }
+
+      .other-heading {
+        margin-top: 55px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="ambient ambient-one" aria-hidden="true"></div>
-  <div class="ambient ambient-two" aria-hidden="true"></div>
-  <aside class="sidebar" aria-label="Acesso rápido">
-    <a class="side-logo" href="#inicio" aria-label="Início"><span>&lt;/&gt;</span></a>
-    <div class="side-nav">
-      <a href="#inicio" class="side-link active" aria-label="Início" title="Início">⌂</a>
-      <a href="#sobre" class="side-link" aria-label="Sobre" title="Sobre">◫</a>
-      <a href="#tecnologias" class="side-link" aria-label="Tecnologias" title="Tecnologias">▤</a>
-      <a href="#projetos" class="side-link" aria-label="Projetos" title="Projetos">◇</a>
-      <a href="#contato" class="side-link" aria-label="Contato" title="Contato">♙</a>
-    </div>
-    <div class="side-social">
-      <a href="https://github.com/phfbr" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
-      <a href="https://www.linkedin.com/in/phfbr/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
-    </div>
-  </aside>
-  <div class="page-shell">
-    <header class="topbar glass">
-      <a href="#inicio" class="top-brand"><strong>Pedro Henrique Barbosa</strong><small data-i18n="footerText">Portfólio de Dados e Business Intelligence</small></a>
-      <nav class="top-nav" aria-label="Navegação principal">
-        <a href="#inicio" class="active" data-i18n="navHome">Início</a>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="navwrap">
+    <div class="container nav">
+
+      <a class="brand" href="index.html">
+        Pedro Henrique Barbosa
+      </a>
+
+      <nav class="navlinks" aria-label="Navegação principal">
         <a href="#sobre" data-i18n="navAbout">Sobre</a>
         <a href="#formacao" data-i18n="navEducation">Formação</a>
         <a href="#projetos" data-i18n="navProjects">Projetos</a>
         <a href="#contato" data-i18n="navContact">Contato</a>
       </nav>
-      <div class="top-actions">
-        <label class="language-picker" aria-label="Idioma">◎
-          <select id="language-select" aria-label="Selecionar idioma"><option value="pt">PT</option><option value="en">EN</option><option value="es">ES</option></select>
+
+      <div class="language-switcher">
+        <label for="language-select" aria-label="Idioma">
+          <span aria-hidden="true">🌐</span>
         </label>
-        <a class="btn btn-primary top-contact" href="#contato" data-i18n="contactButton">Fale comigo ↗</a>
+
+        <select id="language-select" aria-label="Selecionar idioma">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
       </div>
-    </header>
-    <main id="inicio">
-      <section class="hero">
-        <div class="hero-copy">
-          <div class="hero-kicker"><span class="live-dot"></span> DATA ANALYTICS <span>•</span> BUSINESS INTELLIGENCE <span>•</span> DATA ENGINEERING</div>
-          <h1>Pedro Henrique <span>Barbosa<span class="period">.</span></span></h1>
-          <p class="hero-description" data-i18n="heroDescription">Analista de Dados especializado em transformar informações em indicadores, dashboards e soluções analíticas. Atuo com SQL, Python e Business Intelligence, desenvolvendo projetos que conectam tecnologia, análise e tomada de decisão.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projetos"><span class="mini-bars">▂▅▇</span> <span data-i18n="viewProjects">Ver projetos</span> <span aria-hidden="true">↗</span></a>
-            <a class="btn btn-outline" href="https://github.com/phfbr" target="_blank" rel="noopener noreferrer">◉ GitHub</a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="hero">
+      <div class="container hero-inner">
+
+        <div>
+          <div class="eyebrow">
+            DATA ANALYTICS · BUSINESS INTELLIGENCE
+          </div>
+
+          <h1>
+            Pedro Henrique<br>
+            <em>Barbosa.</em>
+          </h1>
+
+          <p class="lead" data-i18n="heroDescription">
+            Analista de Dados especializado em transformar
+            informações em indicadores, dashboards e soluções
+            analíticas. Atuo com SQL, Python e Business
+            Intelligence, desenvolvendo projetos que conectam
+            tecnologia, análise e tomada de decisão.
+          </p>
+
+          <div class="buttons">
+
+            <a class="btn primary" href="#projetos" data-i18n="viewProjects">
+              Ver projetos
+            </a>
+
+            <a
+              class="btn"
+              href="https://www.linkedin.com/in/phfbr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              class="btn"
+              href="https://wa.me/5562992082546"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-grid" aria-hidden="true"></div>
-          <div class="chart-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <svg class="hero-chart" viewBox="0 0 580 260" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1472e7"/><stop offset="1" stop-color="#70b5ff"/></linearGradient></defs><path d="M0 220 C70 212 90 238 150 194 S240 180 292 126 S355 145 403 86 S492 96 580 16" fill="none" stroke="url(#lineGrad)" stroke-width="3"/><path d="M0 220 C70 212 90 238 150 194 S240 180 292 126 S355 145 403 86 S492 96 580 16 L580 260 L0 260 Z" fill="#1472e7" opacity=".08"/></svg>
-          <div class="portrait-glow" aria-hidden="true"></div>
-          <img class="hero-photo" src="assets/foto-perfil-pedro.jpg" alt="Retrato profissional de Pedro Henrique Barbosa" fetchpriority="high">
-          <div class="availability glass"><span class="live-dot"></span><span data-i18n="availability">Aberto a conexões e oportunidades</span></div>
+
+        <div class="portrait">
+          <img
+            class="profile-photo"
+            src="assets/foto-perfil-pedro.jpg"
+            alt="Foto profissional de Pedro Henrique Barbosa"
+            width="260"
+            height="260"
+          >
         </div>
-      </section>
 
-      <section class="expertise-grid" aria-label="Áreas de atuação">
-        <article class="glass expertise-card"><span class="expertise-icon">▥</span><div><h3 data-i18n="expertiseData">Análise de Dados</h3><p data-i18n="expertiseDataDesc">Exploração, tratamento e insights de negócio</p></div></article>
-        <article class="glass expertise-card"><span class="expertise-icon">◈</span><div><h3>Business Intelligence</h3><p data-i18n="expertiseBIDesc">Dashboards, indicadores e performance</p></div></article>
-        <article class="glass expertise-card"><span class="expertise-icon">▤</span><div><h3 data-i18n="expertiseEng">Engenharia de Dados</h3><p data-i18n="expertiseEngDesc">ETL, modelagem e estruturação de dados</p></div></article>
-        <article class="glass expertise-card"><span class="expertise-icon">✧</span><div><h3 data-i18n="expertiseAI">IA Generativa</h3><p data-i18n="expertiseAIDesc">Automação e produtividade aplicada a dados</p></div></article>
-      </section>
+      </div>
+    </section>
 
-      <section class="about-grid" id="sobre">
-        <article class="glass about-card">
-          <div class="section-title"><span class="slash">/</span><h2 data-i18n="aboutTitle">Sobre mim</h2></div>
-          <div class="about-content">
-            <div><p data-i18n="about1">Sou um profissional especializado em dados, formado em Análise e Desenvolvimento de Sistemas, com experiência em transformar dados em informações estratégicas para apoiar decisões de negócio.</p><p data-i18n="about2">Atuo em diferentes etapas do processo analítico, desde a extração, limpeza e modelagem de dados até o desenvolvimento de indicadores, relatórios e dashboards interativos, utilizando SQL, Python, Power BI, DAX e ferramentas de integração e transformação de dados.</p><a href="#formacao" class="btn btn-outline about-link" data-i18n="educationTitle">Formação acadêmica</a></div>
-            <div class="about-facts" id="formacao"><div><span>⌖</span><p>Goiânia, GO — Brasil</p></div><div><span>◇</span><p data-i18n="degree">Análise e Desenvolvimento de Sistemas</p></div><div><span>▣</span><p data-i18n="expertiseData">Análise de Dados</p></div><div><span>▥</span><p>Dados, BI & Data Engineering</p></div></div>
+    <!-- SOBRE MIM -->
+    <section class="section" id="sobre">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow" data-i18n="aboutEyebrow">
+            QUEM SOU
           </div>
-        </article>
-        <article class="glass tech-card" id="tecnologias">
-          <h2 data-i18n="techTitle">Principais tecnologias</h2>
-          <div class="tech-grid">
-            <div class="tech-tile"><span class="tech-symbol powerbi">▥</span><span>Power BI</span></div>
-            <div class="tech-tile"><span class="tech-symbol python">Py</span><span>Python</span></div>
-            <div class="tech-tile"><span class="tech-symbol sql">▤</span><span>SQL</span></div>
-            <div class="tech-tile"><span class="tech-symbol postgres">PG</span><span>PostgreSQL</span></div>
-            <div class="tech-tile"><span class="tech-symbol bigquery">◆</span><span>BigQuery</span></div>
-            <div class="tech-tile"><span class="tech-symbol excel">X</span><span>Excel</span></div>
+
+          <h2 data-i18n="aboutTitle">Sobre mim</h2>
+        </div>
+
+        <div class="about">
+
+          <div>
+            <p data-i18n="about1">
+              Sou um profissional especializado em dados,
+              formado em Análise e Desenvolvimento de Sistemas,
+              com experiência em transformar dados em
+              informações estratégicas para apoiar decisões
+              de negócio.
+            </p>
+
+            <p data-i18n="about2">
+              Atuo em diferentes etapas do processo analítico,
+              desde a extração, limpeza e modelagem de dados
+              até o desenvolvimento de indicadores, relatórios
+              e dashboards interativos, utilizando SQL, Python,
+              Power BI, DAX e ferramentas de integração e
+              transformação de dados.
+            </p>
+
+            <p data-i18n="about3">
+              Meu trabalho é orientado à qualidade dos dados,
+              à clareza das análises e à construção de soluções
+              que facilitem a interpretação de indicadores,
+              a identificação de oportunidades e a tomada
+              de decisões.
+            </p>
+
+            <div class="education" id="formacao">
+
+              <div class="eyebrow" data-i18n="educationEyebrow">
+                EDUCAÇÃO
+              </div>
+
+              <h3 class="subhead" data-i18n="educationTitle">
+                Formação acadêmica
+              </h3>
+
+              <strong data-i18n="degree">
+                Análise e Desenvolvimento de Sistemas
+              </strong>
+
+              <span data-i18n="degreeStatus">
+                Ensino superior completo
+              </span>
+
+            </div>
           </div>
-        </article>
-      </section>
 
-      <section class="projects-section" id="projetos">
-        <div class="section-heading"><div class="section-title"><span class="slash">/</span><h2 data-i18n="featuredTitle">Projetos em destaque</h2></div><a href="#other-projects" class="view-all" data-i18n="allProjects">Ver todos os projetos →</a></div>
-        <div id="featured-grid" class="featured-grid"></div>
-        <div class="section-heading more-heading" id="other-projects"><div class="section-title"><span class="slash">/</span><h2 data-i18n="otherTitle">Outros projetos</h2></div></div>
-        <div id="other-grid" class="other-grid"></div>
-      </section>
+          <div>
+            <h3 class="subhead" data-i18n="skillsTitle">
+              Competências técnicas
+            </h3>
 
-      <section class="contact-section glass" id="contato">
-        <div><span class="overline" data-i18n="contactEyebrow">CONTATO</span><h2 data-i18n="contactTitle">Vamos conversar?</h2><p data-i18n="contactDescription">Aberto a conexões profissionais, troca de conhecimentos e oportunidades em Análise de Dados e Business Intelligence.</p></div>
-        <div class="contact-actions"><a class="btn btn-primary" href="https://wa.me/5562992082546?text=Ol%C3%A1%2C%20Pedro%21%20Vi%20seu%20portf%C3%B3lio%20de%20dados." target="_blank" rel="noopener noreferrer" data-i18n="contactWhatsApp">Chamar no WhatsApp</a><a class="btn btn-outline" href="https://www.linkedin.com/in/phfbr/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn btn-outline" href="https://github.com/phfbr" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-      </section>
-    </main>
-    <footer class="footer"><span>© 2026 Pedro Henrique Barbosa</span><span data-i18n="footerText">Portfólio de Dados e Business Intelligence</span></footer>
-  </div>
+            <div class="skill-list">
+              <div class="skill">Power BI &amp; DAX</div>
+              <div class="skill">SQL &amp; BigQuery</div>
+              <div class="skill">Python</div>
+              <div class="skill">Excel &amp; Power Query</div>
+              <div class="skill">Looker Studio</div>
+
+              <div class="skill" data-i18n="skillCRM">
+                CRM &amp; automação
+              </div>
+
+              <div class="skill" data-i18n="skillETL">
+                ETL &amp; modelagem de dados
+              </div>
+
+              <div class="skill" data-i18n="skillAI">
+                IA generativa aplicada a dados
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section class="section alt" id="projetos">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow" data-i18n="portfolioEyebrow">
+            PORTFÓLIO
+          </div>
+
+          <h2 data-i18n="featuredTitle">
+            Projetos em destaque
+          </h2>
+
+          <p data-i18n="featuredDescription">
+            Projetos de Análise de Dados e Business Intelligence
+            desenvolvidos em diferentes contextos. Explore os
+            dashboards, as metodologias e as tecnologias
+            utilizadas em cada trabalho.
+          </p>
+        </div>
+
+        <!-- Projetos em destaque -->
+        <div
+          class="projects featured-projects"
+          id="featured-grid"
+        ></div>
+
+        <div class="section-heading other-heading">
+          <div class="eyebrow" data-i18n="otherEyebrow">
+            MAIS PROJETOS
+          </div>
+
+          <h2 data-i18n="otherTitle">
+            Outros projetos
+          </h2>
+
+          <p data-i18n="otherDescription">
+            Explore outras aplicações de Business Intelligence
+            e análise de dados.
+          </p>
+        </div>
+
+        <!-- Demais projetos -->
+        <div
+          class="projects other-projects"
+          id="other-grid"
+        ></div>
+
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contact" id="contato">
+      <div class="container">
+
+        <div class="eyebrow" data-i18n="contactEyebrow">
+          CONTATO
+        </div>
+
+        <h2 data-i18n="contactTitle">
+          Vamos conversar?
+        </h2>
+
+        <p data-i18n="contactDescription">
+          Aberto a conexões profissionais, troca de
+          conhecimentos e oportunidades em Análise de
+          Dados e Business Intelligence.
+        </p>
+
+        <div class="buttons">
+
+          <a
+            class="btn primary"
+            href="https://wa.me/5562992082546?text=Ol%C3%A1%2C%20Pedro%21%20Vi%20seu%20portf%C3%B3lio%20de%20dados."
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="contactWhatsApp"
+          >
+            Chamar no WhatsApp
+          </a>
+
+          <a
+            class="btn"
+            href="https://www.linkedin.com/in/phfbr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            class="btn"
+            href="https://github.com/phfbr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 Pedro Henrique Barbosa ·
+      <span data-i18n="footerText">
+        Portfólio de Dados e Business Intelligence
+      </span>
+    </div>
+  </footer>
+
   <script>
     "use strict";
+
+    /* =========================================
+       PROJETOS — CONTEÚDO MULTILÍNGUE
+       ========================================= */
+
     const projects = [
 
       /* PROJETO PRINCIPAL */
@@ -291,6 +654,10 @@
 
     ];
 
+    /* =========================================
+       TRADUÇÕES DA INTERFACE
+       ========================================= */
+
     const translations = {
       pt: {
         navAbout: "Sobre",
@@ -397,81 +764,163 @@
         footerText: "Portafolio de Análisis de Datos e Inteligencia de Negocios"
       }
     };
-    const extras = {
-      pt: {navHome:"Início",contactButton:"Fale comigo ↗",availability:"Aberto a conexões e oportunidades",expertiseData:"Análise de Dados",expertiseDataDesc:"Exploração, tratamento e insights de negócio",expertiseBIDesc:"Dashboards, indicadores e performance",expertiseEng:"Engenharia de Dados",expertiseEngDesc:"ETL, modelagem e estruturação de dados",expertiseAI:"IA Generativa",expertiseAIDesc:"Automação e produtividade aplicada a dados",techTitle:"Principais tecnologias",allProjects:"Ver todos os projetos →",featuredBadge:"Projeto em destaque",viewCase:"Ver projeto ↗"},
-      en: {navHome:"Home",contactButton:"Contact me ↗",availability:"Open to connections and opportunities",expertiseData:"Data Analytics",expertiseDataDesc:"Exploration, preparation and business insights",expertiseBIDesc:"Dashboards, KPIs and performance",expertiseEng:"Data Engineering",expertiseEngDesc:"ETL, modeling and data structures",expertiseAI:"Generative AI",expertiseAIDesc:"Automation and productivity for data",techTitle:"Core technologies",allProjects:"View all projects →",featuredBadge:"Featured project",viewCase:"View project ↗"},
-      es: {navHome:"Inicio",contactButton:"Contáctame ↗",availability:"Abierto a conexiones y oportunidades",expertiseData:"Análisis de Datos",expertiseDataDesc:"Exploración, preparación e insights de negocio",expertiseBIDesc:"Dashboards, indicadores y rendimiento",expertiseEng:"Ingeniería de Datos",expertiseEngDesc:"ETL, modelado y estructura de datos",expertiseAI:"IA Generativa",expertiseAIDesc:"Automatización y productividad aplicada a datos",techTitle:"Tecnologías principales",allProjects:"Ver todos los proyectos →",featuredBadge:"Proyecto destacado",viewCase:"Ver proyecto ↗"}
-    };
-    Object.keys(extras).forEach(lang => Object.assign(translations[lang], extras[lang]));
-    const featuredGrid = document.getElementById("featured-grid");
-    const otherGrid = document.getElementById("other-grid");
-    function make(tag, className, content) {
-      const el = document.createElement(tag);
-      if (className) el.className = className;
-      if (content !== undefined) el.textContent = content;
-      return el;
-    }
+
+    /* =========================================
+       RENDERIZAÇÃO DOS PROJETOS
+       ========================================= */
+
     function renderProjects(lang) {
+      const featuredGrid = document.getElementById("featured-grid");
+      const otherGrid = document.getElementById("other-grid");
+
       featuredGrid.replaceChildren();
       otherGrid.replaceChildren();
+
       projects.forEach(project => {
-        const title = typeof project.title === "string" ? project.title : project.title[lang];
-        const card = make("article", project.main ? "project-feature glass" : "project-card glass");
-        const preview = make("a", "project-preview");
-        preview.href = project.page;
+        const title = typeof project.title === "string"
+          ? project.title
+          : project.title[lang];
+
+        const card = document.createElement("article");
+
+        card.className = project.main
+          ? "project project-featured"
+          : "project";
+
+        const imageLink = document.createElement("a");
+        imageLink.className = "project-image";
+        imageLink.href = project.page;
+
         const img = document.createElement("img");
-        img.src = project.image; img.alt = title; img.loading = "lazy"; img.decoding = "async";
-        img.addEventListener("error", () => { preview.classList.add("image-unavailable"); img.hidden = true; }, {once:true});
-        preview.appendChild(img);
-        const info = make("div", "project-info");
-        if (project.main) info.appendChild(make("span", "featured-badge", "✦ " + translations[lang].featuredBadge));
-        info.appendChild(make("div", "project-category", project.category));
-        info.appendChild(make("h3", "", title));
-        info.appendChild(make("p", "project-description", project.description[lang]));
-        const chips = make("div", "project-chips");
-        project.tech.split(" · ").forEach(tech => chips.appendChild(make("span", "", tech)));
-        info.appendChild(chips);
-        const links = make("div", "project-actions");
-        const detail = make("a", "btn btn-primary", translations[lang].viewCase);
-        detail.href = project.page; links.appendChild(detail);
+        img.src = project.image;
+        img.alt = title;
+        img.loading = "lazy";
+
+        imageLink.appendChild(img);
+
+        const category = document.createElement("div");
+        category.className = "eyebrow";
+        category.textContent = project.category;
+
+        const heading = document.createElement("h3");
+        heading.textContent = title;
+
+        const description = document.createElement("p");
+        description.textContent = project.description[lang];
+
+        const tech = document.createElement("div");
+        tech.className = "project-tech";
+        tech.textContent = project.tech;
+
+        const links = document.createElement("div");
+        links.className = "project-links";
+
+        const detailLink = document.createElement("a");
+        detailLink.className = "textlink";
+        detailLink.href = project.page;
+        detailLink.textContent = translations[lang].projectLink;
+
+        links.appendChild(detailLink);
+
         if (project.github) {
-          const github = make("a", "btn btn-outline", "GitHub ↗");
-          github.href = project.github; github.target = "_blank"; github.rel = "noopener noreferrer";
-          links.appendChild(github);
+          const githubLink = document.createElement("a");
+          githubLink.className = "github-link";
+          githubLink.href = project.github;
+          githubLink.target = "_blank";
+          githubLink.rel = "noopener noreferrer";
+          githubLink.textContent = translations[lang].githubLink;
+
+          links.appendChild(githubLink);
         }
-        info.appendChild(links);
-        card.append(preview, info);
-        if (project.main) featuredGrid.appendChild(card);
-        else otherGrid.appendChild(card);
+
+        card.append(
+          imageLink,
+          category,
+          heading,
+          description,
+          tech,
+          links
+        );
+
+        if (project.featured) {
+          featuredGrid.appendChild(card);
+        } else {
+          otherGrid.appendChild(card);
+        }
       });
     }
+
+    /* =========================================
+       CONTROLE DE IDIOMAS
+       ========================================= */
+
     function changeLanguage(lang) {
       const selected = translations[lang] ? lang : "pt";
-      document.documentElement.lang = selected === "pt" ? "pt-BR" : selected;
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const translation = translations[selected][el.dataset.i18n];
-        if (translation !== undefined) el.textContent = translation;
+
+      document.documentElement.lang =
+        selected === "pt" ? "pt-BR" : selected;
+
+      document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.dataset.i18n;
+        const translation = translations[selected][key];
+
+        if (translation !== undefined) {
+          element.textContent = translation;
+        }
       });
-      const titles = {pt:"Pedro Henrique Barbosa | Portfólio de Dados",en:"Pedro Henrique Barbosa | Data Portfolio",es:"Pedro Henrique Barbosa | Portafolio de Datos"};
+
+      const titles = {
+        pt: "Pedro Henrique Barbosa | Portfólio de Dados",
+        en: "Pedro Henrique Barbosa | Data Portfolio",
+        es: "Pedro Henrique Barbosa | Portafolio de Datos"
+      };
+
+      const descriptions = {
+        pt: "Portfólio de Pedro Henrique Barbosa. Projetos de Análise de Dados, Business Intelligence, Python, SQL, PostgreSQL e Power BI.",
+        en: "Pedro Henrique Barbosa's Data Analytics and Business Intelligence portfolio. Projects using Python, SQL, PostgreSQL and Power BI.",
+        es: "Portafolio de análisis de datos e inteligencia de negocios de Pedro Henrique Barbosa. Proyectos con Python, SQL, PostgreSQL y Power BI."
+      };
+
       document.title = titles[selected];
+
+      const metaDescription = document.querySelector(
+        'meta[name="description"]'
+      );
+
+      if (metaDescription) {
+        metaDescription.setAttribute(
+          "content",
+          descriptions[selected]
+        );
+      }
+
       document.getElementById("language-select").value = selected;
+
       renderProjects(selected);
-      try { localStorage.setItem("portfolio-language", selected); } catch (error) {}
+
+      try {
+        localStorage.setItem("portfolio-language", selected);
+      } catch (error) {
+        // Mantém a tradução ativa sem armazenamento.
+      }
     }
-    document.getElementById("language-select").addEventListener("change", e => changeLanguage(e.target.value));
+
+    document.getElementById("language-select")
+      .addEventListener("change", event => {
+        changeLanguage(event.target.value);
+      });
+
     let initialLanguage = "pt";
-    try { initialLanguage = localStorage.getItem("portfolio-language") || "pt"; } catch (error) {}
-    changeLanguage(initialLanguage);
-    const sections = [...document.querySelectorAll("main section[id]")];
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          document.querySelectorAll(".side-link,.top-nav a").forEach(link => link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id));
-        });
-      }, {rootMargin:"-20% 0px -65% 0px"});
-      sections.forEach(section => observer.observe(section));
+
+    try {
+      initialLanguage =
+        localStorage.getItem("portfolio-language") || "pt";
+    } catch (error) {
+      initialLanguage = "pt";
     }
+
+    changeLanguage(initialLanguage);
   </script>
+
 </body>
 </html>
