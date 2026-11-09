@@ -1,0 +1,930 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B1120">
+  <meta name="description" content="Inteligência de Receita | Análise Comercial e Financeira. Projeto com dados públicos da Olist, Python, PostgreSQL, modelagem dimensional e Power BI.">
+
+  <title>Inteligência de Receita | Pedro Henrique Barbosa</title>
+
+  <link href="../assets/style.css" rel="stylesheet">
+
+  <style>
+    /* ESTILOS EXCLUSIVOS DO INTELIGÊNCIA DE RECEITA */
+
+    .revenue-highlights {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin: 26px 0;
+    }
+
+    .revenue-highlight {
+      padding: 22px 16px;
+      border: 1px solid rgba(56, 189, 248, .18);
+      border-radius: 12px;
+      background: rgba(15, 23, 42, .5);
+    }
+
+    .revenue-highlight strong {
+      display: block;
+      color: #38bdf8;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .revenue-highlight span {
+      display: block;
+      color: #cbd5e1;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .revenue-note {
+      margin-top: 22px;
+      color: #94a3b8;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .revenue-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin: 28px 0;
+    }
+
+    .revenue-gallery figure {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .revenue-gallery a {
+      display: block;
+      text-decoration: none;
+    }
+
+    .revenue-gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid rgba(56, 189, 248, .22);
+    }
+
+    .revenue-gallery a:hover img {
+      border-color: #38bdf8;
+    }
+
+    .revenue-gallery figcaption {
+      padding: 14px 2px 0;
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .revenue-gallery figcaption strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #f8fafc;
+      font-size: 16px;
+    }
+
+    .revenue-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .revenue-pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 26px 0;
+    }
+
+    .pipeline-step {
+      padding: 20px 12px;
+      text-align: center;
+      border: 1px solid rgba(56, 189, 248, .2);
+      border-radius: 12px;
+      background: rgba(15, 23, 42, .5);
+    }
+
+    .pipeline-step strong {
+      display: block;
+      color: #38bdf8;
+      font-size: 16px;
+      margin-bottom: 7px;
+    }
+
+    .pipeline-step span {
+      display: block;
+      color: #cbd5e1;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 760px) {
+      .revenue-highlights,
+      .revenue-pipeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .revenue-highlights {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="navwrap">
+    <div class="container nav">
+
+      <a class="brand" href="../index.html">
+        Pedro Henrique Barbosa
+      </a>
+
+      <nav class="navlinks" aria-label="Navegação principal">
+        <a href="../index.html#sobre" data-i18n="navAbout">Sobre</a>
+        <a href="../index.html#formacao" data-i18n="navEducation">Formação</a>
+        <a href="../index.html#projetos" data-i18n="navProjects">Projetos</a>
+        <a href="../index.html#contato" data-i18n="navContact">Contato</a>
+      </nav>
+
+      <div class="language-switcher">
+        <label for="language-select" aria-label="Selecionar idioma">🌐</label>
+        <select id="language-select" aria-label="Selecionar idioma">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="detail-head">
+      <div class="container">
+
+        <a class="back" href="../index.html#projetos" data-i18n="back">
+          ← Voltar aos projetos
+        </a>
+
+        <div class="eyebrow">
+          DATA ENGINEERING · BUSINESS INTELLIGENCE
+        </div>
+
+        <h1>Inteligência de Receita | Análise Comercial e Financeira</h1>
+
+        <h2 data-i18n="subtitle">
+          Da engenharia de dados à inteligência comercial e financeira
+        </h2>
+
+        <p data-i18n="intro1">
+          Projeto de engenharia e análise de dados desenvolvido com Python,
+          PostgreSQL, SQL e Power BI, utilizando dados públicos do
+          Brazilian E-Commerce Public Dataset by Olist.
+        </p>
+
+        <p data-i18n="intro2">
+          A solução organiza dados transacionais em uma arquitetura
+          Bronze, Silver e Gold, aplica modelagem dimensional em esquema
+          estrela e disponibiliza análises de pedidos, produtos, clientes,
+          recompra, frete e pagamentos registrados.
+        </p>
+
+        <div class="eyebrow">
+          Python · PostgreSQL · SQL · Star Schema · ETL · Power BI · DAX
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ANÁLISE TÉCNICA -->
+    <section class="section project-analysis">
+      <div class="container">
+
+        <div class="eyebrow" data-i18n="analysisEyebrow">
+          POR DENTRO DO PROJETO
+        </div>
+
+        <h2 class="analysis-title" data-i18n="analysisTitle">
+          Uma solução analítica de ponta a ponta
+        </h2>
+
+        <p class="analysis-intro" data-i18n="analysisIntro">
+          Estruturação dos dados desde a origem até a camada analítica,
+          com regras de negócio documentadas, testes de qualidade e
+          indicadores desenvolvidos para apoiar análises comerciais
+          e financeiras.
+        </p>
+
+        <div class="analysis-grid">
+
+          <article class="analysis-item">
+            <h3 data-i18n="objectiveTitle">Objetivo do projeto</h3>
+            <p data-i18n="objectiveText">
+              Construir uma base analítica consistente para investigar
+              o comportamento das vendas, a composição dos pedidos,
+              o perfil dos clientes, a recompra e os pagamentos
+              registrados no conjunto de dados da Olist.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="sourceTitle">Fonte de dados</h3>
+            <p data-i18n="sourceText">
+              Utilização de dados públicos de e-commerce da Olist,
+              contendo informações de pedidos, itens, clientes,
+              produtos, vendedores, pagamentos e entregas.
+              Os registros representam um conjunto histórico
+              de operações disponibilizado para análise.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="engineeringTitle">Engenharia de dados</h3>
+            <p data-i18n="engineeringText">
+              Desenvolvimento de um fluxo de processamento em Python
+              e PostgreSQL, organizado em camadas Bronze, Silver
+              e Gold. O processo contempla ingestão, padronização,
+              tratamento, validações e disponibilização de
+              estruturas adequadas ao consumo analítico.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="modelTitle">Modelagem dimensional</h3>
+            <p data-i18n="modelText">
+              Estruturação da camada Gold segundo princípios de
+              modelagem dimensional, com fatos em diferentes
+              granularidades — pedido, item e pagamento —,
+              dimensões relacionadas e integridade referencial.
+              O modelo foi preparado para análises no Power BI.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="qualityTitle">Qualidade e validação</h3>
+            <p data-i18n="qualityText">
+              Aplicação de verificações de integridade, consistência
+              de valores, duplicidades e reconciliação entre camadas.
+              O projeto documenta as regras de negócio e utiliza
+              testes automatizados e consultas SQL para validar
+              as estruturas analíticas.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="dashboardTitle">Business Intelligence</h3>
+            <p data-i18n="dashboardText">
+              Desenvolvimento de quatro páginas no Power BI:
+              Visão Executiva, Desempenho Comercial,
+              Clientes e Recompra e Análise Financeira.
+              Os painéis reúnem indicadores, comparações,
+              distribuições e análises temporais.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- ARQUITETURA -->
+        <h3 class="analysis-subtitle" data-i18n="pipelineTitle">
+          Arquitetura de dados
+        </h3>
+
+        <p data-i18n="pipelineIntro">
+          O fluxo foi organizado para separar os dados de origem,
+          o tratamento, a modelagem analítica e a visualização.
+        </p>
+
+        <div class="revenue-pipeline">
+
+          <div class="pipeline-step">
+            <strong>BRONZE</strong>
+            <span data-i18n="bronzeText">
+              Ingestão e preservação dos dados de origem
+            </span>
+          </div>
+
+          <div class="pipeline-step">
+            <strong>SILVER</strong>
+            <span data-i18n="silverText">
+              Padronização, tratamento e validação
+            </span>
+          </div>
+
+          <div class="pipeline-step">
+            <strong>GOLD</strong>
+            <span data-i18n="goldText">
+              Fatos, dimensões e regras analíticas
+            </span>
+          </div>
+
+          <div class="pipeline-step">
+            <strong>POWER BI</strong>
+            <span data-i18n="powerbiText">
+              Indicadores, medidas DAX e dashboards
+            </span>
+          </div>
+
+        </div>
+
+        <!-- INDICADORES TÉCNICOS -->
+        <h3 class="analysis-subtitle" data-i18n="metricsTitle">
+          Indicadores do projeto
+        </h3>
+
+        <p data-i18n="metricsIntro">
+          Os números abaixo descrevem o conjunto de dados
+          processado e as verificações executadas na solução.
+        </p>
+
+        <div class="revenue-highlights">
+
+          <div class="revenue-highlight">
+            <strong>99.441</strong>
+            <span data-i18n="metric1">
+              Pedidos registrados na base
+            </span>
+          </div>
+
+          <div class="revenue-highlight">
+            <strong>112.650</strong>
+            <span data-i18n="metric2">
+              Itens de pedidos
+            </span>
+          </div>
+
+          <div class="revenue-highlight">
+            <strong>103.886</strong>
+            <span data-i18n="metric3">
+              Registros de pagamentos
+            </span>
+          </div>
+
+          <div class="revenue-highlight">
+            <strong>130</strong>
+            <span data-i18n="metric4">
+              Verificações analíticas aprovadas
+            </span>
+          </div>
+
+        </div>
+
+        <p class="revenue-note" data-i18n="metricsNote">
+          As quantidades representam registros do conjunto de dados
+          utilizado, não resultados operacionais de uma empresa
+          em produção. As verificações aprovadas correspondem
+          aos escopos testados e não eliminam todas as possíveis
+          limitações da base.
+        </p>
+
+        <!-- REGRAS DE NEGÓCIO -->
+        <h3 class="analysis-subtitle" data-i18n="rulesTitle">
+          Modelagem e regras de negócio
+        </h3>
+
+        <div class="analysis-grid">
+
+          <article class="analysis-item">
+            <h3 data-i18n="grainTitle">Granularidade das tabelas fato</h3>
+            <p data-i18n="grainText">
+              As análises distinguem o nível de pedido,
+              item de pedido e pagamento. Essa separação
+              evita multiplicações indevidas de valores
+              em relacionamentos entre tabelas transacionais.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="customerTitle">Identificação de clientes</h3>
+            <p data-i18n="customerText">
+              A modelagem diferencia os identificadores
+              transacionais dos clientes de sua identidade
+              consolidada, permitindo análises de comportamento
+              e recorrência de compras.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="repeatTitle">Regra de recompra</h3>
+            <p data-i18n="repeatText">
+              A classificação de recompra considera clientes
+              com pelo menos dois pedidos entregues em dias
+              civis distintos, conforme a regra documentada
+              no projeto.
+            </p>
+          </article>
+
+          <article class="analysis-item">
+            <h3 data-i18n="financeTitle">Interpretação financeira</h3>
+            <p data-i18n="financeText">
+              Os valores de produtos, frete e pagamentos
+              registrados são tratados como conceitos
+              diferentes. Os pagamentos da base não são
+              apresentados automaticamente como receita
+              contábil reconhecida, lucro ou margem.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- TECNOLOGIAS -->
+        <h3 class="analysis-subtitle" data-i18n="techTitle">
+          Tecnologias utilizadas
+        </h3>
+
+        <div class="tech-tags">
+          <span>Python</span>
+          <span>PostgreSQL</span>
+          <span>SQL</span>
+          <span>Pandas</span>
+          <span>ETL</span>
+          <span>Bronze / Silver / Gold</span>
+          <span>Star Schema</span>
+          <span>Kimball</span>
+          <span>Power BI</span>
+          <span>Power Query</span>
+          <span>DAX</span>
+          <span>Git</span>
+          <span>GitHub</span>
+        </div>
+
+        <p data-i18n="techNote">
+          O repositório reúne os componentes técnicos
+          e a documentação do projeto, incluindo arquitetura,
+          modelagem, regras de negócio e validações.
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/phfbr/inteligencia-de-receita"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="githubText"
+          >
+            Ver código, documentação e arquivos do projeto no GitHub
+          </a>
+        </p>
+
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="section" id="dashboards">
+      <div class="container">
+
+        <div class="eyebrow">
+          POWER BI · DASHBOARDS
+        </div>
+
+        <h2 class="analysis-title" data-i18n="galleryTitle">
+          Explore as análises
+        </h2>
+
+        <p class="analysis-intro" data-i18n="galleryIntro">
+          Quatro páginas desenvolvidas para analisar
+          o desempenho comercial e financeiro,
+          os clientes e a composição das operações
+          registradas na base da Olist.
+        </p>
+
+        <div class="revenue-gallery">
+
+          <!-- DASHBOARD 01 -->
+          <figure>
+            <a
+              href="../assets/inteligencia-receita-01.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/inteligencia-receita-01.png"
+                alt="Inteligência de Receita — Visão Executiva"
+                data-alt-key="gallery1Title"
+                loading="lazy"
+              >
+            </a>
+
+            <figcaption>
+              <strong data-i18n="gallery1Title">
+                01 · Visão Executiva
+              </strong>
+
+              <span data-i18n="gallery1Text">
+                Panorama consolidado dos principais indicadores
+                comerciais e financeiros, com visão geral das
+                operações, evolução temporal e distribuição
+                dos valores registrados.
+              </span>
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 02 -->
+          <figure>
+            <a
+              href="../assets/inteligencia-receita-02.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/inteligencia-receita-02.png"
+                alt="Inteligência de Receita — Desempenho Comercial"
+                data-alt-key="gallery2Title"
+                loading="lazy"
+              >
+            </a>
+
+            <figcaption>
+              <strong data-i18n="gallery2Title">
+                02 · Desempenho Comercial
+              </strong>
+
+              <span data-i18n="gallery2Text">
+                Análise dos pedidos e itens comercializados,
+                permitindo investigar o comportamento das
+                operações e comparar diferentes recortes
+                comerciais.
+              </span>
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 03 -->
+          <figure>
+            <a
+              href="../assets/inteligencia-receita-03.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/inteligencia-receita-03.png"
+                alt="Inteligência de Receita — Clientes e Recompra"
+                data-alt-key="gallery3Title"
+                loading="lazy"
+              >
+            </a>
+
+            <figcaption>
+              <strong data-i18n="gallery3Title">
+                03 · Clientes e Recompra
+              </strong>
+
+              <span data-i18n="gallery3Text">
+                Estudo da base de clientes e da recorrência
+                de compras, considerando as regras de
+                identificação e recompra documentadas
+                no modelo analítico.
+              </span>
+            </figcaption>
+          </figure>
+
+          <!-- DASHBOARD 04 -->
+          <figure>
+            <a
+              href="../assets/inteligencia-receita-04.png"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/inteligencia-receita-04.png"
+                alt="Inteligência de Receita — Análise Financeira"
+                data-alt-key="gallery4Title"
+                loading="lazy"
+              >
+            </a>
+
+            <figcaption>
+              <strong data-i18n="gallery4Title">
+                04 · Análise Financeira
+              </strong>
+
+              <span data-i18n="gallery4Text">
+                Análise dos valores de produtos, frete
+                e pagamentos registrados, respeitando
+                as diferenças entre os conceitos financeiros
+                disponíveis no conjunto de dados.
+              </span>
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <p class="revenue-note" data-i18n="galleryNote">
+          Clique em qualquer imagem para visualizar o
+          dashboard em tamanho maior. As imagens representam
+          páginas do relatório desenvolvido no Power BI.
+        </p>
+
+        <a
+          class="back"
+          href="../index.html#projetos"
+          data-i18n="otherProjects"
+        >
+          ← Ver outros projetos
+        </a>
+
+        <div class="revenue-actions">
+          <a
+            href="https://github.com/phfbr/inteligencia-de-receita"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="repository"
+          >
+            Acessar repositório do projeto no GitHub
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 Pedro Henrique Barbosa ·
+      <span data-i18n="footer">
+        Portfólio de Dados e Business Intelligence
+      </span>
+    </div>
+  </footer>
+
+  <!-- TRADUÇÕES -->
+  <script>
+    (() => {
+      "use strict";
+
+      const STORAGE_KEY = "portfolio-language";
+
+      const translations = {
+        pt: {
+          navAbout: "Sobre",
+          navEducation: "Formação",
+          navProjects: "Projetos",
+          navContact: "Contato",
+          back: "← Voltar aos projetos",
+          subtitle: "Da engenharia de dados à inteligência comercial e financeira",
+          intro1: "Projeto de engenharia e análise de dados desenvolvido com Python, PostgreSQL, SQL e Power BI, utilizando dados públicos do Brazilian E-Commerce Public Dataset by Olist.",
+          intro2: "A solução organiza dados transacionais em uma arquitetura Bronze, Silver e Gold, aplica modelagem dimensional em esquema estrela e disponibiliza análises de pedidos, produtos, clientes, recompra, frete e pagamentos registrados.",
+          analysisEyebrow: "POR DENTRO DO PROJETO",
+          analysisTitle: "Uma solução analítica de ponta a ponta",
+          analysisIntro: "Estruturação dos dados desde a origem até a camada analítica, com regras de negócio documentadas, testes de qualidade e indicadores desenvolvidos para apoiar análises comerciais e financeiras.",
+          objectiveTitle: "Objetivo do projeto",
+          objectiveText: "Construir uma base analítica consistente para investigar o comportamento das vendas, a composição dos pedidos, o perfil dos clientes, a recompra e os pagamentos registrados no conjunto de dados da Olist.",
+          sourceTitle: "Fonte de dados",
+          sourceText: "Utilização de dados públicos de e-commerce da Olist, contendo informações de pedidos, itens, clientes, produtos, vendedores, pagamentos e entregas. Os registros representam um conjunto histórico de operações disponibilizado para análise.",
+          engineeringTitle: "Engenharia de dados",
+          engineeringText: "Desenvolvimento de um fluxo de processamento em Python e PostgreSQL, organizado em camadas Bronze, Silver e Gold. O processo contempla ingestão, padronização, tratamento, validações e disponibilização de estruturas adequadas ao consumo analítico.",
+          modelTitle: "Modelagem dimensional",
+          modelText: "Estruturação da camada Gold segundo princípios de modelagem dimensional, com fatos em diferentes granularidades — pedido, item e pagamento —, dimensões relacionadas e integridade referencial. O modelo foi preparado para análises no Power BI.",
+          qualityTitle: "Qualidade e validação",
+          qualityText: "Aplicação de verificações de integridade, consistência de valores, duplicidades e reconciliação entre camadas. O projeto documenta as regras de negócio e utiliza testes automatizados e consultas SQL para validar as estruturas analíticas.",
+          dashboardTitle: "Business Intelligence",
+          dashboardText: "Desenvolvimento de quatro páginas no Power BI: Visão Executiva, Desempenho Comercial, Clientes e Recompra e Análise Financeira. Os painéis reúnem indicadores, comparações, distribuições e análises temporais.",
+          pipelineTitle: "Arquitetura de dados",
+          pipelineIntro: "O fluxo foi organizado para separar os dados de origem, o tratamento, a modelagem analítica e a visualização.",
+          bronzeText: "Ingestão e preservação dos dados de origem",
+          silverText: "Padronização, tratamento e validação",
+          goldText: "Fatos, dimensões e regras analíticas",
+          powerbiText: "Indicadores, medidas DAX e dashboards",
+          metricsTitle: "Indicadores do projeto",
+          metricsIntro: "Os números abaixo descrevem o conjunto de dados processado e as verificações executadas na solução.",
+          metric1: "Pedidos registrados na base",
+          metric2: "Itens de pedidos",
+          metric3: "Registros de pagamentos",
+          metric4: "Verificações analíticas aprovadas",
+          metricsNote: "As quantidades representam registros do conjunto de dados utilizado, não resultados operacionais de uma empresa em produção. As verificações aprovadas correspondem aos escopos testados e não eliminam todas as possíveis limitações da base.",
+          rulesTitle: "Modelagem e regras de negócio",
+          grainTitle: "Granularidade das tabelas fato",
+          grainText: "As análises distinguem o nível de pedido, item de pedido e pagamento. Essa separação evita multiplicações indevidas de valores em relacionamentos entre tabelas transacionais.",
+          customerTitle: "Identificação de clientes",
+          customerText: "A modelagem diferencia os identificadores transacionais dos clientes de sua identidade consolidada, permitindo análises de comportamento e recorrência de compras.",
+          repeatTitle: "Regra de recompra",
+          repeatText: "A classificação de recompra considera clientes com pelo menos dois pedidos entregues em dias civis distintos, conforme a regra documentada no projeto.",
+          financeTitle: "Interpretação financeira",
+          financeText: "Os valores de produtos, frete e pagamentos registrados são tratados como conceitos diferentes. Os pagamentos da base não são apresentados automaticamente como receita contábil reconhecida, lucro ou margem.",
+          techTitle: "Tecnologias utilizadas",
+          techNote: "O repositório reúne os componentes técnicos e a documentação do projeto, incluindo arquitetura, modelagem, regras de negócio e validações.",
+          githubText: "Ver código, documentação e arquivos do projeto no GitHub",
+          galleryTitle: "Explore as análises",
+          galleryIntro: "Quatro páginas desenvolvidas para analisar o desempenho comercial e financeiro, os clientes e a composição das operações registradas na base da Olist.",
+          gallery1Title: "01 · Visão Executiva",
+          gallery1Text: "Panorama consolidado dos principais indicadores comerciais e financeiros, com visão geral das operações, evolução temporal e distribuição dos valores registrados.",
+          gallery2Title: "02 · Desempenho Comercial",
+          gallery2Text: "Análise dos pedidos e itens comercializados, permitindo investigar o comportamento das operações e comparar diferentes recortes comerciais.",
+          gallery3Title: "03 · Clientes e Recompra",
+          gallery3Text: "Estudo da base de clientes e da recorrência de compras, considerando as regras de identificação e recompra documentadas no modelo analítico.",
+          gallery4Title: "04 · Análise Financeira",
+          gallery4Text: "Análise dos valores de produtos, frete e pagamentos registrados, respeitando as diferenças entre os conceitos financeiros disponíveis no conjunto de dados.",
+          galleryNote: "Clique em qualquer imagem para visualizar o dashboard em tamanho maior. As imagens representam páginas do relatório desenvolvido no Power BI.",
+          otherProjects: "← Ver outros projetos",
+          repository: "Acessar repositório do projeto no GitHub",
+          footer: "Portfólio de Dados e Business Intelligence",
+          meta: "Inteligência de Receita | Análise Comercial e Financeira. Projeto com dados públicos da Olist, Python, PostgreSQL, modelagem dimensional e Power BI."
+        },
+
+        en: {
+          navAbout: "About",
+          navEducation: "Education",
+          navProjects: "Projects",
+          navContact: "Contact",
+          back: "← Back to projects",
+          subtitle: "From data engineering to commercial and financial intelligence",
+          intro1: "A data engineering and analytics project developed with Python, PostgreSQL, SQL and Power BI, using public data from the Brazilian E-Commerce Public Dataset by Olist.",
+          intro2: "The solution organizes transactional data through Bronze, Silver and Gold layers, applies Star Schema dimensional modeling, and provides analyses of orders, products, customers, repeat purchases, shipping and recorded payments.",
+          analysisEyebrow: "BEHIND THE PROJECT",
+          analysisTitle: "An end-to-end analytics solution",
+          analysisIntro: "Data processing from source to analytical layer, with documented business rules, quality tests and metrics designed to support commercial and financial analysis.",
+          objectiveTitle: "Project objectives",
+          objectiveText: "Build a consistent analytical foundation to examine sales behavior, order composition, customer profiles, repeat purchases and recorded payments in the Olist dataset.",
+          sourceTitle: "Data source",
+          sourceText: "Public Olist e-commerce data containing orders, order items, customers, products, sellers, payments and delivery information. The records represent a historical dataset made available for analysis.",
+          engineeringTitle: "Data engineering",
+          engineeringText: "Development of a Python and PostgreSQL processing workflow organized into Bronze, Silver and Gold layers, including ingestion, standardization, transformation, validation and preparation for analytical consumption.",
+          modelTitle: "Dimensional modeling",
+          modelText: "The Gold layer follows dimensional modeling principles, with facts at different grains — order, order item and payment —, related dimensions and referential integrity. The model supports Power BI analytics.",
+          qualityTitle: "Data quality and validation",
+          qualityText: "Integrity, value consistency, duplicate and cross-layer reconciliation checks. The project documents business rules and uses automated tests and SQL queries to validate analytical structures.",
+          dashboardTitle: "Business Intelligence",
+          dashboardText: "Four Power BI pages: Executive Overview, Sales Performance, Customers and Repeat Purchases, and Financial Analysis. The reports include KPIs, comparisons, distributions and time-based analyses.",
+          pipelineTitle: "Data architecture",
+          pipelineIntro: "The workflow separates source data, processing, analytical modeling and visualization.",
+          bronzeText: "Source data ingestion and preservation",
+          silverText: "Standardization, processing and validation",
+          goldText: "Facts, dimensions and analytical rules",
+          powerbiText: "KPIs, DAX measures and dashboards",
+          metricsTitle: "Project indicators",
+          metricsIntro: "These figures describe the processed dataset and the validation checks performed.",
+          metric1: "Orders in the dataset",
+          metric2: "Order items",
+          metric3: "Payment records",
+          metric4: "Passed analytical checks",
+          metricsNote: "The counts refer to records in the analyzed dataset, not live business results. Passed checks cover the tested scope and do not eliminate every potential data limitation.",
+          rulesTitle: "Modeling and business rules",
+          grainTitle: "Fact table grain",
+          grainText: "The model distinguishes order, order item and payment grains. This separation helps prevent unintended value multiplication when relating transactional tables.",
+          customerTitle: "Customer identification",
+          customerText: "The model distinguishes transactional customer identifiers from consolidated customer identities, supporting behavioral and repeat-purchase analysis.",
+          repeatTitle: "Repeat-purchase rule",
+          repeatText: "A repeat customer has at least two delivered orders placed on distinct calendar days, according to the documented business rule.",
+          financeTitle: "Financial interpretation",
+          financeText: "Product values, shipping amounts and recorded payments are treated as distinct concepts. Recorded payments are not automatically interpreted as recognized accounting revenue, profit or margin.",
+          techTitle: "Technologies",
+          techNote: "The repository contains technical components and documentation covering architecture, modeling, business rules and validation.",
+          githubText: "View the project's code, documentation and files on GitHub",
+          galleryTitle: "Explore the analyses",
+          galleryIntro: "Four Power BI pages examining commercial and financial performance, customers and the composition of transactions in the Olist dataset.",
+          gallery1Title: "01 · Executive Overview",
+          gallery1Text: "Consolidated overview of key commercial and financial indicators, transaction activity, time trends and recorded value distributions.",
+          gallery2Title: "02 · Sales Performance",
+          gallery2Text: "Analysis of orders and sold items to examine transaction behavior and compare different commercial segments.",
+          gallery3Title: "03 · Customers and Repeat Purchases",
+          gallery3Text: "Analysis of the customer base and purchase recurrence using the identification and repeat-purchase rules documented in the analytical model.",
+          gallery4Title: "04 · Financial Analysis",
+          gallery4Text: "Analysis of product values, shipping and recorded payments while preserving the distinctions between the financial concepts available in the dataset.",
+          galleryNote: "Click any image to view the dashboard at a larger size. These images show pages from the Power BI report.",
+          otherProjects: "← View other projects",
+          repository: "Access the project's GitHub repository",
+          footer: "Data Analytics and Business Intelligence Portfolio",
+          meta: "Revenue Intelligence | Commercial and Financial Analytics. Olist public data, Python, PostgreSQL, dimensional modeling and Power BI."
+        },
+
+        es: {
+          navAbout: "Sobre mí",
+          navEducation: "Formación",
+          navProjects: "Proyectos",
+          navContact: "Contacto",
+          back: "← Volver a los proyectos",
+          subtitle: "De la ingeniería de datos a la inteligencia comercial y financiera",
+          intro1: "Proyecto de ingeniería y análisis de datos desarrollado con Python, PostgreSQL, SQL y Power BI, utilizando datos públicos del Brazilian E-Commerce Public Dataset by Olist.",
+          intro2: "La solución organiza datos transaccionales en capas Bronze, Silver y Gold, aplica modelado dimensional en esquema estrella y ofrece análisis de pedidos, productos, clientes, recompra, fletes y pagos registrados.",
+          analysisEyebrow: "DETALLES DEL PROYECTO",
+          analysisTitle: "Una solución analítica integral",
+          analysisIntro: "Procesamiento de datos desde el origen hasta la capa analítica, con reglas de negocio documentadas, pruebas de calidad e indicadores para apoyar el análisis comercial y financiero.",
+          objectiveTitle: "Objetivo del proyecto",
+          objectiveText: "Construir una base analítica consistente para investigar el comportamiento de las ventas, la composición de los pedidos, el perfil de los clientes, la recompra y los pagos registrados en los datos de Olist.",
+          sourceTitle: "Fuente de datos",
+          sourceText: "Datos públicos de comercio electrónico de Olist con información de pedidos, artículos, clientes, productos, vendedores, pagos y entregas. Los registros corresponden a un conjunto histórico disponible para análisis.",
+          engineeringTitle: "Ingeniería de datos",
+          engineeringText: "Desarrollo de un flujo de procesamiento con Python y PostgreSQL organizado en capas Bronze, Silver y Gold, que incluye ingestión, estandarización, transformación, validación y preparación para el consumo analítico.",
+          modelTitle: "Modelado dimensional",
+          modelText: "La capa Gold sigue principios de modelado dimensional, con tablas de hechos de diferentes granularidades — pedido, artículo y pago —, dimensiones relacionadas e integridad referencial. El modelo permite realizar análisis en Power BI.",
+          qualityTitle: "Calidad y validación",
+          qualityText: "Verificaciones de integridad, consistencia de valores, duplicados y conciliación entre capas. El proyecto documenta reglas de negocio y utiliza pruebas automatizadas y consultas SQL para validar las estructuras analíticas.",
+          dashboardTitle: "Business Intelligence",
+          dashboardText: "Desarrollo de cuatro páginas en Power BI: Visión Ejecutiva, Rendimiento Comercial, Clientes y Recompra y Análisis Financiero. Los paneles incluyen indicadores, comparaciones, distribuciones y análisis temporales.",
+          pipelineTitle: "Arquitectura de datos",
+          pipelineIntro: "El flujo separa los datos de origen, el procesamiento, el modelado analítico y la visualización.",
+          bronzeText: "Ingestión y conservación de datos de origen",
+          silverText: "Estandarización, procesamiento y validación",
+          goldText: "Hechos, dimensiones y reglas analíticas",
+          powerbiText: "Indicadores, medidas DAX y dashboards",
+          metricsTitle: "Indicadores del proyecto",
+          metricsIntro: "Estas cifras describen el conjunto de datos procesado y las verificaciones realizadas.",
+          metric1: "Pedidos registrados en los datos",
+          metric2: "Artículos de pedidos",
+          metric3: "Registros de pagos",
+          metric4: "Verificaciones analíticas aprobadas",
+          metricsNote: "Las cantidades representan registros del conjunto de datos analizado, no resultados empresariales en tiempo real. Las verificaciones aprobadas cubren los ámbitos evaluados y no eliminan todas las posibles limitaciones de los datos.",
+          rulesTitle: "Modelado y reglas de negocio",
+          grainTitle: "Granularidad de los hechos",
+          grainText: "El modelo distingue las granularidades de pedido, artículo de pedido y pago. Esta separación ayuda a evitar multiplicaciones indebidas de valores al relacionar tablas transaccionales.",
+          customerTitle: "Identificación de clientes",
+          customerText: "El modelo distingue los identificadores transaccionales de clientes de sus identidades consolidadas, lo que permite analizar el comportamiento y la recurrencia de compras.",
+          repeatTitle: "Regla de recompra",
+          repeatText: "Un cliente recurrente tiene al menos dos pedidos entregados realizados en días naturales distintos, según la regla de negocio documentada.",
+          financeTitle: "Interpretación financiera",
+          financeText: "Los valores de productos, fletes y pagos registrados se tratan como conceptos distintos. Los pagos registrados no se interpretan automáticamente como ingresos contables reconocidos, beneficios o márgenes.",
+          techTitle: "Tecnologías utilizadas",
+          techNote: "El repositorio contiene componentes técnicos y documentación de arquitectura, modelado, reglas de negocio y validación.",
+          githubText: "Ver el código, la documentación y los archivos del proyecto en GitHub",
+          galleryTitle: "Explora los análisis",
+          galleryIntro: "Cuatro páginas de Power BI para analizar el rendimiento comercial y financiero, los clientes y la composición de las operaciones registradas en Olist.",
+          gallery1Title: "01 · Visión Ejecutiva",
+          gallery1Text: "Panorama consolidado de los principales indicadores comerciales y financieros, actividad de las operaciones, evolución temporal y distribución de valores registrados.",
+          gallery2Title: "02 · Rendimiento Comercial",
+          gallery2Text: "Análisis de pedidos y artículos vendidos para investigar el comportamiento de las operaciones y comparar diferentes segmentos comerciales.",
+          gallery3Title: "03 · Clientes y Recompra",
+          gallery3Text: "Análisis de la base de clientes y de la recurrencia de compras según las reglas de identificación y recompra documentadas en el modelo analítico.",
+          gallery4Title: "04 · Análisis Financiero",
+          gallery4Text: "Análisis de valores de productos, fletes y pagos registrados, respetando las diferencias entre los conceptos financieros disponibles en los datos.",
+          galleryNote: "Haz clic en cualquier imagen para ver el dashboard en un tamaño mayor. Las imágenes muestran páginas del informe desarrollado en Power BI.",
+          otherProjects: "← Ver otros proyectos",
+          repository: "Acceder al repositorio del proyecto en GitHub",
+          footer: "Portafolio de Análisis de Datos e Inteligencia de Negocios",
+          meta: "Inteligencia de Ingresos | Análisis Comercial y Financiero. Datos públicos de Olist, Python, PostgreSQL, modelado dimensional y Power BI."
+        }
+      };
+
+      const selector = document.getElementById("language-select");
+
+      function applyLanguage(language) {
+        const lang = translations[language] ? language : "pt";
+        const dictionary = translations[lang];
+
+        document.documentElement.lang =
+          lang === "pt" ? "pt-BR" : lang;
+
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+          const key = element.dataset.i18n;
+
+          if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
+            element.textContent = dictionary[key];
+          }
+        });
+
+        document.querySelectorAll("[data-alt-key]").forEach(image => {
+          const key = image.dataset.altKey;
+
+          if (dictionary[key]) {
+            image.alt = "Inteligência de Receita — " + dictionary[key];
+          }
+        });
+
+        const meta = document.querySelector('meta[name="description"]');
+
+        if (meta) {
+          meta.setAttribute("content", dictionary.meta);
+        }
+
+        selector.value = lang;
+
+        try {
+          localStorage.setItem(STORAGE_KEY, lang);
+        } catch (error) {
+          // A tradução permanece ativa sem armazenamento.
+        }
+      }
+
+      selector.addEventListener("change", event => {
+        applyLanguage(event.target.value);
+      });
+
+      let savedLanguage = "pt";
+
+      try {
+        savedLanguage = localStorage.getItem(STORAGE_KEY) || "pt";
+      } catch (error) {
+        savedLanguage = "pt";
+      }
+
+      applyLanguage(savedLanguage);
+    })();
+  </script>
+
+</body>
+</html>
