@@ -161,7 +161,7 @@
   </style>
 </head>
 
-<body>
+<body class="portfolio-home">
 
   <!-- NAVEGAÇÃO -->
   <header class="navwrap">
@@ -201,7 +201,7 @@
 
         <div>
           <div class="eyebrow">
-            DATA ANALYTICS · BUSINESS INTELLIGENCE
+            DATA ANALYTICS · BUSINESS INTELLIGENCE · DATA ENGINEERING
           </div>
 
           <h1>
@@ -244,16 +244,23 @@
           </div>
         </div>
 
-        <div class="portrait">
+        <div class="portrait" aria-label="Retrato profissional">
           <img
             class="profile-photo"
             src="assets/foto-perfil-pedro.jpg"
             alt="Foto profissional de Pedro Henrique Barbosa"
             width="260"
             height="260"
+            decoding="async"
+            fetchpriority="high"
           >
         </div>
 
+      </div>
+      <div class="container hero-bottom" aria-label="Especialidades">
+        <span>01 / BUSINESS INTELLIGENCE</span>
+        <span>02 / DATA ANALYTICS</span>
+        <span>03 / DATA ENGINEERING</span>
       </div>
     </section>
 
@@ -795,6 +802,7 @@
         img.src = project.image;
         img.alt = title;
         img.loading = "lazy";
+        img.decoding = "async";
 
         imageLink.appendChild(img);
 
