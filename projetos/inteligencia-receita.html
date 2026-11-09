@@ -129,10 +129,68 @@
       line-height: 1.5;
     }
 
+    /* MODELAGEM DIMENSIONAL */
+
+    .revenue-model-figure {
+      margin: 26px 0 18px;
+    }
+
+    .revenue-model-figure a {
+      display: block;
+    }
+
+    .revenue-model-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(56, 189, 248, .22);
+      border-radius: 12px;
+      background: #0b1221;
+    }
+
+    .revenue-model-figure figcaption {
+      margin-top: 12px;
+      color: #94a3b8;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .revenue-model-details {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .revenue-model-details article {
+      padding: 18px;
+      background: rgba(15, 23, 42, .5);
+      border: 1px solid rgba(56, 189, 248, .18);
+      border-radius: 12px;
+    }
+
+    .revenue-model-details h4 {
+      margin: 0 0 10px;
+      color: #e2e8f0;
+      font-size: 16px;
+      overflow-wrap: anywhere;
+    }
+
+    .revenue-model-details p {
+      color: #cbd5e1;
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
     @media (max-width: 760px) {
       .revenue-highlights,
       .revenue-pipeline {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .revenue-model-details {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -393,6 +451,82 @@
           limitações da base.
         </p>
 
+        <!-- DIAGRAMA DIMENSIONAL -->
+        <h3 class="analysis-subtitle" data-i18n="dimensionalTitle">
+          Modelo dimensional da camada Gold
+        </h3>
+
+        <p data-i18n="dimensionalIntro">
+          A camada Gold reúne três tabelas fato com diferentes
+          granularidades e seis dimensões compartilhadas.
+          Em conjunto, elas formam uma constelação de fatos
+          baseada nos princípios de modelagem dimensional de Kimball.
+        </p>
+
+        <figure class="revenue-model-figure">
+          <a
+            href="../assets/modelo-dimensional-inteligencia-receita.svg"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir diagrama dimensional em tamanho maior"
+          >
+            <img
+              src="../assets/modelo-dimensional-inteligencia-receita.svg"
+              alt="Diagrama dimensional da camada Gold com três tabelas fato, seis dimensões e relacionamentos físicos do PostgreSQL"
+              loading="lazy"
+            >
+          </a>
+
+          <figcaption data-i18n="dimensionalCaption">
+            Diagrama construído a partir das chaves primárias e
+            estrangeiras do PostgreSQL. As linhas representam
+            pares de tabelas relacionados; os diferentes papéis
+            do calendário são detalhados abaixo.
+          </figcaption>
+        </figure>
+
+        <div class="revenue-model-details">
+
+          <article>
+            <h4>gold.fato_pedidos</h4>
+            <p data-i18n="dimensionalOrders">
+              Chave primária: order_id. Sete chaves estrangeiras:
+              cliente, localização e cinco papéis da dimensão
+              calendário — compra, aprovação, transportadora,
+              entrega e previsão de entrega.
+            </p>
+          </article>
+
+          <article>
+            <h4>gold.fato_itens_pedido</h4>
+            <p data-i18n="dimensionalItems">
+              Chave primária composta: order_id + order_item_id.
+              Seis chaves estrangeiras: cliente, localização,
+              produto, vendedor, data de compra e limite de envio.
+              Medidas: price e freight_value.
+            </p>
+          </article>
+
+          <article>
+            <h4>gold.fato_pagamentos</h4>
+            <p data-i18n="dimensionalPayments">
+              Chave primária composta: order_id + payment_sequential.
+              Quatro chaves estrangeiras: cliente, localização,
+              forma de pagamento e data de compra.
+              Medida: payment_value.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="revenue-note" data-i18n="dimensionalNote">
+          Os 17 relacionamentos correspondem a restrições físicas
+          de chave estrangeira da camada Gold. O diagrama documenta
+          o PostgreSQL, não os relacionamentos internos do Power BI.
+          As diferentes granularidades exigem agregações adequadas
+          para evitar duplicações de valores financeiros.
+        </p>
+
         <!-- REGRAS DE NEGÓCIO -->
         <h3 class="analysis-subtitle" data-i18n="rulesTitle">
           Modelagem e regras de negócio
@@ -401,7 +535,9 @@
         <div class="analysis-grid">
 
           <article class="analysis-item">
-            <h3 data-i18n="grainTitle">Granularidade das tabelas fato</h3>
+            <h3 data-i18n="grainTitle">
+              Granularidade das tabelas fato
+            </h3>
             <p data-i18n="grainText">
               As análises distinguem o nível de pedido,
               item de pedido e pagamento. Essa separação
@@ -411,7 +547,9 @@
           </article>
 
           <article class="analysis-item">
-            <h3 data-i18n="customerTitle">Identificação de clientes</h3>
+            <h3 data-i18n="customerTitle">
+              Identificação de clientes
+            </h3>
             <p data-i18n="customerText">
               A modelagem diferencia os identificadores
               transacionais dos clientes de sua identidade
@@ -421,7 +559,9 @@
           </article>
 
           <article class="analysis-item">
-            <h3 data-i18n="repeatTitle">Regra de recompra</h3>
+            <h3 data-i18n="repeatTitle">
+              Regra de recompra
+            </h3>
             <p data-i18n="repeatText">
               A classificação de recompra considera clientes
               com pelo menos dois pedidos entregues em dias
@@ -431,7 +571,9 @@
           </article>
 
           <article class="analysis-item">
-            <h3 data-i18n="financeTitle">Interpretação financeira</h3>
+            <h3 data-i18n="financeTitle">
+              Interpretação financeira
+            </h3>
             <p data-i18n="financeText">
               Os valores de produtos, frete e pagamentos
               registrados são tratados como conceitos
@@ -708,6 +850,13 @@
           metric3: "Registros de pagamentos",
           metric4: "Verificações analíticas aprovadas",
           metricsNote: "As quantidades representam registros do conjunto de dados utilizado, não resultados operacionais de uma empresa em produção. As verificações aprovadas correspondem aos escopos testados e não eliminam todas as possíveis limitações da base.",
+          dimensionalTitle: "Modelo dimensional da camada Gold",
+          dimensionalIntro: "A camada Gold reúne três tabelas fato com diferentes granularidades e seis dimensões compartilhadas. Em conjunto, elas formam uma constelação de fatos baseada nos princípios de modelagem dimensional de Kimball.",
+          dimensionalCaption: "Diagrama construído a partir das chaves primárias e estrangeiras do PostgreSQL. As linhas representam pares de tabelas relacionados; os diferentes papéis do calendário são detalhados abaixo.",
+          dimensionalOrders: "Chave primária: order_id. Sete chaves estrangeiras: cliente, localização e cinco papéis da dimensão calendário — compra, aprovação, transportadora, entrega e previsão de entrega.",
+          dimensionalItems: "Chave primária composta: order_id + order_item_id. Seis chaves estrangeiras: cliente, localização, produto, vendedor, data de compra e limite de envio. Medidas: price e freight_value.",
+          dimensionalPayments: "Chave primária composta: order_id + payment_sequential. Quatro chaves estrangeiras: cliente, localização, forma de pagamento e data de compra. Medida: payment_value.",
+          dimensionalNote: "Os 17 relacionamentos correspondem a restrições físicas de chave estrangeira da camada Gold. O diagrama documenta o PostgreSQL, não os relacionamentos internos do Power BI. As diferentes granularidades exigem agregações adequadas para evitar duplicações de valores financeiros.",
           rulesTitle: "Modelagem e regras de negócio",
           grainTitle: "Granularidade das tabelas fato",
           grainText: "As análises distinguem o nível de pedido, item de pedido e pagamento. Essa separação evita multiplicações indevidas de valores em relacionamentos entre tabelas transacionais.",
@@ -774,6 +923,13 @@
           metric3: "Payment records",
           metric4: "Passed analytical checks",
           metricsNote: "The counts refer to records in the analyzed dataset, not live business results. Passed checks cover the tested scope and do not eliminate every potential data limitation.",
+          dimensionalTitle: "Gold layer dimensional model",
+          dimensionalIntro: "The Gold layer contains three fact tables at different grains and six shared dimensions. Together they form a fact constellation based on Kimball dimensional modeling principles.",
+          dimensionalCaption: "Diagram based on PostgreSQL primary and foreign keys. Lines are grouped by table pair; the calendar's different roles are detailed below.",
+          dimensionalOrders: "PK: order_id. Seven FKs: customer, location and five calendar roles (purchase, approval, carrier, delivery and estimated delivery).",
+          dimensionalItems: "Composite PK: order_id + order_item_id. Six FKs: customer, location, product, seller, purchase date and shipping deadline. Measures: price and freight_value.",
+          dimensionalPayments: "Composite PK: order_id + payment_sequential. Four FKs: customer, location, payment method and purchase date. Measure: payment_value.",
+          dimensionalNote: "The 17 relationships are physical foreign-key constraints in the Gold layer. The diagram documents PostgreSQL, not the relationships inside the Power BI file. Different grains require appropriate aggregations to prevent duplicated financial amounts.",
           rulesTitle: "Modeling and business rules",
           grainTitle: "Fact table grain",
           grainText: "The model distinguishes order, order item and payment grains. This separation helps prevent unintended value multiplication when relating transactional tables.",
@@ -840,6 +996,13 @@
           metric3: "Registros de pagos",
           metric4: "Verificaciones analíticas aprobadas",
           metricsNote: "Las cantidades representan registros del conjunto de datos analizado, no resultados empresariales en tiempo real. Las verificaciones aprobadas cubren los ámbitos evaluados y no eliminan todas las posibles limitaciones de los datos.",
+          dimensionalTitle: "Modelo dimensional de la capa Gold",
+          dimensionalIntro: "La capa Gold contiene tres tablas de hechos con distintas granularidades y seis dimensiones compartidas. Juntas forman una constelación de hechos basada en los principios de modelado dimensional de Kimball.",
+          dimensionalCaption: "Diagrama basado en claves primarias y foráneas de PostgreSQL. Las líneas se agrupan por par de tablas; los distintos roles del calendario se detallan a continuación.",
+          dimensionalOrders: "PK: order_id. Siete FK: cliente, ubicación y cinco roles de calendario (compra, aprobación, transportista, entrega y entrega prevista).",
+          dimensionalItems: "PK compuesta: order_id + order_item_id. Seis FK: cliente, ubicación, producto, vendedor, fecha de compra y límite de envío. Medidas: price y freight_value.",
+          dimensionalPayments: "PK compuesta: order_id + payment_sequential. Cuatro FK: cliente, ubicación, forma de pago y fecha de compra. Medida: payment_value.",
+          dimensionalNote: "Las 17 relaciones son restricciones físicas de clave foránea de la capa Gold. El diagrama documenta PostgreSQL, no las relaciones internas del archivo Power BI. Las diferentes granularidades requieren agregaciones adecuadas para evitar duplicar importes financieros.",
           rulesTitle: "Modelado y reglas de negocio",
           grainTitle: "Granularidad de los hechos",
           grainText: "El modelo distingue las granularidades de pedido, artículo de pedido y pago. Esta separación ayuda a evitar multiplicaciones indebidas de valores al relacionar tablas transaccionales.",
